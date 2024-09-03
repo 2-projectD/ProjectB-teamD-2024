@@ -8,7 +8,6 @@
     android:background="#F8F7F5"
     tools:context=".MainActivity">
 
-
     <Button
         android:id="@+id/btnStart"
         android:layout_width="144dp"
@@ -38,6 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp" />
 
 
@@ -50,5 +50,17 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="178dp" />
+        tools:layout_editor_absoluteX="178dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:layout_width="133dp"
+        android:layout_height="130dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
