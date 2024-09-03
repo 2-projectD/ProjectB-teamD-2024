@@ -8,6 +8,27 @@
     android:background="#F8F7F5"
     tools:context=".VoiceActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="433dp"
+        android:layout_height="69dp"
+        android:padding="0dp"
+        android:src="@drawable/navi_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+    <ImageButton
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/back"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-9dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -16,6 +37,7 @@
         android:text="メモ"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="178dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

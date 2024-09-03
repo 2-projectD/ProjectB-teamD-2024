@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
         btnStrat.setOnClickListener{
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, VoiceActivity::class.java)
             startActivity(intent)
         }
     }
