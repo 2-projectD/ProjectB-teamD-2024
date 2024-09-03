@@ -50,6 +50,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="178dp" />
+        tools:layout_editor_absoluteX="178dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
