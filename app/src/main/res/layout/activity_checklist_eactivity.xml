@@ -5,7 +5,170 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChecklistEActivity">
+    tools:context=".ChecklistEActivity"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="356dp"
+        android:layout_height="490dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="RedundantNamespace">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button05"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button06"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button07"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button08"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button09"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button10"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button11"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button12"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button13"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button14"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button15"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+            <ImageButton
+                android:layout_marginTop="30dp"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button16"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -21,13 +184,12 @@
 
 
     <ImageButton
+        android:id="@+id/imageButton4"
         android:layout_width="438dp"
         android:layout_height="50dp"
         android:padding="0dp"
         android:src="@drawable/navi_under"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription" />
 
@@ -58,16 +220,17 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="検査記録の記録"
+        android:text="検査結果の記録"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageButton
+        android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
