@@ -8,24 +8,15 @@
     android:background="#F8F7F5"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="144dp"
-        android:layout_height="69dp"
-        android:text="画面移行1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteY="254dp" />
-
     <ImageButton
+        android:id="@+id/imageButton3"
         android:layout_width="416dp"
         android:layout_height="68dp"
         android:padding="0dp"
         android:src="@drawable/navi_under"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -45,16 +36,17 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ホーム"
+        android:text="メニュー"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="178dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/Contact"
+        android:id="@+id/contact"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:background="#00000000"
@@ -63,5 +55,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btnVoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/navi_button1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/navi_button2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

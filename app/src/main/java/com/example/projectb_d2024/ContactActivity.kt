@@ -1,5 +1,6 @@
 package com.example.projectb_d2024
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
@@ -8,15 +9,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class ContactActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_contact)
 
-        val Back : ImageButton = findViewById(R.id.Back)
+        val back : ImageButton = findViewById(R.id.back)
 
         //3)戻るボタン（アクティビティの終了）
-        Back.setOnClickListener{
+        back.setOnClickListener{
             finish()
         }
 

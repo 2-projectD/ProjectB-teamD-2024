@@ -15,21 +15,21 @@ class MainActivity : AppCompatActivity() {
 
 
         //1) Viewの取得
-        val btnStrat : Button = findViewById(R.id.btnStart)
+        val btnVoice : ImageButton = findViewById(R.id.btnVoice)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        btnStrat.setOnClickListener{
+        btnVoice.setOnClickListener{
             val intent = Intent(this, VoiceActivity::class.java)
             startActivity(intent)
         }
 
         //1) Viewの取得(連絡ボタン)
-        val Contact : ImageButton = findViewById(R.id.Contact)
+        val contact = findViewById<ImageButton>(R.id.contact)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        Contact.setOnClickListener{
+        contact.setOnClickListener{
             val intent = Intent(this, ContactActivity::class.java)
             startActivity(intent)
         }
