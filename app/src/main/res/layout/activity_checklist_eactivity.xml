@@ -168,6 +168,13 @@
 
         </LinearLayout>
 
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/long_button"
+            android:background="#00000000"
+            tools:ignore="ContentDescription,MissingConstraints"/>
+
     </LinearLayout>
 
     <ImageButton

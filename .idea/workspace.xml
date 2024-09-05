@@ -41,7 +41,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="定期の修正と検査記録の記録の追加">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="検査結果の記録のレイアウト作成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" afterDir="false" />
     </list>
@@ -298,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725542304815</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="検査結果の記録のレイアウト作成">
+      <option name="closed" value="true" />
+      <created>1725548617716</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1725548617716</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +332,7 @@
     <MESSAGE value="個体管理の画面追加と戻るボタンの修正、メニュー・メモボタンの追加" />
     <MESSAGE value="健康チェック画面の作成" />
     <MESSAGE value="定期の修正と検査記録の記録の追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="定期の修正と検査記録の記録の追加" />
+    <MESSAGE value="検査結果の記録のレイアウト作成" />
+    <option name="LAST_COMMIT_MESSAGE" value="検査結果の記録のレイアウト作成" />
   </component>
 </project>
