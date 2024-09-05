@@ -24,17 +24,17 @@
         <activity
             android:name=".ContactActivity"
             android:exported="false" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO"
+            tools:ignore="WrongManifestParent" />
         <activity
             android:name=".VoiceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

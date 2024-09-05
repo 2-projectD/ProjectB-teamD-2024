@@ -1,3 +1,12 @@
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    :
+
+    implementation "com.github.permissions-dispatcher:permissionsdispatcher:4.8.0"
+    kapt "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0"
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)

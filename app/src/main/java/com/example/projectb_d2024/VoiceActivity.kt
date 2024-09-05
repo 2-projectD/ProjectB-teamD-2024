@@ -1,13 +1,25 @@
 package com.example.projectb_d2024
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.Manifest
+import android.app.AlertDialog
+import android.widget.TextView
+import android.widget.Toast
+import android.speech.SpeechRecognizer
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.content.Intent
+import android.view.View
+import android.widget.Button
+import java.util.*
+import permissions.dispatcher.*
+
 
 class VoiceActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -32,6 +44,8 @@ class VoiceActivity : AppCompatActivity() {
             val intent = Intent(this, ContactActivity::class.java)
             startActivity(intent)
         }
+
+        
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
