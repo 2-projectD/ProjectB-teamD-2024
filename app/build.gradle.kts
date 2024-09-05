@@ -1,10 +1,11 @@
 apply plugin: 'kotlin-kapt'
 
 dependencies {
-    :
-
-    implementation "com.github.permissions-dispatcher:permissionsdispatcher:4.8.0"
-    kapt "com.github.permissions-dispatcher:permissionsdispatcher-processor:4.8.0"
+    implementation("com.github.hotchemi:permissionsdispatcher:3.3.1") {
+        // Fragmentで使用したい場合はこの記述を外す
+        exclude module: "support-v13"
+    }
+    kapt "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
 }
 
 plugins {
