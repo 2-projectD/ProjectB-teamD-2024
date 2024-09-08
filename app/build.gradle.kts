@@ -1,13 +1,3 @@
-apply plugin: 'kotlin-kapt'
-
-dependencies {
-    implementation("com.github.hotchemi:permissionsdispatcher:3.3.1") {
-        // Fragmentで使用したい場合はこの記述を外す
-        exclude module: "support-v13"
-    }
-    kapt "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
-}
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)

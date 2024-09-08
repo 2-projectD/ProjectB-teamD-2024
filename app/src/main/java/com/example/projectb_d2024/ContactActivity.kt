@@ -1,6 +1,7 @@
 package com.example.projectb_d2024
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
@@ -20,6 +21,26 @@ class ContactActivity : AppCompatActivity() {
         //3)戻るボタン（アクティビティの終了）
         back.setOnClickListener{
             finish()
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnMenu : ImageButton = findViewById(R.id.btnMenu)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnMenu.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnVoice : ImageButton = findViewById(R.id.btnVoice)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnVoice.setOnClickListener{
+            val intent = Intent(this, VoiceActivity::class.java)
+            startActivity(intent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

@@ -18,6 +18,7 @@
         tools:ignore="RedundantNamespace">
 
         <ImageButton
+            android:id="@+id/kiroku"
             android:layout_width="match_parent"
             android:layout_height="132dp"
             android:layout_marginTop="50dp"
@@ -43,6 +44,7 @@
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/healthCheck"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginTop="50dp"
@@ -84,7 +86,7 @@
 
     <ImageButton
         android:layout_width="438dp"
-        android:layout_height="50dp"
+        android:layout_height="32dp"
         android:padding="0dp"
         android:src="@drawable/navi_under"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -130,22 +132,23 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageButton
+        android:id="@+id/btnVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/navi_button1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="84dp"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/navi_button2"

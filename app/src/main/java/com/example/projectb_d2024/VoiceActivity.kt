@@ -18,8 +18,6 @@ import android.content.Intent
 import android.view.View
 import android.widget.Button
 import java.util.*
-import permissions.dispatcher.*
-
 
 class VoiceActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -42,6 +40,26 @@ class VoiceActivity : AppCompatActivity() {
         //val intent = Intent(this,遷移先::class.java)
         contact.setOnClickListener{
             val intent = Intent(this, ContactActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnMenu : ImageButton = findViewById(R.id.btnMenu)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnMenu.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnVoice : ImageButton = findViewById(R.id.btnVoice)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnVoice.setOnClickListener{
+            val intent = Intent(this, VoiceActivity::class.java)
             startActivity(intent)
         }
 

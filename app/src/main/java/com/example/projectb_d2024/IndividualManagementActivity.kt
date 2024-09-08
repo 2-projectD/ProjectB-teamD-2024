@@ -33,6 +33,36 @@ class IndividualManagementActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnMenu : ImageButton = findViewById(R.id.btnMenu)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnMenu.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnVoice : ImageButton = findViewById(R.id.btnVoice)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnVoice.setOnClickListener{
+            val intent = Intent(this, VoiceActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val healthCheck : ImageButton = findViewById(R.id.healthCheck)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        healthCheck.setOnClickListener{
+            val intent = Intent(this, HealthChecksActivity::class.java)
+            startActivity(intent)
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
