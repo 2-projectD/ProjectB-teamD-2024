@@ -40,14 +40,14 @@
         </activity>
     </application>
 
-</manifest>
-
     <!--
       権限の付与。
       記述し忘れても、当該権限を利用している PermissionsDispatcher 関連コードは
       ビルド時にも実行時にもエラーとならず、自動的に権限申請が却下扱いとなるので要注意。
     -->
 
-    <!--<uses-permission xmlns:tools="http://schemas.android.com/tools"-->
-    <!--    android:name="android.permission.READ_CONTACTS"-->
-    <!--    tools:ignore="MissingVersion,WrongManifestParent" />-->
+    <uses-permission xmlns:tools="http://schemas.android.com/tools"
+        android:name="android.permission.READ_CONTACTS"
+        tools:ignore="ManifestOrder,MissingVersion,RedundantNamespace,WrongManifestParent" />
+
+</manifest>
