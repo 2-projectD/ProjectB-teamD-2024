@@ -18,13 +18,19 @@ import android.content.Intent
 import android.view.View
 import android.widget.Button
 import java.util.*
+import androidx.activity.enableEdgeToEdge
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
 
 class VoiceActivity : AppCompatActivity() {
+    private lateinit var speechRecognizer: SpeechRecognizer
+    private lateinit var textView: TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_voice)
+
 
         val back : ImageButton = findViewById(R.id.back)
 
@@ -63,12 +69,93 @@ class VoiceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        //以下音声認識のプログラム
+
+
+            val startButton: ImageButton = findViewById(R.id.strVoice)
+            val stopButton: ImageButton = findViewById(R.id.endVoice)
+            textView = findViewById(R.id.textMemo)
+
+            // 戻るボタン
+            back.setOnClickListener {
+                finish()
+            }
+
+            // 音声認識の初期化
+            speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+            speechRecognizer.setRecognitionListener(object : RecognitionListener {
+                override fun onReadyForSpeech(params: Bundle?) {
+                    Toast.makeText(this@VoiceActivity, "音声認識の準備完了", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onBeginningOfSpeech() {
+                    Toast.makeText(this@VoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onRmsChanged(rmsdB: Float) {}
+
+                override fun onBufferReceived(buffer: ByteArray?) {}
+
+                override fun onEndOfSpeech() {
+                    Toast.makeText(this@VoiceActivity, "話し終わりました", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onError(error: Int) {
+                    Toast.makeText(this@VoiceActivity, "エラーが発生しました: $error", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onResults(results: Bundle?) {
+                    val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                    if (matches != null && matches.isNotEmpty()) {
+                        textView.text = matches[0] // 認識したテキストを表示
+                    }
+                }
+
+                override fun onPartialResults(partialResults: Bundle?) {}
+
+                override fun onEvent(eventType: Int, params: Bundle?) {}
+            })
+
+            // ボタンのクリックリスナー設定
+            startButton.setOnClickListener {
+                startSpeechRecognition()
+            }
+
+            stopButton.setOnClickListener {
+                stopSpeechRecognition()
+            }
+
+            // ウィンドウインセットの設定
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
+        }
+
+        private fun startSpeechRecognition() {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 1)
+                return
+            }
+
+            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ja-JP") // 日本語
+                putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
+            }
+            speechRecognizer.startListening(intent)
+        }
+
+        private fun stopSpeechRecognition() {
+            speechRecognizer.cancel()
+            Toast.makeText(this, "音声認識を停止しました", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onDestroy() {
+            super.onDestroy()
+            speechRecognizer.destroy() // SpeechRecognizerのリソースを解放
         }
     }
-}

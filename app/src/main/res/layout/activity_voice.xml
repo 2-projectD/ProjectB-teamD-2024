@@ -37,22 +37,24 @@
 
 
     <ImageButton
+        android:id="@+id/endVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="80dp"
         android:background="#00000000"
         android:padding="0dp"
-        android:src="@drawable/button_s1"
+        android:src="@drawable/memo_button2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strVoice"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="80dp"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/button_s1"
@@ -60,12 +62,11 @@
         app:layout_constraintTop_toBottomOf="@+id/strVoice"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="72dp"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/button_s2"
