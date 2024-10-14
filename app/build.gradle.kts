@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
+    kotlin("kapt")
 }
 
 android {
@@ -43,16 +43,15 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
+    // Google Play Services Speech
+    // 最新バージョンを確認すること
+    implementation("com.google.android.gms:play-services-speech:21.0.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
-
-    // Google Play Services Speech
-    implementation("com.google.android.gms:play-services-speech:20.0.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
