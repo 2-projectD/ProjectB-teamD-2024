@@ -1,5 +1,10 @@
 package com.example.projectb_d2024
 
+import android.os.Environment
+import androidx.core.content.ContextCompat
+import java.io.File
+import java.io.FileWriter
+import java.io.IOException
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageButton
@@ -25,12 +30,13 @@ import androidx.core.app.ActivityCompat
 class VoiceActivity : AppCompatActivity() {
     private lateinit var speechRecognizer: SpeechRecognizer
     private lateinit var textView: TextView
+    private lateinit var saveButton: ImageButton
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_voice)
-
 
         val back : ImageButton = findViewById(R.id.back)
 
@@ -70,9 +76,7 @@ class VoiceActivity : AppCompatActivity() {
         }
 
 
-
         //以下音声認識のプログラム
-
 
             val startButton: ImageButton = findViewById(R.id.strVoice)
             val stopButton: ImageButton = findViewById(R.id.endVoice)
@@ -127,6 +131,8 @@ class VoiceActivity : AppCompatActivity() {
                 stopSpeechRecognition()
             }
 
+
+
             // ウィンドウインセットの設定
             ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -134,6 +140,9 @@ class VoiceActivity : AppCompatActivity() {
                 insets
             }
         }
+
+
+
 
         private fun startSpeechRecognition() {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
@@ -158,4 +167,4 @@ class VoiceActivity : AppCompatActivity() {
             super.onDestroy()
             speechRecognizer.destroy() // SpeechRecognizerのリソースを解放
         }
-    }
+}
