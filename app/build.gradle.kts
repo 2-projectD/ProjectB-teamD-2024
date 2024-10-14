@@ -45,7 +45,7 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     // Google Play Services Speech
     // 最新バージョンを確認すること
-    implementation("com.google.android.gms:play-services-speech:21.0.1")
+    implementation("com.google.android.gms:play-services-speech:21.0.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
