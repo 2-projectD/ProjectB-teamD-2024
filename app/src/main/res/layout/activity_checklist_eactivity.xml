@@ -9,6 +9,16 @@
     android:orientation="horizontal"
     tools:context=".ChecklistEActivity">
 
+    <ScrollView
+        android:layout_width="352dp"
+        android:layout_height="528dp"
+        android:id="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        tools:ignore="MissingConstraints">
+
     <LinearLayout
         android:layout_width="352dp"
         android:layout_height="528dp"
@@ -149,7 +159,7 @@
 
             <ImageButton
                 android:layout_width="176dp"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:layout_marginTop="30dp"
                 android:background="#00000000"
                 android:padding="0dp"
@@ -158,7 +168,7 @@
 
             <ImageButton
                 android:layout_width="180dp"
-                android:layout_height="wrap_content"
+                android:layout_height="75dp"
                 android:layout_marginTop="30dp"
                 android:background="#00000000"
                 android:padding="0dp"
@@ -169,13 +179,14 @@
 
         <ImageButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_marginTop="30dp"
             android:background="#00000000"
             android:src="@drawable/long_button"
             tools:ignore="ContentDescription,MissingConstraints" />
 
     </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/imageButton2"

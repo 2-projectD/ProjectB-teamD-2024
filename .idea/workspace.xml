@@ -30,6 +30,11 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -41,9 +46,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="エラー修正完了！&#10;メモのところのレイアウト変更中！代わりにやってくれると助かる。高さがあるのでスクロール式にしたい">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_individual_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_individual_management.xml" afterDir="false" />
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ちょっと修正（気にしなくて）">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -416,7 +422,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728935843724</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="ちょっとレイアウト整えたのでチェックお願いします！直しもヨロ">
+      <option name="closed" value="true" />
+      <created>1729056272375</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1729056272375</updated>
+    </task>
+    <task id="LOCAL-00027" summary="ちょっと修正（気にしなくて）">
+      <option name="closed" value="true" />
+      <created>1729056365267</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1729056365267</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -451,7 +473,9 @@
     <MESSAGE value="エラーの直し" />
     <MESSAGE value="音声認識のバージョン変更" />
     <MESSAGE value="エラー修正完了！&#10;メモのところのレイアウト変更中！代わりにやってくれると助かる。高さがあるのでスクロール式にしたい" />
-    <option name="LAST_COMMIT_MESSAGE" value="エラー修正完了！&#10;メモのところのレイアウト変更中！代わりにやってくれると助かる。高さがあるのでスクロール式にしたい" />
+    <MESSAGE value="ちょっとレイアウト整えたのでチェックお願いします！直しもヨロ" />
+    <MESSAGE value="ちょっと修正（気にしなくて）" />
+    <option name="LAST_COMMIT_MESSAGE" value="ちょっと修正（気にしなくて）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
