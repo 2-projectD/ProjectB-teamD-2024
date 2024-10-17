@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.Manifest
+import android.Manifest.permission.RECORD_AUDIO
 import android.app.AlertDialog
 import android.widget.TextView
 import android.widget.Toast
@@ -25,23 +26,20 @@ import android.widget.Button
 import java.util.*
 import androidx.activity.enableEdgeToEdge
 import android.content.pm.PackageManager
+import android.media.Image
 import androidx.core.app.ActivityCompat
-
-// 作成したRecognitionListenerAdapterをインポート
-import package.RecognitionListenerAdapter
+import androidx.activity.result.contract.ActivityResultContracts
+import android.os.Build
 
 class VoiceActivity : AppCompatActivity() {
-    private lateinit var speechRecognizer: SpeechRecognizer
-    private lateinit var textView: TextView
-    private lateinit var saveButton: ImageButton
+    private var speechRecognizer : SpeechRecognizer? = null
+    private lateinit var textMemo: TextView
+    private lateinit var strVoice: ImageButton
+    private lateinit var endVoice: ImageButton
 
-    private var strVoice: Button? = null
-    private var endVoice: Button? = null
-    private var textMemo: TextView? = null
-
-
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_voice)
@@ -86,62 +84,81 @@ class VoiceActivity : AppCompatActivity() {
 
         //以下音声認識のプログラム
 
-        // 音声認識
-        val startButton: ImageButton = findViewById(R.id.strVoice)
-        val stopButton: ImageButton = findViewById(R.id.endVoice)
-        textView = findViewById(R.id.textMemo)
+        textMemo = findViewById(R.id.textMemo)
+        strVoice = findViewById(R.id.strVoice)
+        endVoice = findViewById(R.id.endVoice)
 
-        // 音声認識の準備
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
-        recognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-        recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ja-JP")
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        // 音声認識結果のコールバック
-        speechRecognizer.setRecognitionListener(object : RecognitionListenerAdapter() {
-            override fun onResults(results: Bundle?) {
-                val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                if (!matches.isNullOrEmpty()) {
-                    textView.text = matches[0] // 最初の認識結果を表示
-                }
-            }
-        })
-
-        // 音声認識開始ボタンのクリックイベント
-        startButton.setOnClickListener {
-            checkAudioPermissionAndStart()
+        val granted = ContextCompat.checkSelfPermission(this, RECORD_AUDIO)
+        if (granted != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(RECORD_AUDIO), PERMISSIONS_RECORD_AUDIO)
         }
 
-        // 音声認識停止ボタンのクリックイベント
-        stopButton.setOnClickListener {
-            speechRecognizer.stopListening()
+        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(applicationContext)
+        speechRecognizer?.setRecognitionListener(createRecognitionListenerStringStream { textMemo.text = it })
+        strVoice.setOnClickListener {
+            speechRecognizer?.startListening(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH))
         }
-    }
-
-    private fun checkAudioPermissionAndStart() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
-            != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.RECORD_AUDIO),
-                REQUEST_RECORD_AUDIO_PERMISSION
-            )
-        } else {
-            startListening()
-        }
-    }
-
-    private fun startListening() {
-        speechRecognizer.startListening(recognizerIntent)
+        endVoice.setOnClickListener { speechRecognizer?.stopListening() }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        speechRecognizer.destroy()
+        speechRecognizer?.cancel()
+        speechRecognizer?.destroy()
+    }
+
+    private fun createRecognitionListenerStringStream(onResult : (String)-> Unit) : RecognitionListener {
+        return object : RecognitionListener {
+            // The sound level in the audio stream has changed.
+            override fun onRmsChanged(rmsdB: Float) {}
+
+            // Called when the endpointer is ready for the user to start speaking.
+            override fun onReadyForSpeech(params: Bundle) {
+                onResult("onReadyForSpeech")
+            }
+
+            // More sound has been received.
+            override fun onBufferReceived(buffer: ByteArray) {
+                onResult("onBufferReceived")
+            }
+
+            // Called when partial recognition results are available.
+            override fun onPartialResults(partialResults: Bundle) {
+                onResult("onPartialResults")
+            }
+
+            // Reserved for adding future events.
+            override fun onEvent(eventType: Int, params: Bundle) {
+                onResult("onEvent")
+            }
+
+            // The user has started to speak.
+            override fun onBeginningOfSpeech() {
+                onResult("onBeginningOfSpeech")
+            }
+
+            // Called after the user stops speaking.
+            override fun onEndOfSpeech() {
+                onResult("onEndOfSpeech")
+            }
+
+            // A network or recognition error occurred.
+            override fun onError(error: Int) {
+                onResult("onError")
+            }
+
+            // Called when recognition results are ready.
+            override fun onResults(results: Bundle) {
+                val stringArray = results.getStringArrayList(android.speech.SpeechRecognizer.RESULTS_RECOGNITION);
+                onResult("onResults " + stringArray.toString())
+            }
+        }
     }
 
     companion object {
-        private const val REQUEST_RECORD_AUDIO_PERMISSION = 1
+        private const val PERMISSIONS_RECORD_AUDIO = 1000
     }
 }
