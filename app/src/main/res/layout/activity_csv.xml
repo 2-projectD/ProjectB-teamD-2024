@@ -12,10 +12,13 @@
         android:id="@+id/list"
         android:layout_width="350dp"
         android:layout_height="500dp"
+        android:layout_marginTop="28dp"
         android:elevation="-2dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:background="#7AB0D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/imageButton2"
