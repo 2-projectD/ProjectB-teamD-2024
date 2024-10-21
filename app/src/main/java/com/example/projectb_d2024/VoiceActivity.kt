@@ -100,6 +100,14 @@ class VoiceActivity : AppCompatActivity() {
         }
 
 
+        //csvの画面へ
+        val nextButton : Button = findViewById(R.id.nextButton)
+        //val intent = Intent(this,遷移先::class.java)
+        nextButton.setOnClickListener{
+            val intent = Intent(this, CsvActivity::class.java)
+            startActivity(intent)
+        }
+
 
         /// 音声認識の初期化
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
@@ -171,21 +179,44 @@ class VoiceActivity : AppCompatActivity() {
         val file = File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), fileName)
 
         try {
-            // FileWriterを作成。trueを指定すると追記モードになります。
-            val fileWriter = FileWriter(file, true)
-            // データを追加
-            fileWriter.append(data) // CSV形式でデータを追加
-            fileWriter.append("\n") // 改行を追加
-            fileWriter.flush() // バッファに残っているデータを強制的に書き出す
-            fileWriter.close() // ファイルを閉じる
+            // 行数の制限
+            val maxLines = 10 // 最大行数
 
-            // 保存完了メッセージ
+            // 新しい内容を作成
+            val newContent = mutableListOf<String>()
+
+            // 既存のファイルから行を読み込む
+            if (file.exists()) {
+                file.forEachLine { line ->
+                    newContent.add(line) // 行をリストに追加
+                }
+            }
+
+            // 新しいデータを追加
+            newContent.add(data)
+
+            // 最大行数を超えた場合、古い行を削除
+            while (newContent.size > maxLines) {
+                newContent.removeAt(0) // 最初の行を削除
+            }
+
+            // FileWriterを作成して新しい内容を書き込む
+            val fileWriter = FileWriter(file)
+            newContent.forEach { line ->
+                fileWriter.append(line) // 各行を書き込むやつ
+                fileWriter.append("\n")
+            }
+            fileWriter.flush() // 残っているデータを強制的に書き出すやつ
+            fileWriter.close() // ファイルを閉
+
+            // 保存完了メッセ
             Toast.makeText(this, "結果をCSVファイルに保存しました", Toast.LENGTH_SHORT).show()
         } catch (e: IOException) {
             e.printStackTrace() // エラーのスタックトレースを表示
             Toast.makeText(this, "エラーが発生しました: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
+
 
 
     // 音声認識を開始する
