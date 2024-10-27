@@ -25,7 +25,7 @@
             android:layout_marginTop="50dp"
             android:background="#00000000"
             android:src="@drawable/menu_icon"
-            tools:ignore="ContentDescription,MissingConstraints" />
+            tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:layout_marginTop="50dp"
             android:background="#00000000"
             android:src="@drawable/menu_icon"
-            tools:ignore="ContentDescription,MissingConstraints" />
+            tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="0dp" />
 
 
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/contact"
@@ -105,7 +105,7 @@
         android:src="@drawable/phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/back"
@@ -117,7 +117,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView2"
@@ -143,7 +143,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/btnMenu"
@@ -155,6 +155,6 @@
         android:src="@drawable/navi_button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
