@@ -35,6 +35,11 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -51,8 +56,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ちょっとだけレイアウト修正">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="エラー修正">
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +69,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RF8N10AZXFK)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -494,7 +501,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729530485248</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="エラー修正">
+      <option name="closed" value="true" />
+      <created>1730124209192</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1730124209192</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -509,7 +524,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="連絡の場所を作った" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="連絡ボタンの更新" />
     <MESSAGE value="連絡ボタンへの移動プログラム" />
@@ -534,7 +548,8 @@
     <MESSAGE value="・音声認識を２回目以降もテキストビューに入れられるようにした（上書きなし！）&#10;・CSVファイルの追加" />
     <MESSAGE value="csvの追加（新しいactivity追加した）" />
     <MESSAGE value="ちょっとだけレイアウト修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="ちょっとだけレイアウト修正" />
+    <MESSAGE value="エラー修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="エラー修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
