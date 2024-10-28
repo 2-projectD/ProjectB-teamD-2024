@@ -53,7 +53,7 @@ class IndividualManagementActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //1) Viewの取得(メニュー画面へボタン)
+        //1) Viewの取得(健康チェック画面へボタン)
         val healthCheck : ImageButton = findViewById(R.id.healthCheck)
 
         //2) ボタンを押したら次の画面へ
@@ -62,6 +62,18 @@ class IndividualManagementActivity : AppCompatActivity() {
             val intent = Intent(this, HealthChecksActivity::class.java)
             startActivity(intent)
         }
+
+        //1) Viewの取得(給餌記録画面へボタン)
+        val feedRecord : ImageButton = findViewById(R.id.feedRecord)
+                ↑↑
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        healthCheck.setOnClickListener{
+            val intent = Intent(this, FeedingRecordsActivity::class.java)
+            startActivity(intent)
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
