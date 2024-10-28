@@ -65,7 +65,6 @@ class IndividualManagementActivity : AppCompatActivity() {
 
         //1) Viewの取得(給餌記録画面へボタン)
         val feedRecord : ImageButton = findViewById(R.id.feedRecord)
-                ↑↑
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
