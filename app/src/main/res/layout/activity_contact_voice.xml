@@ -121,8 +121,8 @@
         android:padding="0dp"
         android:src="@drawable/small_bg"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="250dp" />
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="241dp" />
 
     <ImageButton
         android:id="@+id/strVoice"
