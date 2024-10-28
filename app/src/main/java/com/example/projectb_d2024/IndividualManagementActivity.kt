@@ -68,7 +68,7 @@ class IndividualManagementActivity : AppCompatActivity() {
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        healthCheck.setOnClickListener{
+        feedRecord.setOnClickListener{
             val intent = Intent(this, FeedingRecordsActivity::class.java)
             startActivity(intent)
         }

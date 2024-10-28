@@ -51,8 +51,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="csvの追加（新しいactivity追加した）">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_csv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_csv.xml" afterDir="false" />
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ちょっとだけレイアウト修正">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RF8N10AZXFK)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -486,7 +486,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729529897183</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="ちょっとだけレイアウト修正">
+      <option name="closed" value="true" />
+      <created>1729530485248</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1729530485248</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -501,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ホーム画面の調整" />
     <MESSAGE value="連絡の場所を作った" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="連絡ボタンの更新" />
@@ -526,7 +533,8 @@
     <MESSAGE value="音声認識の直し中" />
     <MESSAGE value="・音声認識を２回目以降もテキストビューに入れられるようにした（上書きなし！）&#10;・CSVファイルの追加" />
     <MESSAGE value="csvの追加（新しいactivity追加した）" />
-    <option name="LAST_COMMIT_MESSAGE" value="csvの追加（新しいactivity追加した）" />
+    <MESSAGE value="ちょっとだけレイアウト修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="ちょっとだけレイアウト修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
