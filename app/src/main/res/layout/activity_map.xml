@@ -79,41 +79,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/mapbutton05"
-        android:layout_width="68dp"
-        android:layout_height="93dp"
-        android:text="５階"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <Button
-        android:id="@+id/mapbutton03"
-        android:layout_width="68dp"
-        android:layout_height="93dp"
-        android:text="３階"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="215dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <Button
-        android:id="@+id/mapbutton04"
-        android:layout_width="68dp"
-        android:layout_height="93dp"
-        android:text="４階"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <Button
-        android:id="@+id/mapbutton01"
-        android:layout_width="68dp"
-        android:layout_height="93dp"
-        android:text="１階"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="0dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

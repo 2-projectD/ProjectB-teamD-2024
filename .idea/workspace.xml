@@ -61,10 +61,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="色々修正！使い勝手まだ悪い">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ちょい修正！" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +105,7 @@
     </scriptDefinition>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="_Designer_Tab" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -524,7 +521,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730133420555</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="色々！">
+      <option name="closed" value="true" />
+      <created>1730139129330</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1730139129330</updated>
+    </task>
+    <task id="LOCAL-00037" summary="ちょい修正！">
+      <option name="closed" value="true" />
+      <created>1730139896360</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1730139896360</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -539,9 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="連絡ボタンの更新" />
-    <MESSAGE value="連絡ボタンへの移動プログラム" />
-    <MESSAGE value="更新" />
     <MESSAGE value="個体管理の画面追加と戻るボタンの修正、メニュー・メモボタンの追加" />
     <MESSAGE value="健康チェック画面の作成" />
     <MESSAGE value="定期の修正と検査記録の記録の追加" />
@@ -564,7 +574,10 @@
     <MESSAGE value="ちょっとだけレイアウト修正" />
     <MESSAGE value="エラー修正" />
     <MESSAGE value="色々修正！使い勝手まだ悪い" />
-    <option name="LAST_COMMIT_MESSAGE" value="色々修正！使い勝手まだ悪い" />
+    <MESSAGE value="Rename map_5f_all.png to map5f_all.png" />
+    <MESSAGE value="色々！" />
+    <MESSAGE value="ちょい修正！" />
+    <option name="LAST_COMMIT_MESSAGE" value="ちょい修正！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
