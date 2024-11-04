@@ -22,7 +22,7 @@ import androidx.core.app.ActivityCompat
 import android.os.Handler
 import android.os.Looper
 
-class VoiceActivity : AppCompatActivity() {
+class BreedingVoiceActivity : AppCompatActivity() {
     private var speechRecognizer: SpeechRecognizer? = null
     private lateinit var textMemo: TextView
     private lateinit var strVoice: ImageButton
@@ -31,12 +31,11 @@ class VoiceActivity : AppCompatActivity() {
     private lateinit var restartSpeechRecognitionRunnable: Runnable
     private var isListening = false
 
-    @SuppressLint("MissingInflatedId", "MissingSuperCall")
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_voice)
-
+        setContentView(R.layout.activity_breeding_voice)
         //buttonの初期化
         textMemo = findViewById(R.id.textMemo)
         strVoice = findViewById(R.id.strVoice)
@@ -112,11 +111,11 @@ class VoiceActivity : AppCompatActivity() {
             speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
             speechRecognizer?.setRecognitionListener(object : RecognitionListener {
                 override fun onReadyForSpeech(params: Bundle?) {
-                    Toast.makeText(this@VoiceActivity, "音声認識の準備完了", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BreedingVoiceActivity, "音声認識の準備完了", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onBeginningOfSpeech() {
-                    Toast.makeText(this@VoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BreedingVoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onRmsChanged(rmsdB: Float) {}
@@ -136,7 +135,7 @@ class VoiceActivity : AppCompatActivity() {
                         SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "音声入力のタイムアウトです"
                         else -> "不明なエラーが発生しました"
                     }
-                    Toast.makeText(this@VoiceActivity, "エラーが発生しました: $errorMessage", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BreedingVoiceActivity, "エラーが発生しました: $errorMessage", Toast.LENGTH_SHORT).show()
                     isListening = false
                     initializeSpeechRecognizer() // エラー後に再初期化して再スタート準備
                 }
@@ -154,7 +153,7 @@ class VoiceActivity : AppCompatActivity() {
                         }
                         textMemo.text = newText
                     } else {
-                        Toast.makeText(this@VoiceActivity, "一致する結果がありません。もう一度話してください。", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@BreedingVoiceActivity, "一致する結果がありません。もう一度話してください。", Toast.LENGTH_SHORT).show()
                     }
                     isListening = false
                 }
