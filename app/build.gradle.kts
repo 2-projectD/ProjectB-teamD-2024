@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.projectb_d2024"
-        minSdk = 21
+        minSdk = 34
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -20,6 +20,7 @@ android {
         ndk {
             abiFilters += listOf("arm64-v8a", "x86_64")
         }
+        signingConfig = signingConfigs.getByName("debug")
     }
 
     buildTypes {
@@ -37,6 +38,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
