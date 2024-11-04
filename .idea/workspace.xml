@@ -35,6 +35,16 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -51,7 +61,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ちょっとだけレイアウト修正" />
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ちょい修正！" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +70,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\blueb\.android\avd\Pixel_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RF8N10AZXFK)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -83,19 +93,19 @@
     &quot;assignee&quot;: &quot;NGO-079&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/2-projectD/ProjectB-teamD-2024",
-    "accountId": "6f65889c-5269-4bfc-843e-1dd1f39d6574"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/2-projectD/ProjectB-teamD-2024&quot;,
+    &quot;accountId&quot;: &quot;0912d4ec-c1fd-41c0-90ed-1adf2172027d&quot;
   }
-}]]></component>
+}</component>
   <component name="KotlinScriptingSettings">
     <scriptDefinition className="org.jetbrains.kotlin.scripting.resolve.KotlinScriptDefinitionFromAnnotatedTemplate" definitionName="KotlinBuildScript">
       <order>2147483647</order>
     </scriptDefinition>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="_Designer_Tab" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -148,6 +158,9 @@
       <recent name="com.example.projectb_d2024" />
     </key>
     <key name="android.template.1959582924">
+      <recent name="com.example.projectb_d2024" />
+    </key>
+    <key name="android.template.670916231">
       <recent name="com.example.projectb_d2024" />
     </key>
   </component>
@@ -492,15 +505,39 @@
       <option name="project" value="LOCAL" />
       <updated>1729530485248</updated>
     </task>
-    <task id="LOCAL-00034" summary="ちょっとだけレイアウト修正">
+    <task id="LOCAL-00034" summary="エラー修正">
       <option name="closed" value="true" />
-      <created>1730731337710</created>
+      <created>1730124209192</created>
       <option name="number" value="00034" />
       <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1730731337710</updated>
+      <updated>1730124209192</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="色々修正！使い勝手まだ悪い">
+      <option name="closed" value="true" />
+      <created>1730133420555</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1730133420555</updated>
+    </task>
+    <task id="LOCAL-00036" summary="色々！">
+      <option name="closed" value="true" />
+      <created>1730139129330</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1730139129330</updated>
+    </task>
+    <task id="LOCAL-00037" summary="ちょい修正！">
+      <option name="closed" value="true" />
+      <created>1730139896360</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1730139896360</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -515,10 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
-    <MESSAGE value="連絡ボタンの更新" />
-    <MESSAGE value="連絡ボタンへの移動プログラム" />
-    <MESSAGE value="更新" />
     <MESSAGE value="個体管理の画面追加と戻るボタンの修正、メニュー・メモボタンの追加" />
     <MESSAGE value="健康チェック画面の作成" />
     <MESSAGE value="定期の修正と検査記録の記録の追加" />
@@ -538,9 +571,13 @@
     <MESSAGE value="音声認識の直し中" />
     <MESSAGE value="・音声認識を２回目以降もテキストビューに入れられるようにした（上書きなし！）&#10;・CSVファイルの追加" />
     <MESSAGE value="csvの追加（新しいactivity追加した）" />
-    <MESSAGE value="修正など" />
     <MESSAGE value="ちょっとだけレイアウト修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="ちょっとだけレイアウト修正" />
+    <MESSAGE value="エラー修正" />
+    <MESSAGE value="色々修正！使い勝手まだ悪い" />
+    <MESSAGE value="Rename map_5f_all.png to map5f_all.png" />
+    <MESSAGE value="色々！" />
+    <MESSAGE value="ちょい修正！" />
+    <option name="LAST_COMMIT_MESSAGE" value="ちょい修正！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

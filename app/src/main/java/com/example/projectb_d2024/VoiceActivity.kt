@@ -30,12 +30,17 @@ import android.media.Image
 import androidx.core.app.ActivityCompat
 import androidx.activity.result.contract.ActivityResultContracts
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 
 class VoiceActivity : AppCompatActivity() {
-    private lateinit var speechRecognizer: SpeechRecognizer
+    private var speechRecognizer: SpeechRecognizer? = null
     private lateinit var textMemo: TextView
     private lateinit var strVoice: ImageButton
     private lateinit var endVoice: ImageButton
+    private val handler = Handler(Looper.getMainLooper())
+    private lateinit var restartSpeechRecognitionRunnable: Runnable
+    private var isListening = false
 
     @SuppressLint("MissingInflatedId", "MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,13 +55,15 @@ class VoiceActivity : AppCompatActivity() {
         val saveButton: ImageButton = findViewById(R.id.saveButton)
 
         // ボタンのクリックリスナー設定
-        strVoice.setOnClickListener { startSpeechRecognition()}
+        strVoice.setOnClickListener { startSpeechRecognition() }
         endVoice.setOnClickListener { stopSpeechRecognition() }
+
+
         // CSV保存ボタンのクリックリスナー
         saveButton.setOnClickListener {
             val textToSave = textMemo.text.toString()
             if (textToSave.isNotEmpty()) {
-                saveToCSV(textToSave) // CSVに保存
+                saveToCSV(textToSave)
             } else {
                 Toast.makeText(this, "保存するテキストがありません。", Toast.LENGTH_SHORT).show()
             }
@@ -99,7 +106,6 @@ class VoiceActivity : AppCompatActivity() {
             finish()
         }
 
-
         //csvの画面へ
         val nextButton : Button = findViewById(R.id.nextButton)
         //val intent = Intent(this,遷移先::class.java)
@@ -108,142 +114,169 @@ class VoiceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // 音声認識の初期化
+        initializeSpeechRecognizer()
+    }
 
-        /// 音声認識の初期化
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
-        speechRecognizer.setRecognitionListener(object : RecognitionListener {
-            override fun onReadyForSpeech(params: Bundle?) {
-                Toast.makeText(this@VoiceActivity, "音声認識を開始", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onBeginningOfSpeech() {
-                Toast.makeText(this@VoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onRmsChanged(rmsdB: Float) {}
-
-            override fun onBufferReceived(buffer: ByteArray?) {}
-
-            override fun onError(error: Int) {
-                val errorMessage = when (error) {
-                    SpeechRecognizer.ERROR_AUDIO -> "音声入力中にエラーが発生しました"
-                    SpeechRecognizer.ERROR_CLIENT -> "クライアントエラーが発生しました"
-                    SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "権限が不足しています"
-                    SpeechRecognizer.ERROR_NETWORK -> "ネットワークエラーが発生しました"
-                    SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "ネットワークタイムアウトです"
-                    SpeechRecognizer.ERROR_NO_MATCH -> "一致する結果がありません"
-                    SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "認識システムがビジー状態です"
-                    SpeechRecognizer.ERROR_SERVER -> "サーバーエラーが発生しました"
-                    SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "音声入力のタイムアウトです"
-                    else -> "不明なエラーが発生しました"
+    private fun initializeSpeechRecognizer() {
+        if (speechRecognizer == null) {
+            speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+            speechRecognizer?.setRecognitionListener(object : RecognitionListener {
+                override fun onReadyForSpeech(params: Bundle?) {
+                    Toast.makeText(this@VoiceActivity, "音声認識の準備完了", Toast.LENGTH_SHORT).show()
                 }
-                Toast.makeText(this@VoiceActivity, "エラーが発生しました: $errorMessage", Toast.LENGTH_SHORT).show()
-            }
 
-            override fun onEndOfSpeech() {}
+                override fun onBeginningOfSpeech() {
+                    Toast.makeText(this@VoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
+                }
 
-            override fun onResults(results: Bundle?) {
-                val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                if (matches != null && matches.isNotEmpty()) {
-                    val existingText = textMemo.text.toString()
-                    val newText = if (existingText.isNotEmpty()) {
-                        "$existingText\n${matches[0]}"
-                    } else {
-                        matches[0]
+                override fun onRmsChanged(rmsdB: Float) {}
+
+                override fun onBufferReceived(buffer: ByteArray?) {}
+
+                override fun onError(error: Int) {
+                    val errorMessage = when (error) {
+                        SpeechRecognizer.ERROR_AUDIO -> "音声入力中にエラーが発生しました"
+                        SpeechRecognizer.ERROR_CLIENT -> "クライアントエラーが発生しました"
+                        SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "権限が不足しています"
+                        SpeechRecognizer.ERROR_NETWORK -> "ネットワークエラーが発生しました"
+                        SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "ネットワークタイムアウトです"
+                        SpeechRecognizer.ERROR_NO_MATCH -> "一致する結果がありません"
+                        SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "認識システムがビジー状態です"
+                        SpeechRecognizer.ERROR_SERVER -> "サーバーエラーが発生しました"
+                        SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "音声入力のタイムアウトです"
+                        else -> "不明なエラーが発生しました"
                     }
-                    textMemo.text = newText
-                } else {
-                    Toast.makeText(this@VoiceActivity, "一致する結果がありません。もう一度話してください。", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@VoiceActivity, "エラーが発生しました: $errorMessage", Toast.LENGTH_SHORT).show()
+                    isListening = false
+                    initializeSpeechRecognizer() // エラー後に再初期化して再スタート準備
                 }
-            }
 
-            override fun onPartialResults(partialResults: Bundle?) {}
+                override fun onEndOfSpeech() { }
 
-            override fun onEvent(eventType: Int, params: Bundle?) {}
-        })
+                override fun onResults(results: Bundle?) {
+                    val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                    if (matches != null && matches.isNotEmpty()) {
+                        val existingText = textMemo.text.toString()
+                        val newText = if (existingText.isNotEmpty()) {
+                            "$existingText\n${matches[0]}"
+                        } else {
+                            matches[0]
+                        }
+                        textMemo.text = newText
+                    } else {
+                        Toast.makeText(this@VoiceActivity, "一致する結果がありません。もう一度話してください。", Toast.LENGTH_SHORT).show()
+                    }
+                    isListening = false
+                }
 
-        // ウィンドウインセットの設定
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+                override fun onPartialResults(partialResults: Bundle?) {}
+
+                override fun onEvent(eventType: Int, params: Bundle?) {}
+            })
         }
     }
 
-    // CSVファイルに保存する関数
-    private fun saveToCSV(data: String) {
-        // CSVファイル名
-        val fileName = "speech_recognition_results.csv"
-
-        // 外部ストレージへのパスを取得
-        val file = File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), fileName)
-
-        try {
-            // 行数の制限
-            val maxLines = 10 // 最大行数
-
-            // 新しい内容を作成
-            val newContent = mutableListOf<String>()
-
-            // 既存のファイルから行を読み込む
-            if (file.exists()) {
-                file.forEachLine { line ->
-                    newContent.add(line) // 行をリストに追加
-                }
-            }
-
-            // 新しいデータを追加
-            newContent.add(data)
-
-            // 最大行数を超えた場合、古い行を削除
-            while (newContent.size > maxLines) {
-                newContent.removeAt(0) // 最初の行を削除
-            }
-
-            // FileWriterを作成して新しい内容を書き込む
-            val fileWriter = FileWriter(file)
-            newContent.forEach { line ->
-                fileWriter.append(line) // 各行を書き込むやつ
-                fileWriter.append("\n")
-            }
-            fileWriter.flush() // 残っているデータを強制的に書き出すやつ
-            fileWriter.close() // ファイルを閉
-
-            // 保存完了メッセ
-            Toast.makeText(this, "結果をCSVファイルに保存しました", Toast.LENGTH_SHORT).show()
-        } catch (e: IOException) {
-            e.printStackTrace() // エラーのスタックトレースを表示
-            Toast.makeText(this, "エラーが発生しました: ${e.message}", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-
-
-    // 音声認識を開始する
     private fun startSpeechRecognition() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 1)
             return
         }
 
-        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ja-JP") // 日本語
-            putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
-            putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 20000L) // 20秒の無音でも終了しない
-            putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 20000L) // 20秒の無音でも終了しない
+        if (!isListening) {
+            initializeSpeechRecognizer() // 初期化
+            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ja-JP")
+                putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
+                // 無音のタイムアウトを長く設定
+                putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 60000L) // 1分
+                putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 60000L) // 1分
+            }
+
+            isListening = true
+            speechRecognizer?.startListening(intent)
         }
-        speechRecognizer.startListening(intent)
     }
 
-    // 音声認識を停止する
     private fun stopSpeechRecognition() {
-        speechRecognizer.stopListening()
-        Toast.makeText(this, "音声認識を停止しました", Toast.LENGTH_SHORT).show()  // 停止メッセージ表示
+        if (isListening) {
+            try {
+                speechRecognizer?.stopListening()
+                // 結果を取得するためのフラグを設定
+                speechRecognizer?.setRecognitionListener(object : RecognitionListener {
+                    override fun onResults(results: Bundle?) {
+                        // 結果をテキストビューに追加
+                        val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                        if (matches != null && matches.isNotEmpty()) {
+                            val existingText = textMemo.text.toString()
+                            val newText = if (existingText.isNotEmpty()) {
+                                "$existingText\n${matches[0]}"
+                            } else {
+                                matches[0]
+                            }
+                            textMemo.text = newText
+                        }
+                    }
+
+                    override fun onError(error: Int) {
+                        // エラー処理はそのまま
+                    }
+
+                    override fun onEndOfSpeech() {
+                        // 音声が終わったときは何もしない
+                    }
+
+                    // その他のメソッドはそのまま
+                    override fun onReadyForSpeech(params: Bundle?) {}
+                    override fun onBeginningOfSpeech() {}
+                    override fun onRmsChanged(rmsdB: Float) {}
+                    override fun onBufferReceived(buffer: ByteArray?) {}
+                    override fun onPartialResults(partialResults: Bundle?) {}
+                    override fun onEvent(eventType: Int, params: Bundle?) {}
+                })
+
+                speechRecognizer?.cancel()
+                speechRecognizer?.destroy()
+                speechRecognizer = null
+                isListening = false
+                Toast.makeText(this, "音声認識を停止しました", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(this, "音声認識の停止に失敗しました", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun saveToCSV(data: String) {
+        val fileName = "speech_recognition_results.csv"
+        val file = File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), fileName)
+        try {
+            val maxLines = 10
+            val newContent = mutableListOf<String>()
+            if (file.exists()) {
+                file.forEachLine { line ->
+                    newContent.add(line)
+                }
+            }
+            newContent.add(data.replace("\n", ""))
+            while (newContent.size > maxLines) {
+                newContent.removeAt(0)
+            }
+            FileWriter(file).use { writer ->
+                newContent.forEach { line ->
+                    writer.append(line).append("\n")
+                }
+            }
+            Toast.makeText(this, "結果をCSVファイルに保存しました", Toast.LENGTH_SHORT).show()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Toast.makeText(this, "エラーが発生しました: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        speechRecognizer.destroy() // SpeechRecognizerのリソースを解放
+        stopSpeechRecognition()
     }
 }
