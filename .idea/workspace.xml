@@ -62,6 +62,16 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_3f.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_4f.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -88,9 +98,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="マップ">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="２Fマップ修正">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_4f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_2f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map_2f.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -600,7 +610,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731167536182</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="２Fマップ修正">
+      <option name="closed" value="true" />
+      <created>1731242043519</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1731242043519</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -615,7 +633,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="定期の修正と検査記録の記録の追加" />
     <MESSAGE value="検査結果の記録のレイアウト作成" />
     <MESSAGE value="個体管理とメニューとかのレイアウト作成" />
     <MESSAGE value="音声認識の作成中（エラー多め）" />
@@ -640,7 +657,8 @@
     <MESSAGE value="ちょい修正！" />
     <MESSAGE value="余計なボタンをけす" />
     <MESSAGE value="マップ" />
-    <option name="LAST_COMMIT_MESSAGE" value="マップ" />
+    <MESSAGE value="２Fマップ修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="２Fマップ修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
