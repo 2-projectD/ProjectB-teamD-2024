@@ -21,6 +21,8 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import android.os.Handler
 import android.os.Looper
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
 
 class BreedingVoiceActivity : AppCompatActivity() {
     private var speechRecognizer: SpeechRecognizer? = null

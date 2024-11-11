@@ -55,6 +55,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //1) Viewの取得(日報へボタン)
+        val btnNippo : ImageButton = findViewById(R.id.btnNippo)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnNippo.setOnClickListener{
+            val intent = Intent(this, DailyReportActivity::class.java)
+            startActivity(intent)
+        }
+
         //1) Viewの取得(メモ画面へボタン)
         val check_it : ImageButton = findViewById(R.id.check_it)
 

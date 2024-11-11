@@ -2,9 +2,7 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config>
-        <device id="pixel" />
-      </config>
+      <config />
     </shared>
     <layouts>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml">
@@ -18,11 +16,6 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
@@ -57,21 +50,6 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_3f.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_4f.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_5f.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -87,18 +65,22 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_word_registration_management.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="マップ微調整" />
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="pythonの準備と日報記録の画面の設置">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/voice2.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/python/voice2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +89,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\blueb\.android\avd\Pixel_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -117,7 +99,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="layoutResourceFile" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -134,7 +116,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/2-projectD/ProjectB-teamD-2024&quot;,
-    &quot;accountId&quot;: &quot;6f65889c-5269-4bfc-843e-1dd1f39d6574&quot;
+    &quot;accountId&quot;: &quot;0912d4ec-c1fd-41c0-90ed-1adf2172027d&quot;
   }
 }</component>
   <component name="KotlinScriptingSettings">
@@ -143,7 +125,7 @@
     </scriptDefinition>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -157,30 +139,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/ProjectB-teamD-2024/app/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/android&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/ProjectB-teamD-2024/app/src/main/java",
+    "last_opened_file_path": "D:/android",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\blueb\\.gradle&quot;
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\kanpa\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -591,55 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730727698098</updated>
     </task>
-    <task id="LOCAL-00039" summary="マップ">
+    <task id="LOCAL-00039" summary="pythonの準備と日報記録の画面の設置">
       <option name="closed" value="true" />
-      <created>1731163535382</created>
+      <created>1730742437948</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1731163535382</updated>
+      <updated>1730742438033</updated>
     </task>
-    <task id="LOCAL-00040" summary="マップ">
-      <option name="closed" value="true" />
-      <created>1731167536182</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1731167536182</updated>
-    </task>
-    <task id="LOCAL-00041" summary="２Fマップ修正">
-      <option name="closed" value="true" />
-      <created>1731242043519</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1731242043519</updated>
-    </task>
-    <task id="LOCAL-00042" summary="４Fマップ追加">
-      <option name="closed" value="true" />
-      <created>1731246059740</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1731246059740</updated>
-    </task>
-    <task id="LOCAL-00043" summary="５Fマップ追加">
-      <option name="closed" value="true" />
-      <created>1731246936042</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1731246936042</updated>
-    </task>
-    <task id="LOCAL-00044" summary="マップ微調整">
-      <option name="closed" value="true" />
-      <created>1731334713467</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1731334713467</updated>
-    </task>
-    <option name="localTasksCounter" value="45" />
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -654,6 +597,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="個体管理とメニューとかのレイアウト作成" />
+    <MESSAGE value="音声認識の作成中（エラー多め）" />
     <MESSAGE value="ボタンでのつながりの編集・デザインの更新" />
     <MESSAGE value="音声認識（基本）はできた" />
     <MESSAGE value="何か書き換えた。ごめん忘れた" />
@@ -674,12 +619,10 @@
     <MESSAGE value="色々！" />
     <MESSAGE value="ちょい修正！" />
     <MESSAGE value="余計なボタンをけす" />
-    <MESSAGE value="マップ" />
-    <MESSAGE value="２Fマップ修正" />
-    <MESSAGE value="４Fマップ追加" />
-    <MESSAGE value="５Fマップ追加" />
-    <MESSAGE value="マップ微調整" />
-    <option name="LAST_COMMIT_MESSAGE" value="マップ微調整" />
+    <MESSAGE value="Rename map_1F_button.png to map1f_button.png" />
+    <MESSAGE value="pythonの準備と" />
+    <MESSAGE value="pythonの準備と日報記録の画面の設置" />
+    <option name="LAST_COMMIT_MESSAGE" value="pythonの準備と日報記録の画面の設置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
