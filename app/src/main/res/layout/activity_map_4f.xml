@@ -131,16 +131,31 @@
 
     <ImageButton
         android:id="@+id/imageButton39"
-        android:layout_width="143dp"
-        android:layout_height="51dp"
+        android:layout_width="83dp"
+        android:layout_height="50dp"
         android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408"
+        app:srcCompat="@drawable/map4_3right"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton42"
+        android:layout_width="79dp"
+        android:layout_height="48dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.407"
-        app:srcCompat="@drawable/map4_3"
+        app:srcCompat="@drawable/map4_3left"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
