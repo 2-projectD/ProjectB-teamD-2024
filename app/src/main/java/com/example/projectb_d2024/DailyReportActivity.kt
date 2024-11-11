@@ -27,7 +27,7 @@ class DailyReportActivity : AppCompatActivity() {
         // AnimalDatabaseHelperのインスタンスを作成
         val dbHelper = AnimalDatabaseHelper(this)
 
-        // 10種類の動物データをリストとして定義
+        // 動物データをデータベースに挿入 (すでに挿入したデータがあればスキップ)
         val animalsData = listOf(
             Triple("カメ", "アオウミガメ", "元気"),
             Triple("ペンギン", "ケープペンギン", "普通"),
@@ -41,7 +41,7 @@ class DailyReportActivity : AppCompatActivity() {
             Triple("サメ", "シロワニ", "普通")
         )
 
-        // 動物データをデータベースに挿入
+        // データベースに挿入
         for ((type, name, healthStatus) in animalsData) {
             val id = dbHelper.insertAnimal(type, name, healthStatus)
             if (id != -1L) {
@@ -51,11 +51,13 @@ class DailyReportActivity : AppCompatActivity() {
             }
         }
 
-        // 挿入後に動物データを取得して表示
+        // 動物データを取得
         val animals = dbHelper.getAllAnimals()
-        for (animal in animals) {
-            println("ID: ${animal.id}, Type: ${animal.type}, Name: ${animal.name}, Health Status: ${animal.healthStatus}")
-        }
+
+        // ListViewのセットアップ
+        val listView: ListView = findViewById(R.id.animalListView)
+        val adapter = AnimalAdapter(this, animals)
+        listView.adapter = adapter
 
         // ステータスバーのインセット処理
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -166,46 +168,3 @@ class AnimalAdapter(context: Context, private val animals: List<Animal>) : Array
     }
 }
 
-class DailyReportActivity2 : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_daily_report)
-
-        // AnimalDatabaseHelperのインスタンスを作成
-        val dbHelper = AnimalDatabaseHelper(this)
-
-        // 動物データをデータベースに挿入 (すでに挿入したデータがあればスキップ)
-        val animalsData = listOf(
-            Triple("カメ", "アオウミガメ", "元気"),
-            Triple("ペンギン", "ケープペンギン", "普通"),
-            Triple("ペンギン", "アデリーペンギン", "良好"),
-            Triple("ペンギン", "オウサマペンギン", "元気"),
-            Triple("ペンギン", "ジェンツーペンギン", "普通"),
-            Triple("ペンギン", "ヒゲペンギン", "健康"),
-            Triple("ミミズク", "アフリカンミミズク", "良好"),
-            Triple("インコ", "ルリコンゴインコ", "元気"),
-            Triple("タカ", "モモアカノスリ", "元気"),
-            Triple("サメ", "シロワニ", "普通")
-        )
-
-        // データベースに挿入
-        for ((type, name, healthStatus) in animalsData) {
-            val id = dbHelper.insertAnimal(type, name, healthStatus)
-            if (id != -1L) {
-                println("Inserted animal with ID: $id")
-            } else {
-                Log.e("DatabaseError", "Failed to insert animal: $name")
-            }
-        }
-
-        // 動物データを取得
-        val animals = dbHelper.getAllAnimals()
-
-        // ListViewのセットアップ
-        val listView: ListView = findViewById(R.id.animalListView)
-        val adapter = AnimalAdapter(this, animals)
-        listView.adapter = adapter
-    }
-}
