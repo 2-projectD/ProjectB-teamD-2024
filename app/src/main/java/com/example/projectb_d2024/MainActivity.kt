@@ -75,6 +75,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //1) Viewの取得(マップへボタン)
+        val btnTenpure : ImageButton = findViewById(R.id.btnTenpure)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnTenpure.setOnClickListener{
+            val intent = Intent(this, MapActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }

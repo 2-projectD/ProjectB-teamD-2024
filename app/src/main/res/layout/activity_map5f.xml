@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F7F5"
-    tools:context=".MapActivity">
+    tools:context=".Map_5f_Activity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -240,6 +239,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.464" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
