@@ -6,6 +6,12 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -140,3 +146,66 @@ data class Animal(
     val name: String,
     val healthStatus: String
 )
+
+class AnimalAdapter(context: Context, private val animals: List<Animal>) : ArrayAdapter<Animal>(context, 0, animals) {
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_animal, parent, false)
+
+        val animal = animals[position]
+
+        val typeTextView: TextView = view.findViewById(R.id.animalType)
+        val nameTextView: TextView = view.findViewById(R.id.animalName)
+        val healthStatusTextView: TextView = view.findViewById(R.id.animalHealthStatus)
+
+        typeTextView.text = animal.type
+        nameTextView.text = animal.name
+        healthStatusTextView.text = animal.healthStatus
+
+        return view
+    }
+}
+
+class DailyReportActivity2 : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_daily_report)
+
+        // AnimalDatabaseHelperのインスタンスを作成
+        val dbHelper = AnimalDatabaseHelper(this)
+
+        // 動物データをデータベースに挿入 (すでに挿入したデータがあればスキップ)
+        val animalsData = listOf(
+            Triple("カメ", "アオウミガメ", "元気"),
+            Triple("ペンギン", "ケープペンギン", "普通"),
+            Triple("ペンギン", "アデリーペンギン", "良好"),
+            Triple("ペンギン", "オウサマペンギン", "元気"),
+            Triple("ペンギン", "ジェンツーペンギン", "普通"),
+            Triple("ペンギン", "ヒゲペンギン", "健康"),
+            Triple("ミミズク", "アフリカンミミズク", "良好"),
+            Triple("インコ", "ルリコンゴインコ", "元気"),
+            Triple("タカ", "モモアカノスリ", "元気"),
+            Triple("サメ", "シロワニ", "普通")
+        )
+
+        // データベースに挿入
+        for ((type, name, healthStatus) in animalsData) {
+            val id = dbHelper.insertAnimal(type, name, healthStatus)
+            if (id != -1L) {
+                println("Inserted animal with ID: $id")
+            } else {
+                Log.e("DatabaseError", "Failed to insert animal: $name")
+            }
+        }
+
+        // 動物データを取得
+        val animals = dbHelper.getAllAnimals()
+
+        // ListViewのセットアップ
+        val listView: ListView = findViewById(R.id.animalListView)
+        val adapter = AnimalAdapter(this, animals)
+        listView.adapter = adapter
+    }
+}
