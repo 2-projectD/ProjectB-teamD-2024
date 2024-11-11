@@ -16,7 +16,7 @@ class DailyReportActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_daily_report)
+        setContentView(R.layout.activity_daily_report2)
 
         // AnimalDatabaseHelperのインスタンスを作成
         val dbHelper = AnimalDatabaseHelper(this)
