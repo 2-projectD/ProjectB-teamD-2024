@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -9,17 +9,17 @@
         android:id="@+id/animalType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type" />
+        android:text="@string/animal_type" />
 
     <TextView
         android:id="@+id/animalName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name" />
+        android:text="@string/animal_name" />
 
     <TextView
         android:id="@+id/animalHealthStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Health Status" />
+        android:text="@string/animal_health_status" />
 </LinearLayout>
