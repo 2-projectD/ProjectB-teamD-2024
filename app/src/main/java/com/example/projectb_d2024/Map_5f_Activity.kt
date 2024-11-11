@@ -20,7 +20,7 @@ class Map_5f_Activity : AppCompatActivity() {
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
         imageButton5.setOnClickListener{
-            val intent = Intent(this, Map_5f_Activity::class.java)
+            val intent = Intent(this, Map_3f_Activity::class.java)
             startActivity(intent)
         }
 
