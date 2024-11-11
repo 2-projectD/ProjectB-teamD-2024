@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapActivity">
+    tools:context=".Map_3f_Activity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -48,7 +48,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/map3f_buttonbig"
         tools:ignore="SpeakableTextPresentCheck" />
-
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="wrap_content"
@@ -481,5 +480,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.469" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
