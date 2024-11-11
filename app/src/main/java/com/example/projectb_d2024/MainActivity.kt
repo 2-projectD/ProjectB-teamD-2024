@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
         btn_nippo.setOnClickListener{
-            val intent = Intent(this, DailyReportActivity::class.java)
+            val intent = Intent(this, DailyReportAgeActivity::class.java)
             startActivity(intent)
         }
 
