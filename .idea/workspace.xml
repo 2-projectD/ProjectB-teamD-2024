@@ -35,11 +35,6 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report_age.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -56,11 +51,6 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
@@ -86,9 +76,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="ただの修正">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +91,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=FirebaseDirectAccess, isTemplate=true, identifier=model_id=shiba/34)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -181,9 +174,6 @@
   <component name="RecentsManager">
     <key name="android.template.-1344972289">
       <recent name="com.example.projectb_d2024.ui.theme" />
-      <recent name="com.example.projectb_d2024" />
-    </key>
-    <key name="android.template.-956640693">
       <recent name="com.example.projectb_d2024" />
     </key>
     <key name="android.template.-1145534137">
@@ -602,15 +592,7 @@
       <option name="project" value="LOCAL" />
       <updated>1731339844477</updated>
     </task>
-    <task id="LOCAL-00041" summary="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動">
-      <option name="closed" value="true" />
-      <created>1731348841664</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1731348841664</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -637,6 +619,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="音声認識の作成中（エラー多め）" />
     <MESSAGE value="ボタンでのつながりの編集・デザインの更新" />
     <MESSAGE value="音声認識（基本）はできた" />
     <MESSAGE value="何か書き換えた。ごめん忘れた" />
@@ -661,8 +644,7 @@
     <MESSAGE value="pythonの準備と" />
     <MESSAGE value="pythonの準備と日報記録の画面の設置" />
     <MESSAGE value="ただの修正" />
-    <MESSAGE value="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動" />
-    <option name="LAST_COMMIT_MESSAGE" value="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動" />
+    <option name="LAST_COMMIT_MESSAGE" value="ただの修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
