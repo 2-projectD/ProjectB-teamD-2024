@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapActivity">
+    tools:context=".Map_4f_Activity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -342,6 +342,4 @@
         </FrameLayout>
 
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
