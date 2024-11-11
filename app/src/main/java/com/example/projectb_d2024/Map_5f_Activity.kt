@@ -8,19 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MapActivity : AppCompatActivity() {
+class Map_5f_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_map)
+        setContentView(R.layout.activity_map5f)
 
-
-        //1) Viewの取得(5Fボタン)
-        val imageButton8 : ImageButton = findViewById(R.id.imageButton8)
+        //1) Viewの取得(3Fボタン)
+        val imageButton5 : ImageButton = findViewById(R.id.imageButton5)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        imageButton8.setOnClickListener{
+        imageButton5.setOnClickListener{
             val intent = Intent(this, Map_5f_Activity::class.java)
             startActivity(intent)
         }
@@ -35,13 +34,13 @@ class MapActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //1) Viewの取得(3Fボタン)
-        val imageButton5 : ImageButton = findViewById(R.id.imageButton5)
+        //1) Viewの取得(1Fボタン)
+        val imageButton3 : ImageButton = findViewById(R.id.imageButton3)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        imageButton5.setOnClickListener{
-            val intent = Intent(this, Map_3f_Activity::class.java)
+        imageButton3.setOnClickListener{
+            val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
         }
 
@@ -54,8 +53,5 @@ class MapActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-
-
     }
 }

@@ -28,7 +28,7 @@
                 android:id="@+id/btn_nippo"
                 android:layout_width="176dp"
                 android:layout_height="wrap_content"
-                android:background="#00000000"
+                android:background="#F8F7F5"
                 android:padding="0dp"
                 android:src="@drawable/menu_icon"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
@@ -135,7 +135,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="テンプレート管理"
+                android:text="マップ"
                 android:textSize="18sp"
                 tools:ignore="HardcodedText" />
 

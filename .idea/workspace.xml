@@ -65,6 +65,16 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map_5f.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -86,9 +96,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="細かい調整">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportAgeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportAgeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MapActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MapActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/Map_3f_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/Map_3f_Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +111,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RF8N10AZXFK)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -134,7 +147,7 @@
     </scriptDefinition>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -618,7 +631,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731349276195</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="DailyReportActivityへ移動ボタン">
+      <option name="closed" value="true" />
+      <created>1731349837959</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1731349837959</updated>
+    </task>
+    <task id="LOCAL-00044" summary="細かい調整">
+      <option name="closed" value="true" />
+      <created>1731350899496</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1731350899496</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -645,8 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ボタンでのつながりの編集・デザインの更新" />
-    <MESSAGE value="音声認識（基本）はできた" />
     <MESSAGE value="何か書き換えた。ごめん忘れた" />
     <MESSAGE value="エラーの直し" />
     <MESSAGE value="音声認識のバージョン変更" />
@@ -670,7 +697,9 @@
     <MESSAGE value="pythonの準備と日報記録の画面の設置" />
     <MESSAGE value="ただの修正" />
     <MESSAGE value="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動" />
-    <option name="LAST_COMMIT_MESSAGE" value="DailyReportActivityのレイアウトをDailyReportAgeActivityに移動" />
+    <MESSAGE value="DailyReportActivityへ移動ボタン" />
+    <MESSAGE value="細かい調整" />
+    <option name="LAST_COMMIT_MESSAGE" value="細かい調整" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
         btn_nippo.setOnClickListener{
-            val intent = Intent(this, DailyReportActivity::class.java)
+            val intent = Intent(this, DailyReportAgeActivity::class.java)
             startActivity(intent)
         }
 
@@ -72,6 +72,16 @@ class MainActivity : AppCompatActivity() {
         //val intent = Intent(this,遷移先::class.java)
         check_it.setOnClickListener{
             val intent = Intent(this, IndividualManagementActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(マップへボタン)
+        val btnTenpure : ImageButton = findViewById(R.id.btnTenpure)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnTenpure.setOnClickListener{
+            val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
         }
 
