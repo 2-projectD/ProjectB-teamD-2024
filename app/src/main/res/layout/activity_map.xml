@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F7F5"
     tools:context=".MapActivity">
 
     <ImageButton
@@ -453,8 +452,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="SpeakableTextPresentCheck">
+        app:layout_constraintVertical_bias="1.0">
 
         <FrameLayout
             android:id="@+id/frameLayout"
@@ -492,6 +490,5 @@
         app:layout_constraintStart_toStartOf="@+id/scrollView"
         app:layout_constraintTop_toBottomOf="@+id/imageButton14"
         tools:ignore="HardcodedText,MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

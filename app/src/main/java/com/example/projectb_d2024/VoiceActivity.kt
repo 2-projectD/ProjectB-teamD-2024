@@ -31,16 +31,17 @@ class VoiceActivity : AppCompatActivity() {
     private lateinit var restartSpeechRecognitionRunnable: Runnable
     private var isListening = false
 
+
     @SuppressLint("MissingInflatedId", "MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_voice)
 
+        endVoice = findViewById(R.id.endVoice)
         //buttonの初期化
         textMemo = findViewById(R.id.textMemo)
         strVoice = findViewById(R.id.strVoice)
-        endVoice = findViewById(R.id.endVoice)
         val saveButton: ImageButton = findViewById(R.id.saveButton)
 
         // ボタンのクリックリスナー設定

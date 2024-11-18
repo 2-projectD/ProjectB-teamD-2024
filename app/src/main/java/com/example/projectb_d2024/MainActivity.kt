@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //1) Viewの取得(メモ画面へボタン)
+        //1) Viewの取得(給餌へボタン)
         val check_it : ImageButton = findViewById(R.id.check_it)
 
         //2) ボタンを押したら次の画面へ
