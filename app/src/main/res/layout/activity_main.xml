@@ -39,6 +39,16 @@
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:padding="0dp"
+                android:src="@drawable/icon_kyuji"
+                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/check_it2"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:padding="0dp"
                 android:src="@drawable/menu_icon"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -79,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:padding="0dp"
-                android:src="@drawable/menu_icon"
+                android:src="@drawable/icon_memo"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
@@ -88,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:padding="0dp"
-                android:src="@drawable/menu_icon"
+                android:src="@drawable/icon_tango"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         </LinearLayout>
