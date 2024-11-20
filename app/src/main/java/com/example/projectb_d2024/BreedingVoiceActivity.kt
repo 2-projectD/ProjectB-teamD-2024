@@ -35,18 +35,18 @@ class BreedingVoiceActivity : AppCompatActivity() {
         val modelPath = "path_to_model/vosk-model-small-ja-0.22"  // モデルのパス
         voiceRecognizer = pythonFile.callAttr("VoiceRecognizer", modelPath)
 
-        // strVoiceボタンが押されたときに音声認識を開始
-        strVoice.setOnClickListener {
-            pythonFile.callAttr("start_recognition", voiceRecognizer, object : PythonCallable {
-                override fun call(python: Python, args: Array<out Any>): Any {
-                    val resultText = args[0] as String
-                    runOnUiThread {
-                        textMemo.text = resultText
-                    }
-                    return ""
-                }
-            })
-        }
+//        // strVoiceボタンが押されたときに音声認識を開始
+//        strVoice.setOnClickListener {
+//            pythonFile.callAttr("start_recognition", voiceRecognizer, object : PythonCallable {
+//                override fun call(python: Python, args: Array<out Any>): Any {
+//                    val resultText = args[0] as String
+//                    runOnUiThread {
+//                        textMemo.text = resultText
+//                    }
+//                    return ""
+//                }
+//            })
+//        }
 
         // endVoiceボタンが押されたときに音声認識を停止
         endVoice.setOnClickListener {

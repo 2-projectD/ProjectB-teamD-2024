@@ -51,7 +51,7 @@ chaquopy {
             install("numpy")
             install("pandas")
             install("cython")
-            install("vosk")
+            //install("vosk")
         }
     }
 }

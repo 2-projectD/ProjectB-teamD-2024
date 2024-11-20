@@ -97,7 +97,7 @@ class VoiceActivity : AppCompatActivity() {
         }
 
         //csvの画面へ
-        val nextButton : Button = findViewById(R.id.nextButton)
+        val nextButton : ImageButton = findViewById(R.id.nextButton)
         //val intent = Intent(this,遷移先::class.java)
         nextButton.setOnClickListener{
             val intent = Intent(this, CsvActivity::class.java)
