@@ -8,29 +8,18 @@
     android:background="#F8F7F5"
     tools:context=".VoiceActivity">
 
+ <!-- 上バー -->
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="437dp"
-        android:layout_height="43dp"
+        android:layout_width="733dp"
+        android:layout_height="38dp"
         android:padding="0dp"
-        android:src="@drawable/navi_top"
+        android:src="@drawable/tab_var"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="0dp" />
-
-
-    <ImageButton
-        android:layout_width="438dp"
-        android:layout_height="32dp"
-        android:padding="0dp"
-        android:src="@drawable/navi_under"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/back"
@@ -38,11 +27,11 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:padding="0dp"
-        android:src="@drawable/back"
+        android:src="@drawable/tab_back"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView2"
@@ -57,11 +46,25 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText,MissingConstraints" />
 
+<!-- 上バー -->
+<!--下バー-->
+    <ImageButton
+        android:layout_width="734dp"
+        android:layout_height="35dp"
+        android:padding="0dp"
+        android:src="@drawable/tab_var"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+
     <ImageButton
         android:id="@+id/btnVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="128dp"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/navi_button1"
@@ -73,46 +76,46 @@
         android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="136dp"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/navi_button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
-
+<!--下バー-->
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="担当医に報告する個体"
+        android:text="担当医に報告する個体："
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111"
+        app:layout_constraintVertical_bias="0.154"
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="連絡内容を声に出してください"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.232"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268"
-        tools:ignore="HardcodedText" />
+       android:id="@+id/textView3"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="連絡内容を声に出してください"
+       android:textSize="20sp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.425"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.257"
+       tools:ignore="HardcodedText" />
 
-    <ImageButton
+   <ImageButton
         android:id="@+id/imageButton7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,8 +124,8 @@
         android:padding="0dp"
         android:src="@drawable/small_bg"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="241dp" />
+        tools:layout_editor_absoluteX="191dp"
+        tools:layout_editor_absoluteY="157dp" />
 
     <ImageButton
         android:id="@+id/strVoice"
