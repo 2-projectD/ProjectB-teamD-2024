@@ -21,13 +21,15 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import android.os.Handler
 import android.os.Looper
+import android.text.Editable
+import android.text.Selection
+import android.text.Spannable
 import android.text.SpannableStringBuilder
 
 class VoiceActivity : AppCompatActivity() {
     private var speechRecognizer: SpeechRecognizer? = null
     private lateinit var textMemo: TextView
     private lateinit var strVoice: ImageButton
-    private lateinit var endVoice: ImageButton
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var restartSpeechRecognitionRunnable: Runnable
     private var isListening = false
@@ -39,16 +41,15 @@ class VoiceActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_voice)
 
-        endVoice = findViewById(R.id.endVoice)
         //buttonの初期化
         textMemo = findViewById(R.id.textMemo)
         strVoice = findViewById(R.id.strVoice)
+        val deleteButton: ImageButton = findViewById(R.id.deleteButton)
         val saveButton: ImageButton = findViewById(R.id.saveButton)
 
         // ボタンのクリックリスナー設定
         strVoice.setOnClickListener { startSpeechRecognition() }
-        endVoice.setOnClickListener { stopSpeechRecognition() }
-
+        deleteButton.setOnClickListener { deleteSelectedText() }
 
         // CSV保存ボタンのクリックリスナー
         saveButton.setOnClickListener {
@@ -196,54 +197,23 @@ class VoiceActivity : AppCompatActivity() {
         }
     }
 
-    private fun stopSpeechRecognition() {
-        if (isListening) {
-            try {
-                speechRecognizer?.stopListening()
-                // 結果を取得するためのフラグを設定
-                speechRecognizer?.setRecognitionListener(object : RecognitionListener {
-                    override fun onResults(results: Bundle?) {
-                        // 結果をテキストビューに追加
-                        val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                        if (matches != null && matches.isNotEmpty()) {
-                            val existingText = textMemo.text.toString()
-                            val newText = if (existingText.isNotEmpty()) {
-                                "$existingText\n${matches[0]}"
-                            } else {
-                                matches[0]
-                            }
-                            textMemo.text = newText
-                        }
-                    }
+    private fun deleteSelectedText() {
+        val spannableText = textMemo.text as? Spannable ?: return // Spannableにキャスト
+        val start = Selection.getSelectionStart(spannableText)
+        val end = Selection.getSelectionEnd(spannableText)
 
-                    override fun onError(error: Int) {
-                        // エラー処理はそのまま
-                    }
-
-                    override fun onEndOfSpeech() {
-                        // 音声が終わったときは何もしない
-                    }
-
-                    // その他のメソッドはそのまま
-                    override fun onReadyForSpeech(params: Bundle?) {}
-                    override fun onBeginningOfSpeech() {}
-                    override fun onRmsChanged(rmsdB: Float) {}
-                    override fun onBufferReceived(buffer: ByteArray?) {}
-                    override fun onPartialResults(partialResults: Bundle?) {}
-                    override fun onEvent(eventType: Int, params: Bundle?) {}
-                })
-
-                speechRecognizer?.cancel()
-                speechRecognizer?.destroy()
-                speechRecognizer = null
-                isListening = false
-                Toast.makeText(this, "音声認識を停止しました", Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(this, "音声認識の停止に失敗しました", Toast.LENGTH_SHORT).show()
-            }
+        if (start != -1 && end != -1 && start != end) {
+            val editableText = spannableText.toString().toEditable() // SpannableをEditableに変換
+            editableText.delete(start, end)
+            textMemo.text = editableText // 更新後のテキストをセット
+            Toast.makeText(this, "選択したテキストを削除しました", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "削除する選択範囲がありません", Toast.LENGTH_SHORT).show()
         }
     }
+
+    // String拡張関数でEditableに変換
+    fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
     private fun saveToCSV(data: String) {
         val fileName = "speech_recognition_results.csv"
@@ -274,6 +244,5 @@ class VoiceActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        stopSpeechRecognition()
     }
 }
