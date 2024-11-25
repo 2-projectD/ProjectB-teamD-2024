@@ -133,10 +133,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="マップのずれ検証">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="メモ機能の性能向上！">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -690,7 +693,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731940882703</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="メモ機能の性能向上！">
+      <option name="closed" value="true" />
+      <created>1732548109661</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1732548109661</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -717,7 +728,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="エラーの直し" />
     <MESSAGE value="音声認識のバージョン変更" />
     <MESSAGE value="エラー修正完了！&#10;メモのところのレイアウト変更中！代わりにやってくれると助かる。高さがあるのでスクロール式にしたい" />
     <MESSAGE value="ちょっとレイアウト整えたのでチェックお願いします！直しもヨロ" />
@@ -742,7 +752,8 @@
     <MESSAGE value="DailyReportActivityへ移動ボタン" />
     <MESSAGE value="細かい調整" />
     <MESSAGE value="マップのずれ検証" />
-    <option name="LAST_COMMIT_MESSAGE" value="マップのずれ検証" />
+    <MESSAGE value="メモ機能の性能向上！" />
+    <option name="LAST_COMMIT_MESSAGE" value="メモ機能の性能向上！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

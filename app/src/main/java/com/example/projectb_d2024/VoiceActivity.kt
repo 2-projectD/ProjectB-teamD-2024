@@ -1,30 +1,34 @@
 package com.example.projectb_d2024
 
-import android.os.Environment
-import java.io.File
-import java.io.FileWriter
-import java.io.IOException
-import android.annotation.SuppressLint
-import android.os.Bundle
-import android.widget.ImageButton
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import android.Manifest
-import android.widget.TextView
-import android.widget.Toast
-import android.speech.SpeechRecognizer
-import android.speech.RecognitionListener
-import android.speech.RecognizerIntent
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
-import android.widget.Button
 import android.content.pm.PackageManager
-import androidx.core.app.ActivityCompat
+import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
 import android.os.Looper
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.text.Editable
 import android.text.Selection
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import java.io.File
+import java.io.FileWriter
+import java.io.IOException
+import java.security.AccessController.getContext
+
 
 class VoiceActivity : AppCompatActivity() {
     private var speechRecognizer: SpeechRecognizer? = null
@@ -144,7 +148,15 @@ class VoiceActivity : AppCompatActivity() {
                     initializeSpeechRecognizer() // エラー後に再初期化して再スタート準備
                 }
 
-                override fun onEndOfSpeech() { }
+                override fun onEndOfSpeech() {
+                    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                    if (vibrator.hasVibrator()) {
+                        // バイブレーション効果の作成 (1000ms = 1秒)
+                        val vibrationEffect =
+                            VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE)
+                        vibrator.vibrate(vibrationEffect)
+                    }
+                }
 
                 override fun onResults(results: Bundle?) {
                     val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
