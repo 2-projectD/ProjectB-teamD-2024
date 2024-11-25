@@ -91,14 +91,14 @@
 
 
     <ImageButton
-        android:id="@+id/kiroku"
-        android:layout_width="228dp"
+        android:id="@+id/healthCheck"
+        android:layout_width="237dp"
         android:layout_height="162dp"
-        android:background="#00000000"
-        android:src="@drawable/menu_icon"
+        android:background="#F8F7F5"
+        android:src="@drawable/icon_nippo"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="134dp" />
+        tools:layout_editor_absoluteX="376dp"
+        tools:layout_editor_absoluteY="108dp" />
 
     <TextView
         android:layout_width="237dp"
@@ -111,18 +111,18 @@
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793"
+        app:layout_constraintVertical_bias="0.723"
         tools:ignore="HardcodedText" />
 
     <ImageButton
-        android:id="@+id/healthCheck"
-        android:layout_width="237dp"
+        android:id="@+id/kiroku"
+        android:layout_width="228dp"
         android:layout_height="162dp"
-        android:background="#F8F7F5"
-        android:src="@drawable/icon_nippo"
+        android:background="#00000000"
+        android:src="@drawable/menu_icon"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="376dp"
-        tools:layout_editor_absoluteY="134dp" />
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="108dp" />
 
     <TextView
         android:layout_width="228dp"
@@ -135,7 +135,7 @@
         app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793"
+        app:layout_constraintVertical_bias="0.723"
         tools:ignore="HardcodedText" />
 
     <ImageButton
