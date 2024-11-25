@@ -21,6 +21,7 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import android.os.Handler
 import android.os.Looper
+import android.text.SpannableStringBuilder
 
 class VoiceActivity : AppCompatActivity() {
     private var speechRecognizer: SpeechRecognizer? = null
@@ -147,15 +148,21 @@ class VoiceActivity : AppCompatActivity() {
                 override fun onResults(results: Bundle?) {
                     val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                     if (matches != null && matches.isNotEmpty()) {
+                        val recognizedText = matches[0]
+
+                        // 選択範囲の取得
+                        val start = textMemo.selectionStart
+                        val end = textMemo.selectionEnd
                         val existingText = textMemo.text.toString()
-                        val newText = if (existingText.isNotEmpty()) {
-                            "$existingText\n${matches[0]}"
+
+                        if (start >= 0 && end >= 0 && start != end) {
+                            val editableText = SpannableStringBuilder(existingText)
+                            editableText.replace(start, end, recognizedText)
+                            textMemo.text = editableText
                         } else {
-                            matches[0]
+                            // 選択範囲がない場合は最後に追加
+                            textMemo.text = existingText + "\n" + recognizedText
                         }
-                        textMemo.text = newText
-                    } else {
-                        Toast.makeText(this@VoiceActivity, "一致する結果がありません。もう一度話してください。", Toast.LENGTH_SHORT).show()
                     }
                     isListening = false
                 }
