@@ -141,7 +141,7 @@
     </ScrollView>
 
     <LinearLayout
-        android:layout_width="320dp"
+        android:layout_width="356dp"
         android:layout_height="249dp"
         android:layout_marginTop="8dp"
         android:background="#F8F7F5"
@@ -154,7 +154,7 @@
 
         <ImageButton
             android:id="@+id/strVoice"
-            android:layout_width="wrap_content"
+            android:layout_width="356dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
@@ -167,7 +167,7 @@
 
         <ImageButton
             android:id="@+id/endVoice"
-            android:layout_width="wrap_content"
+            android:layout_width="356dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="#00000000"
@@ -187,6 +187,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
                 android:background="#00000000"
                 android:padding="0dp"
                 android:src="@drawable/button_s1"
@@ -197,6 +198,7 @@
                 android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
                 android:background="#00000000"
                 android:padding="0dp"
                 android:src="@drawable/button_s2"
@@ -204,13 +206,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/strVoice"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/nextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="保存したCSVへ"
-                tools:ignore="HardcodedText,InefficientWeight" />
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/button_s4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/strVoice"
+                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         </LinearLayout>
 

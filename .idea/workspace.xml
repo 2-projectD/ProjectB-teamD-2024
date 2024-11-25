@@ -100,6 +100,12 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_voice.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_word_registration_management.xml">
         <config>
           <state>Landscape</state>
@@ -217,8 +223,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="横画面（音声認識系画面スクロールできてない）">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="横画面（スクロールできるようになったかも）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_contact_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_contact_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_feeding_records_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_feeding_records_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_measurement_result_records_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_measurement_result_records_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +276,7 @@
     </scriptDefinition>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="_Designer_Tab" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -796,7 +808,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732499643416</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="横画面（スクロールできるようになったかも）">
+      <option name="closed" value="true" />
+      <created>1732510475665</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1732510475665</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -823,7 +843,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="エラー修正完了！&#10;メモのところのレイアウト変更中！代わりにやってくれると助かる。高さがあるのでスクロール式にしたい" />
     <MESSAGE value="ちょっとレイアウト整えたのでチェックお願いします！直しもヨロ" />
     <MESSAGE value="ちょっと修正（気にしなくて）" />
     <MESSAGE value="スクロールレバーの追加" />
@@ -848,7 +867,8 @@
     <MESSAGE value="マップのずれ検証" />
     <MESSAGE value="横画面（スクロールできなくて心折れた）" />
     <MESSAGE value="横画面（音声認識系画面スクロールできてない）" />
-    <option name="LAST_COMMIT_MESSAGE" value="横画面（音声認識系画面スクロールできてない）" />
+    <MESSAGE value="横画面（スクロールできるようになったかも）" />
+    <option name="LAST_COMMIT_MESSAGE" value="横画面（スクロールできるようになったかも）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
