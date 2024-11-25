@@ -106,9 +106,13 @@
         android:gravity="center_horizontal"
         android:text="給餌記録"
         android:textSize="21sp"
-        tools:ignore="HardcodedText"
-        tools:layout_editor_absoluteX="365dp"
-        tools:layout_editor_absoluteY="248dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645"
+        tools:ignore="HardcodedText" />
 
     <ImageButton
         android:id="@+id/healthCheck"
@@ -126,9 +130,13 @@
         android:gravity="center_horizontal"
         android:text="健康チェック"
         android:textSize="21sp"
-        tools:ignore="HardcodedText"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="248dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645"
+        tools:ignore="HardcodedText" />
 
     <ImageButton
         android:id="@+id/contact"
