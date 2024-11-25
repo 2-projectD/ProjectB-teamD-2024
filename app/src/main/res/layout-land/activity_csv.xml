@@ -94,9 +94,10 @@
         android:layout_width="350dp"
         android:layout_height="500dp"
         android:layout_marginTop="28dp"
-        android:elevation="-2dp"
         android:background="#7AB0D1"
+        android:elevation="-2dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact"
         tools:ignore="MissingConstraints" />
