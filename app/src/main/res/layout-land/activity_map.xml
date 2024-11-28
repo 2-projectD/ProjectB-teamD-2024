@@ -25,7 +25,7 @@
         android:id="@+id/image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#F8F7F5"
         android:src="@drawable/layer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

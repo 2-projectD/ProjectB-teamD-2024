@@ -37,6 +37,9 @@
             android:exported="false" />
         <!-- ↑paythonの宣言 -->
         <activity
+            android:name=".UserSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".Map_5f_Activity"
             android:exported="false" />
         <activity

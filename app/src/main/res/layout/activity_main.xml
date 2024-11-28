@@ -10,6 +10,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="355dp"
         android:layout_height="522dp"
         android:background="#F8F7F5"
@@ -41,16 +42,6 @@
                 android:background="#00000000"
                 android:padding="0dp"
                 android:src="@drawable/icon_kotaikanri"
-                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/check_it2"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#00000000"
-                android:padding="0dp"
-                android:src="@drawable/menu_icon"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         </LinearLayout>
@@ -165,6 +156,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+
 
     <ImageButton
         android:id="@+id/imageButton2"
