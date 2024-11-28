@@ -35,7 +35,7 @@ class DailyReportActivity : AppCompatActivity() {
         val animalsData = listOf(
             AnimalDatabaseHelper.AnimalData(112,"カメ", "アオウミガメ", "爬虫綱カメ目ウミガメ科アオウミガメ属", "亀子","kameko","Chelonia mydas",2,"2004/12/06","山田","",0),
             AnimalDatabaseHelper.AnimalData(203,"サメ","シロワニ", "シロワニ", "シャークマン","kameko","Chelonia mydas",1,"2016/02/19","長谷川","",0),
-            AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "ケープペンギン", "ささみ","kameko","Chelonia mydas",2,"2016/02/19","長野","",0),
+            AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "ケープペンギン", "ささみ","kameko","Chelonia mydas",2,"2015/01/19","長野","",0),
             AnimalDatabaseHelper.AnimalData(125,"ペンギン", "アデリーペンギン","アデリーペンギン", "カイト","kameko","Chelonia mydas",1,"2020/03/15","山田","",0),
             AnimalDatabaseHelper.AnimalData(501,"ペンギン","オウサマペンギン", "オウサマペンギン", "りりな","kameko","Chelonia mydas",2,"2000/06/18","長谷川","",0),
             AnimalDatabaseHelper.AnimalData(111,"ペンギン","ジェンツーペンギン", "ジェンツーペンギン", "こころ","kameko","Chelonia mydas",2,"2015/01/01","山田","",0),
@@ -48,29 +48,30 @@ class DailyReportActivity : AppCompatActivity() {
 
         // データベースに挿入
         for (animal in animalsData) {
-            val id = dbHelper.insertAnimal(animal)
+            val id = dbHelper.insertOrUpdateAnimal(animal)
             if (id != -1L) {
-                println("Inserted animal with ID: $id")
+                Log.d("InsertCheck", "Inserted/Updated animal with ID: $id")
             } else {
-                Log.e("DatabaseError", "Failed to insert animal: ${animal.name}")
+                Log.e("InsertError", "Failed to insert/update animal: ${animal.name}")
             }
         }
 
-        // 動物データを取得
+
+        // データ取得
         val animals = dbHelper.getAllAnimals().distinctBy { it.animalNumber }
 
-        // ListViewのセットアップ
+        // ログで確認
+        for (animal in animals) {
+            Log.d("DatabaseCheck", "Animal: $animal")
+        }
+
+        // ListView設定
         val listView: ListView = findViewById(R.id.animalListView)
         val adapter = AnimalDatabaseHelper.AnimalAdapter(this, animals)
         listView.adapter = adapter
-        adapter.notifyDataSetChanged()
 
-        // ステータスバーのインセット処理
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        // 更新通知
+        adapter.notifyDataSetChanged()
     }
 }
 
@@ -78,7 +79,7 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
 
     companion object {
         private const val DATABASE_NAME = "AnimalDatabase.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
 
         const val TABLE_ANIMALS = "animals"
         const val COLUMN_ID = "id"
@@ -96,21 +97,20 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
 
 
         private const val CREATE_TABLE_ANIMALS = """
-            CREATE TABLE $TABLE_ANIMALS (
-                $COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                $COLUMN_ANIMAL_NUMBER INTEGER NOT NULL,
-                $COLUMN_TYPE TEXT NOT NULL,
-                $COLUMN_NAME TEXT NOT NULL,
-                $COLUMN_BREED TEXT NOT NULL,
-                $COLUMN_NICKNAME TEXT NOT NULL,
-                $COLUMN_FURIGANA TEXT NOT NULL,
-                $COLUMN_ROMANIZED_NAME TEXT NOT NULL,
-                $COLUMN_GENDER INTEGER NOT NULL,
-                $COLUMN_BIRTH_DATE TEXT NOT NULL,
-                $COLUMN_DOCTOR TEXT NOT NULL,
-                $COLUMN_NOTE TEXT NOT NULL
-            )
-        """
+    CREATE TABLE $TABLE_ANIMALS (
+        $COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        $COLUMN_ANIMAL_NUMBER INTEGER NOT NULL UNIQUE, -- ユニークキーを設定
+        $COLUMN_TYPE TEXT NOT NULL,
+        $COLUMN_NAME TEXT NOT NULL,
+        $COLUMN_BREED TEXT NOT NULL,
+        $COLUMN_NICKNAME TEXT NOT NULL,
+        $COLUMN_FURIGANA TEXT NOT NULL,
+        $COLUMN_ROMANIZED_NAME TEXT NOT NULL,
+        $COLUMN_GENDER INTEGER NOT NULL,
+        $COLUMN_BIRTH_DATE TEXT NOT NULL,
+        $COLUMN_DOCTOR TEXT NOT NULL,
+        $COLUMN_NOTE TEXT NOT NULL
+    )"""
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -119,13 +119,16 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        Log.d("Database", "onUpgrade called: $oldVersion -> $newVersion")
-        db.execSQL("DROP TABLE IF EXISTS $TABLE_ANIMALS")
-        onCreate(db)
+        if (oldVersion < 2) {
+            // テーブルにユニークキーを追加するため再作成
+            db.execSQL("DROP TABLE IF EXISTS $TABLE_ANIMALS")
+            onCreate(db)
+        }
     }
 
+
     // **修正: insertAnimalメソッドから年齢計算を削除**
-    fun insertAnimal(animal: AnimalData): Long {
+    fun insertOrUpdateAnimal(animal: AnimalData): Long {
         val db = writableDatabase
         return try {
             val values = ContentValues().apply {
@@ -141,14 +144,17 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
                 put(COLUMN_DOCTOR, animal.doctor)
                 put(COLUMN_NOTE, animal.note)
             }
-            db.insert(TABLE_ANIMALS, null, values)
+
+            // INSERT OR REPLACE を使用して既存データを更新
+            db.insertWithOnConflict(TABLE_ANIMALS, null, values, SQLiteDatabase.CONFLICT_REPLACE)
         } catch (e: Exception) {
-            Log.e("DatabaseError", "Error inserting data", e)
+            Log.e("DatabaseError", "Error inserting or updating data", e)
             -1L
         } finally {
             db.close()
         }
     }
+
 
     // **修正: getAllAnimalsで年齢を動的に計算**
     fun getAllAnimals(): List<AnimalData> {
