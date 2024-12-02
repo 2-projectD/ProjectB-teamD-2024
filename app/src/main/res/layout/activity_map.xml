@@ -9,6 +9,16 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView"
+        app:srcCompat="@drawable/maplist_bg1f"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="wrap_content"
@@ -35,15 +45,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/contact"
                 tools:ignore="RedundantNamespace">
 
-                <ImageView
-                    android:id="@+id/imageView"
+
+                <ListView
+                    android:id="@+id/animalListView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/maplist_bg1f"
-                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-                    tools:layout_editor_absoluteX="-138dp"
-                    tools:layout_editor_absoluteY="501dp" />
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintVertical_bias="0.586" />
 
             </FrameLayout>
 

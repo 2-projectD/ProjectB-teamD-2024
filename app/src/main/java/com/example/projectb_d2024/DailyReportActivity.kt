@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -26,10 +27,44 @@ import java.time.temporal.ChronoUnit
 
 class DailyReportActivity : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_daily_report)
+
+        val back : ImageButton = findViewById(R.id.back)
+        back.setOnClickListener {
+            finish()
+        }
+
+        //1) Viewの取得(連絡ボタン)
+        val contact = findViewById<ImageButton>(R.id.contact)
+
+        //2) ボタンを押したら次の画面へ
+        contact.setOnClickListener{
+            val intent = Intent(this, ContactActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メニュー画面へボタン)
+        val btnMenu : ImageButton = findViewById(R.id.btnMenu)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        btnMenu.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        //1) Viewの取得(メモ画面へボタン)
+        val btnVoice : ImageButton = findViewById(R.id.btnVoice)
+
+        //2) ボタンを押したら次の画面へ
+        btnVoice.setOnClickListener{
+            val intent = Intent(this, VoiceActivity::class.java)
+            startActivity(intent)
+        }
 
         // AnimalDatabaseHelperのインスタンスを作成
         val dbHelper = AnimalDatabaseHelper(this)
