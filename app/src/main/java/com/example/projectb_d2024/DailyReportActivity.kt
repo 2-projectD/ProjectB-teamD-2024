@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
+
 
 class DailyReportActivity : AppCompatActivity() {
 
@@ -50,9 +53,9 @@ class DailyReportActivity : AppCompatActivity() {
         for (animal in animalsData) {
             val id = dbHelper.insertOrUpdateAnimal(animal)
             if (id != -1L) {
-                Log.d("InsertCheck", "Inserted/Updated animal with ID: $id")
+                Log.d("InsertCheck", "Inserted or updated animal with ID: $id")
             } else {
-                Log.e("InsertError", "Failed to insert/update animal: ${animal.name}")
+                Log.e("InsertError", "Failed to insert or update animal: ${animal.name}")
             }
         }
 
@@ -69,6 +72,18 @@ class DailyReportActivity : AppCompatActivity() {
         val listView: ListView = findViewById(R.id.animalListView)
         val adapter = AnimalDatabaseHelper.AnimalAdapter(this, animals)
         listView.adapter = adapter
+
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedAnimal = adapter.getItem(position)
+            if (selectedAnimal != null) {
+                val intent = Intent(this, MedicalRecordActivity::class.java)
+                intent.putExtra("animalNumber", selectedAnimal.animalNumber) // データを渡す
+                startActivity(intent) // MedicalRecordActivity を起動
+            } else {
+                Log.e("DailyReportActivity", "Selected animal is null!")
+            }
+        }
+
 
         // 更新通知
         adapter.notifyDataSetChanged()
@@ -165,8 +180,9 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
             arrayOf(
                 COLUMN_ANIMAL_NUMBER, COLUMN_TYPE, COLUMN_NAME, COLUMN_BREED,
                 COLUMN_NICKNAME, COLUMN_FURIGANA, COLUMN_ROMANIZED_NAME, COLUMN_GENDER,
-                COLUMN_BIRTH_DATE, COLUMN_DOCTOR, COLUMN_NOTE
+                COLUMN_BIRTH_DATE, COLUMN_DOCTOR, com.example.projectb_d2024.AnimalDatabaseHelper.Companion.COLUMN_NOTE
             ),
+
             null, null, null, null, null
         )
 
@@ -209,6 +225,40 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         }
     }
 
+    fun getAnimalByNumber(animalNumber: Int): AnimalData? {
+        val db = readableDatabase
+        val cursor = db.query(
+            TABLE_ANIMALS,
+            null, // 全ての列を取得
+            "$COLUMN_ANIMAL_NUMBER = ?", // 条件: animalNumber が一致
+            arrayOf(animalNumber.toString()), // プレースホルダーに渡す値
+            null,
+            null,
+            null
+        )
+
+        cursor.use {
+            if (it.moveToFirst()) {
+                return AnimalData(
+                    animalNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER)),
+                    type = it.getString(it.getColumnIndexOrThrow(COLUMN_TYPE)),
+                    name = it.getString(it.getColumnIndexOrThrow(COLUMN_NAME)),
+                    breed = it.getString(it.getColumnIndexOrThrow(COLUMN_BREED)),
+                    nickname = it.getString(it.getColumnIndexOrThrow(COLUMN_NICKNAME)),
+                    furigana = it.getString(it.getColumnIndexOrThrow(COLUMN_FURIGANA)),
+                    romanizedName = it.getString(it.getColumnIndexOrThrow(COLUMN_ROMANIZED_NAME)),
+                    gender = it.getInt(it.getColumnIndexOrThrow(COLUMN_GENDER)),
+                    birthDate = it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE)),
+                    doctor = it.getString(it.getColumnIndexOrThrow(COLUMN_DOCTOR)),
+                    note = it.getString(it.getColumnIndexOrThrow(COLUMN_NOTE)),
+                    age = calculateAge(it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE))) // 年齢を計算
+                )
+            }
+        }
+        return null // データが見つからない場合
+    }
+
+
     // **修正: AnimalDataクラスのageを動的プロパティに**
     data class AnimalData(
         val animalNumber: Int,
@@ -225,8 +275,10 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         val age: Int // 動的に設定
     )
 
-    class AnimalAdapter(context: Context, private val animals: List<AnimalData>) :
-        ArrayAdapter<AnimalData>(context, 0, animals) {
+    class AnimalAdapter(
+        private val context: Context,
+        private val animals: List<AnimalData>
+    ) : ArrayAdapter<AnimalData>(context, 0, animals) {
 
         @SuppressLint("SetTextI18n")
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -236,18 +288,36 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
             val animal = animals[position]
 
             val animalNumberTextView: TextView = view.findViewById(R.id.animalNumber)
-            val typeTextView: TextView = view.findViewById(R.id.animalType)
             val breedTextView: TextView = view.findViewById(R.id.animalBreed)
-            val ageTextView: TextView = view.findViewById(R.id.animalAge)
+            val nicknameTextView: TextView = view.findViewById(R.id.animalNickname)
 
-            animalNumberTextView.text = animal.animalNumber.toString()
-            typeTextView.text = animal.type
+
+            animalNumberTextView.text = "動物番号：${animal.animalNumber}"
             breedTextView.text = animal.breed
-            ageTextView.text = "${animal.age}"
+            nicknameTextView.text = animal.nickname
+
+
+            val backgroundColor = if (position % 2 == 0) {
+                Color.parseColor("#7AB0D1") // 偶数行
+            } else {
+                Color.parseColor("#808080") // 奇数行
+            }
+            view.setBackgroundColor(backgroundColor)
+
+            val textColor = Color.parseColor("#FFFFFF")
+            animalNumberTextView.setTextColor(textColor)
+            breedTextView.setTextColor(textColor)
+            nicknameTextView.setTextColor(textColor)
+
+            // 項目クリック時の動作を設定
+            view.setOnClickListener {
+                val intent = Intent(context, MedicalRecordActivity::class.java).apply {
+                    putExtra("animalNumber", animal.animalNumber)
+                }
+                context.startActivity(intent)
+            }
 
             return view
         }
     }
-
 }
-

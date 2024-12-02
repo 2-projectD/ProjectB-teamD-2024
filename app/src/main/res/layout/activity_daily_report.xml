@@ -6,8 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F7F5"
+    android:fitsSystemWindows="true"
     tools:context=".IndividualManagementActivity">
 
+    <ListView
+        android:id="@+id/animalListView"
+        android:layout_width="346dp"
+        android:layout_height="547dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        app:layout_constraintVertical_bias="0.586" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -95,16 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-    <ListView
-        android:id="@+id/animalListView"
-        android:layout_width="346dp"
-        android:layout_height="547dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

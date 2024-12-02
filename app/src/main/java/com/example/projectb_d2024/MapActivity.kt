@@ -3,6 +3,7 @@ package com.example.projectb_d2024
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ScrollView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -56,6 +57,11 @@ class MapActivity : AppCompatActivity() {
         }
 
 
+        val scrollView = findViewById<ScrollView>(R.id.scrollView)
+        scrollView.post {
+            // スクロールビューの最後までスクロール
+            scrollView.scrollTo(0, scrollView.getChildAt(0).height)
+        }
 
     }
 }
