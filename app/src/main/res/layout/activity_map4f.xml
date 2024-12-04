@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
-        app:srcCompat="@drawable/maplist_bg1f"
+        app:srcCompat="@drawable/maplist_bg4f"
         android:layout_marginTop="20dp"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
