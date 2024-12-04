@@ -100,7 +100,7 @@ class MedicalRecordActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun loadAnimalData() {
         val dbHelper = AnimalDatabaseHelper(this)
-        val animal = dbHelper.getAnimalByAquaNumber(currentAnimalNumber)
+        val animal = dbHelper.getAnimalByNumber(currentAnimalNumber)
 
 
         if (animal != null) {
@@ -128,43 +128,5 @@ class MedicalRecordActivity : AppCompatActivity() {
             finish()
         }
     }
-
-    private fun saveAnimalData() {
-        val dbHelper = AnimalDatabaseHelper(this)
-
-        val aquaNumberValue = aquaNumberEditText.text.toString().toIntOrNull() ?: -1
-
-        val updatedAnimal = AnimalDatabaseHelper.AnimalData(
-            animalNumber = currentAnimalNumber,
-            type = typeEditText.text.toString(),
-            name = nameEditText.text.toString(),
-            breed = breedEditText.text.toString(),
-            nickname = nicknameEditText.text.toString(),
-            furigana = furiganaEditText.text.toString(),
-            romanizedName = romanizedNameEditText.text.toString(),
-            gender = when (genderTextView.text.toString()) {
-                "オス" -> 0
-                "メス" -> 1
-                else -> -1
-            },
-            birthDate = birthDateEditText.text.toString(),
-            age = ageEditText.text.toString(),
-            aquaNumber = aquaNumberValue,
-            span = spanEditText.text.toString(),
-            bodyWeight = bodyWeightEditText.text.toString(),
-            doctor = doctorEditText.text.toString(),
-            note = noteEditText.text.toString()
-        )
-
-        val id = dbHelper.insertOrUpdateAnimal(updatedAnimal)
-        if (id != -1L) {
-            Toast.makeText(this, "データを保存しました", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "保存に失敗しました", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-
-
 
     }
