@@ -31,11 +31,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　動物番号"
+                android:background="@drawable/bottom_border"
+                android:hint="動物番号"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -43,23 +43,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　種類"
+                android:background="@drawable/bottom_border"
+                android:hint="種類"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -67,23 +67,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　動物種"
+                android:background="@drawable/bottom_border"
+                android:hint="動物種"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -91,23 +91,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　分類"
+                android:background="@drawable/bottom_border"
+                android:hint="分類"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -115,23 +115,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　ニックネーム"
+                android:background="@drawable/bottom_border"
+                android:hint="ニックネーム"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -139,23 +139,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　フリガナ"
+                android:background="@drawable/bottom_border"
+                android:hint="フリガナ"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -163,23 +163,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　英"
+                android:background="@drawable/bottom_border"
+                android:hint="英"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -187,23 +187,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　性別"
+                android:background="@drawable/bottom_border"
+                android:hint="性別"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -211,23 +211,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　誕生日"
+                android:background="@drawable/bottom_border"
+                android:hint="誕生日"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -235,23 +235,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　年齢"
+                android:background="@drawable/bottom_border"
+                android:hint="年齢"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -259,23 +259,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　水槽番号"
+                android:background="@drawable/bottom_border"
+                android:hint="水槽番号"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -283,23 +283,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　体長"
+                android:background="@drawable/bottom_border"
+                android:hint="体長"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -307,23 +307,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　体重"
+                android:background="@drawable/bottom_border"
+                android:hint="体重"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -331,23 +331,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　担当医"
+                android:background="@drawable/bottom_border"
+                android:hint="担当医"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -355,23 +355,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#808080"
-                android:hint="　備考"
+                android:background="@drawable/bottom_border"
+                android:hint="備考"
                 android:padding="8dp"
-                android:textColorHint="#e6e6e6"
-                android:textSize="20sp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -379,12 +379,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
-                android:background="#7AB0D1"
+                android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#505050"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText,TextFields" />
 
         </LinearLayout>
