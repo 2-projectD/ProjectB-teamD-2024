@@ -147,7 +147,7 @@ class MapActivity : AppCompatActivity() {
     }
 
     private fun searchAndDisplayData(aquaNumber: Int) {
-        val animalDataList = dbHelper.getAnimalsByAquaNumber(aquaNumber) // 複数行を取得
+        val animalDataList = dbHelper.getAnimalsByAquaNumber(aquaNumber)
 
         // 検索結果に応じてリストを更新
         if (animalDataList.isNotEmpty()) {

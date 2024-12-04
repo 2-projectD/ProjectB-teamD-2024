@@ -212,45 +212,41 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         }
     }
 
-    // aquaNumberを使って検索(マップに使うやつ)
-    fun getAnimalByAquaNumber(aquaNumber: Int): AnimalData? {
+    fun getAnimalByNumber(animalNumber: Int): AnimalData? {
         val db = readableDatabase
         val cursor = db.query(
-            "animals",
-            null,
-            "aquaNumber = ?",
-            arrayOf(aquaNumber.toString()),
+            TABLE_ANIMALS,
+            null, // 全ての列を取得
+            "$COLUMN_ANIMAL_NUMBER = ?", // 条件: animalNumber が一致
+            arrayOf(animalNumber.toString()), // プレースホルダーに渡す値
             null,
             null,
             null
         )
 
-        if (cursor != null && cursor.moveToFirst()) {
-            val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER))
-            val type = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TYPE))
-            val name = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
-            val breed = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BREED))
-            val nickname = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NICKNAME))
-            val furigana = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FURIGANA))
-            val romanizedName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ROMANIZED_NAME))
-            val gender = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GENDER))
-            val birthDate = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BIRTH_DATE))
-            val doctor = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DOCTOR))
-            val note = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NOTE))
-            val age = calculateAge(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BIRTH_DATE)))
-            val span = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_SPAN))
-            val bodyWeight = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BODYWEIGHT))
-
-            cursor.close()
-
-            // AnimalDataのインスタンスを作成して返す
-            return AnimalData(animalNumber,type,name, breed, nickname, furigana, romanizedName,gender, birthDate, doctor, note, age, aquaNumber, span, bodyWeight)
+        cursor.use {
+            if (it.moveToFirst()) {
+                return AnimalData(
+                    animalNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER)),
+                    type = it.getString(it.getColumnIndexOrThrow(COLUMN_TYPE)),
+                    name = it.getString(it.getColumnIndexOrThrow(COLUMN_NAME)),
+                    breed = it.getString(it.getColumnIndexOrThrow(COLUMN_BREED)),
+                    nickname = it.getString(it.getColumnIndexOrThrow(COLUMN_NICKNAME)),
+                    furigana = it.getString(it.getColumnIndexOrThrow(COLUMN_FURIGANA)),
+                    romanizedName = it.getString(it.getColumnIndexOrThrow(COLUMN_ROMANIZED_NAME)),
+                    gender = it.getInt(it.getColumnIndexOrThrow(COLUMN_GENDER)),
+                    birthDate = it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE)),
+                    doctor = it.getString(it.getColumnIndexOrThrow(COLUMN_DOCTOR)),
+                    note = it.getString(it.getColumnIndexOrThrow(COLUMN_NOTE)),
+                    age = calculateAge(it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE))),
+                    aquaNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_AQUANUMBER)),
+                    span = it.getString(it.getColumnIndexOrThrow(COLUMN_SPAN)),
+                    bodyWeight = it.getString(it.getColumnIndexOrThrow(COLUMN_BODYWEIGHT))
+                )
+            }
         }
-
-        cursor?.close()
         return null
     }
-
 
 
     fun getAllAnimals(): List<AnimalData> {
