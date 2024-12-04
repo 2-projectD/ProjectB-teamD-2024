@@ -4,11 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +20,10 @@ class MedicalRecordActivity : AppCompatActivity() {
     private lateinit var romanizedNameEditText: TextView
     private lateinit var genderTextView: TextView
     private lateinit var birthDateEditText: TextView
+    private lateinit var ageEditText: TextView
+    private lateinit var aquaNumberEditText: TextView
+    private lateinit var spanEditText: TextView
+    private lateinit var bodyWeightEditText: TextView
     private lateinit var doctorEditText: TextView
     private lateinit var noteEditText: TextView
 
@@ -77,6 +77,10 @@ class MedicalRecordActivity : AppCompatActivity() {
         romanizedNameEditText = findViewById(R.id.romanizedNameEditText)
         genderTextView = findViewById(R.id.genderTextView)
         birthDateEditText = findViewById(R.id.birthDateEditText)
+        ageEditText = findViewById(R.id.ageEditText)
+        aquaNumberEditText = findViewById(R.id.aquaNumberEditText)
+        spanEditText = findViewById(R.id.spanEditText)
+        bodyWeightEditText = findViewById(R.id.bodyWeightEditText)
         doctorEditText = findViewById(R.id.doctorEditText)
         noteEditText = findViewById(R.id.noteEditText)
 
@@ -93,9 +97,11 @@ class MedicalRecordActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun loadAnimalData() {
         val dbHelper = AnimalDatabaseHelper(this)
-        val animal = dbHelper.getAnimalByNumber(currentAnimalNumber)
+        val animal = dbHelper.getAnimalByAquaNumber(currentAnimalNumber)
+
 
         if (animal != null) {
             animalNumberTextView.text = animal.animalNumber.toString()
@@ -111,6 +117,10 @@ class MedicalRecordActivity : AppCompatActivity() {
                 else -> "不明"
             }
             birthDateEditText.text = animal.birthDate
+            ageEditText.text = animal.age
+            aquaNumberEditText.text = animal.aquaNumber.toString()
+            spanEditText.text = "${animal.span}cm"
+            bodyWeightEditText.text = "${animal.bodyWeight}kg"
             doctorEditText.text = animal.doctor
             noteEditText.text = animal.note
         } else {
@@ -121,6 +131,8 @@ class MedicalRecordActivity : AppCompatActivity() {
 
     private fun saveAnimalData() {
         val dbHelper = AnimalDatabaseHelper(this)
+
+        val aquaNumberValue = aquaNumberEditText.text.toString().toIntOrNull() ?: -1
 
         val updatedAnimal = AnimalDatabaseHelper.AnimalData(
             animalNumber = currentAnimalNumber,
@@ -136,23 +148,13 @@ class MedicalRecordActivity : AppCompatActivity() {
                 else -> -1
             },
             birthDate = birthDateEditText.text.toString(),
+            age = ageEditText.text.toString(),
+            aquaNumber = aquaNumberValue,
+            span = spanEditText.text.toString(),
+            bodyWeight = bodyWeightEditText.text.toString(),
             doctor = doctorEditText.text.toString(),
-            note = noteEditText.text.toString(),
-            age = 0
+            note = noteEditText.text.toString()
         )
-
-        val textColor = Color.parseColor("#FFFFFF")
-        animalNumberTextView.setTextColor(textColor)
-        typeEditText.setTextColor(textColor)
-        nameEditText.setTextColor(textColor)
-        breedEditText.setTextColor(textColor)
-        nicknameEditText.setTextColor(textColor)
-        furiganaEditText.setTextColor(textColor)
-        romanizedNameEditText.setTextColor(textColor)
-        genderTextView.setTextColor(textColor)
-        birthDateEditText.setTextColor(textColor)
-        doctorEditText.setTextColor(textColor)
-        noteEditText.setTextColor(textColor)
 
         val id = dbHelper.insertOrUpdateAnimal(updatedAnimal)
         if (id != -1L) {

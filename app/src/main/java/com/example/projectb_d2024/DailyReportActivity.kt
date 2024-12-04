@@ -13,13 +13,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.BaseAdapter
 import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
@@ -71,16 +70,16 @@ class DailyReportActivity : AppCompatActivity() {
 
         // 動物データをデータベースに挿入 (すでに挿入したデータがあればスキップ)
         val animalsData = listOf(
-            AnimalDatabaseHelper.AnimalData(112,"カメ", "アオウミガメ", "爬虫綱カメ目ウミガメ科アオウミガメ属", "亀子","kameko","Chelonia mydas",2,"2004/12/06","山田","",0),
-            AnimalDatabaseHelper.AnimalData(203,"サメ","シロワニ", "シロワニ", "シャークマン","kameko","Chelonia mydas",1,"2016/02/19","長谷川","",0),
-            AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "ケープペンギン", "ささみ","kameko","Chelonia mydas",2,"2015/01/19","長野","",0),
-            AnimalDatabaseHelper.AnimalData(125,"ペンギン", "アデリーペンギン","アデリーペンギン", "カイト","kameko","Chelonia mydas",1,"2020/03/15","山田","",0),
-            AnimalDatabaseHelper.AnimalData(501,"ペンギン","オウサマペンギン", "オウサマペンギン", "りりな","kameko","Chelonia mydas",2,"2000/06/18","長谷川","",0),
-            AnimalDatabaseHelper.AnimalData(111,"ペンギン","ジェンツーペンギン", "ジェンツーペンギン", "こころ","kameko","Chelonia mydas",2,"2015/01/01","山田","",0),
-            AnimalDatabaseHelper.AnimalData(130,"ペンギン","ヒゲペンギン", "ヒゲペンギン", "イナゴ","kameko","Chelonia mydas",1,"2020/08/29","長野","",0),
-            AnimalDatabaseHelper.AnimalData(350,"ミミズク","アフリカンミミズク", "アフリカンミミズク", "ミミ","kameko","Chelonia mydas",2,"2024/01/09","山田","",0),
-            AnimalDatabaseHelper.AnimalData(566,"インコ","ルリコンゴインコ", "ルリコンゴインコ", "たま","kameko","Chelonia mydas",1,"2018/11/12","長野","",0),
-            AnimalDatabaseHelper.AnimalData(250,"タカ","モモアカノスリ", "モモアカノスリ", "タカコ","kameko","Chelonia mydas",2,"2021/07/11","長谷川","",0)
+            AnimalDatabaseHelper.AnimalData(112,"カメ", "アオウミガメ", "爬虫綱カメ目ウミガメ科アオウミガメ属", "亀子","kameko","Chelonia mydas",2,"2004/12/06","山田","","0", 1, "50", "150"),
+            AnimalDatabaseHelper.AnimalData(203,"サメ","シロワニ", "シロワニ", "シャークマン","kameko","Chelonia mydas",1,"","長谷川","","0", 3, "70", "200"),
+            AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "ケープペンギン", "ささみ","kameko","Chelonia mydas",2,"2015/01/19","長野","","0", 1, "", ""),
+            AnimalDatabaseHelper.AnimalData(125,"ペンギン", "アデリーペンギン","アデリーペンギン", "カイト","kameko","Chelonia mydas",1,"2020/03/15","山田","","0", 1, "80", "120"),
+            AnimalDatabaseHelper.AnimalData(501,"ペンギン","オウサマペンギン", "オウサマペンギン", "りりな","kameko","Chelonia mydas",2,"2000/06/18","長谷川","","0", 3, "50","95"),
+            AnimalDatabaseHelper.AnimalData(111,"ペンギン","ジェンツーペンギン", "ジェンツーペンギン", "こころ","kameko","Chelonia mydas",2,"2015/01/01","山田","","0", 2, "20", "30"),
+            AnimalDatabaseHelper.AnimalData(130,"ペンギン","ヒゲペンギン", "ヒゲペンギン", "イナゴ","kameko","Chelonia mydas",1,"2020/08/29","長野","","0", 5, "50", "120"),
+            AnimalDatabaseHelper.AnimalData(350,"ミミズク","アフリカンミミズク", "アフリカンミミズク", "ミミ","kameko","Chelonia mydas",2,"2024/01/09","山田","","0", 5, "120", "190"),
+            AnimalDatabaseHelper.AnimalData(566,"インコ","ルリコンゴインコ", "ルリコンゴインコ", "たま","kameko","Chelonia mydas",1,"2018/11/12","長野","","0", 2, "60", "130"),
+            AnimalDatabaseHelper.AnimalData(250,"タカ","モモアカノスリ", "モモアカノスリ", "タカコ","kameko","Chelonia mydas",2,"2021/07/11","長谷川","","0", 1, "100", "120")
 
         )
 
@@ -144,6 +143,9 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         const val COLUMN_BIRTH_DATE = "birthDate"
         const val COLUMN_DOCTOR = "doctor"
         const val COLUMN_NOTE = "note"
+        const val COLUMN_AQUANUMBER = "aquaNumber"
+        const val COLUMN_SPAN = "span"
+        const val COLUMN_BODYWEIGHT = "bodyWeight"
 
 
         private const val CREATE_TABLE_ANIMALS = """
@@ -159,7 +161,10 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         $COLUMN_GENDER INTEGER NOT NULL,
         $COLUMN_BIRTH_DATE TEXT NOT NULL,
         $COLUMN_DOCTOR TEXT NOT NULL,
-        $COLUMN_NOTE TEXT NOT NULL
+        $COLUMN_NOTE TEXT NOT NULL,
+        $COLUMN_AQUANUMBER INTEGER NOT NULL,
+        $COLUMN_SPAN TEXT DEFAULT NULL,
+        $COLUMN_BODYWEIGHT TEXT DEFAULT NULL
     )"""
     }
 
@@ -177,7 +182,6 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
     }
 
 
-    // **修正: insertAnimalメソッドから年齢計算を削除**
     fun insertOrUpdateAnimal(animal: AnimalData): Long {
         val db = writableDatabase
         return try {
@@ -193,6 +197,9 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
                 put(COLUMN_BIRTH_DATE, animal.birthDate)
                 put(COLUMN_DOCTOR, animal.doctor)
                 put(COLUMN_NOTE, animal.note)
+                put(COLUMN_AQUANUMBER, animal.aquaNumber)
+                put(COLUMN_SPAN, animal.span)
+                put(COLUMN_BODYWEIGHT, animal.bodyWeight)
             }
 
             // INSERT OR REPLACE を使用して既存データを更新
@@ -205,8 +212,47 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         }
     }
 
+    // aquaNumberを使って検索(マップに使うやつ)
+    fun getAnimalByAquaNumber(aquaNumber: Int): AnimalData? {
+        val db = readableDatabase
+        val cursor = db.query(
+            "animals",
+            null,
+            "aquaNumber = ?",
+            arrayOf(aquaNumber.toString()),
+            null,
+            null,
+            null
+        )
 
-    // **修正: getAllAnimalsで年齢を動的に計算**
+        if (cursor != null && cursor.moveToFirst()) {
+            val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER))
+            val type = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TYPE))
+            val name = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME))
+            val breed = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BREED))
+            val nickname = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NICKNAME))
+            val furigana = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FURIGANA))
+            val romanizedName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ROMANIZED_NAME))
+            val gender = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GENDER))
+            val birthDate = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BIRTH_DATE))
+            val doctor = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DOCTOR))
+            val note = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NOTE))
+            val age = calculateAge(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BIRTH_DATE)))
+            val span = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_SPAN))
+            val bodyWeight = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BODYWEIGHT))
+
+            cursor.close()
+
+            // AnimalDataのインスタンスを作成して返す
+            return AnimalData(animalNumber,type,name, breed, nickname, furigana, romanizedName,gender, birthDate, doctor, note, age, aquaNumber, span, bodyWeight)
+        }
+
+        cursor?.close()
+        return null
+    }
+
+
+
     fun getAllAnimals(): List<AnimalData> {
         val db = readableDatabase
         val animals = mutableListOf<AnimalData>()
@@ -215,7 +261,7 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
             arrayOf(
                 COLUMN_ANIMAL_NUMBER, COLUMN_TYPE, COLUMN_NAME, COLUMN_BREED,
                 COLUMN_NICKNAME, COLUMN_FURIGANA, COLUMN_ROMANIZED_NAME, COLUMN_GENDER,
-                COLUMN_BIRTH_DATE, COLUMN_DOCTOR, com.example.projectb_d2024.AnimalDatabaseHelper.Companion.COLUMN_NOTE
+                COLUMN_BIRTH_DATE, COLUMN_DOCTOR, COLUMN_NOTE, COLUMN_AQUANUMBER ,COLUMN_SPAN, COLUMN_BODYWEIGHT
             ),
 
             null, null, null, null, null
@@ -238,7 +284,12 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
                     birthDate = birthDate,
                     age = calculatedAge, // 年齢を計算してセット
                     doctor = it.getString(it.getColumnIndexOrThrow(COLUMN_DOCTOR)),
-                    note = it.getString(it.getColumnIndexOrThrow(COLUMN_NOTE))
+                    note = it.getString(it.getColumnIndexOrThrow(COLUMN_NOTE)),
+                    aquaNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_AQUANUMBER)),
+                    span = it.getString(it.getColumnIndexOrThrow(COLUMN_SPAN)),
+                    bodyWeight = it.getString(it.getColumnIndexOrThrow(COLUMN_BODYWEIGHT))
+
+
                 )
                 animals.add(animal)
             }
@@ -247,54 +298,66 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         return animals
     }
 
-    // **変更: calculateAgeメソッドを年齢計算のみに使用**
-    private fun calculateAge(birthDate: String): Int {
-        return try {
-            val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
-            val birthLocalDate = LocalDate.parse(birthDate, formatter)
-            val today = LocalDate.now()
-            ChronoUnit.YEARS.between(birthLocalDate, today).toInt()
-        } catch (e: Exception) {
-            Log.e("DateError", "Invalid birthDate format: $birthDate", e)
-            0
+
+    private fun calculateAge(birthDate: String?): String {
+        return if (birthDate.isNullOrBlank()) {
+            "-" // 誕生日が空の場合
+        } else {
+            try {
+                val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
+                val birthLocalDate = LocalDate.parse(birthDate, formatter)
+                val today = LocalDate.now()
+                val years = ChronoUnit.YEARS.between(birthLocalDate, today).toInt()
+                "$years 歳" // 正常に年齢を計算
+            } catch (e: Exception) {
+                Log.e("DateError", "Invalid birthDate format: $birthDate", e)
+                "年齢なし" // フォーマットエラーの場合
+            }
         }
     }
 
-    fun getAnimalByNumber(animalNumber: Int): AnimalData? {
+
+    fun getAnimalsByAquaNumber(aquaNumber: Int): List<AnimalData> {
         val db = readableDatabase
+        val animals = mutableListOf<AnimalData>()
+
         val cursor = db.query(
             TABLE_ANIMALS,
             null, // 全ての列を取得
-            "$COLUMN_ANIMAL_NUMBER = ?", // 条件: animalNumber が一致
-            arrayOf(animalNumber.toString()), // プレースホルダーに渡す値
+            "$COLUMN_AQUANUMBER = ?", // aquaNumber が一致かどうか
+            arrayOf(aquaNumber.toString()),
             null,
             null,
             null
         )
 
         cursor.use {
-            if (it.moveToFirst()) {
-                return AnimalData(
-                    animalNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER)),
-                    type = it.getString(it.getColumnIndexOrThrow(COLUMN_TYPE)),
-                    name = it.getString(it.getColumnIndexOrThrow(COLUMN_NAME)),
-                    breed = it.getString(it.getColumnIndexOrThrow(COLUMN_BREED)),
-                    nickname = it.getString(it.getColumnIndexOrThrow(COLUMN_NICKNAME)),
-                    furigana = it.getString(it.getColumnIndexOrThrow(COLUMN_FURIGANA)),
-                    romanizedName = it.getString(it.getColumnIndexOrThrow(COLUMN_ROMANIZED_NAME)),
-                    gender = it.getInt(it.getColumnIndexOrThrow(COLUMN_GENDER)),
-                    birthDate = it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE)),
-                    doctor = it.getString(it.getColumnIndexOrThrow(COLUMN_DOCTOR)),
-                    note = it.getString(it.getColumnIndexOrThrow(COLUMN_NOTE)),
-                    age = calculateAge(it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE))) // 年齢を計算
+            while (it.moveToNext()) {
+                animals.add(
+                    AnimalData(
+                        animalNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER)),
+                        type = it.getString(it.getColumnIndexOrThrow(COLUMN_TYPE)),
+                        name = it.getString(it.getColumnIndexOrThrow(COLUMN_NAME)),
+                        breed = it.getString(it.getColumnIndexOrThrow(COLUMN_BREED)),
+                        nickname = it.getString(it.getColumnIndexOrThrow(COLUMN_NICKNAME)),
+                        furigana = it.getString(it.getColumnIndexOrThrow(COLUMN_FURIGANA)),
+                        romanizedName = it.getString(it.getColumnIndexOrThrow(COLUMN_ROMANIZED_NAME)),
+                        gender = it.getInt(it.getColumnIndexOrThrow(COLUMN_GENDER)),
+                        birthDate = it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE)),
+                        doctor = it.getString(it.getColumnIndexOrThrow(COLUMN_DOCTOR)),
+                        note = it.getString(it.getColumnIndexOrThrow(COLUMN_NOTE)),
+                        age = calculateAge(it.getString(it.getColumnIndexOrThrow(COLUMN_BIRTH_DATE))),
+                        aquaNumber = it.getInt(it.getColumnIndexOrThrow(COLUMN_AQUANUMBER)),
+                        span = it.getString(it.getColumnIndexOrThrow(COLUMN_SPAN)),
+                        bodyWeight = it.getString(it.getColumnIndexOrThrow(COLUMN_BODYWEIGHT))
+                    )
                 )
             }
         }
-        return null // データが見つからない場合
+        return animals
     }
 
 
-    // **修正: AnimalDataクラスのageを動的プロパティに**
     data class AnimalData(
         val animalNumber: Int,
         val type: String,
@@ -307,7 +370,10 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         val birthDate: String,
         val doctor: String,
         val note: String,
-        val age: Int // 動的に設定
+        val age: String,
+        val aquaNumber: Int,
+        val span: String,
+        val bodyWeight: String
     )
 
     class AnimalAdapter(
@@ -326,11 +392,9 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
             val breedTextView: TextView = view.findViewById(R.id.animalBreed)
             val nicknameTextView: TextView = view.findViewById(R.id.animalNickname)
 
-
             animalNumberTextView.text = "動物番号：${animal.animalNumber}"
             breedTextView.text = animal.breed
             nicknameTextView.text = animal.nickname
-
 
             val backgroundColor = if (position % 2 == 0) {
                 Color.parseColor("#7AB0D1") // 偶数行
@@ -351,6 +415,35 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
                 }
                 context.startActivity(intent)
             }
+
+            return view
+        }
+    }
+
+    data class Animal(
+        val animalNumber: String,
+        val name: String,
+        val nickname: String
+    )
+    class AnimalAdapterMap(private val context: Context, private val animals: List<Animal>) : BaseAdapter() {
+
+        override fun getCount(): Int = animals.size
+
+        override fun getItem(position: Int): Any = animals[position]
+
+        override fun getItemId(position: Int): Long = position.toLong()
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+            val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
+            val animal = getItem(position) as Animal
+
+            val animalNumberText = view.findViewById<TextView>(R.id.animalNumberText)
+            val animalNameText = view.findViewById<TextView>(R.id.animalNameText)
+            val nicknameText = view.findViewById<TextView>(R.id.nicknameText)
+
+            animalNumberText.text = "動物番号: ${animal.animalNumber}"
+            animalNameText.text = "動物種: ${animal.name}"
+            nicknameText.text = "名前: ${animal.nickname}"
 
             return view
         }

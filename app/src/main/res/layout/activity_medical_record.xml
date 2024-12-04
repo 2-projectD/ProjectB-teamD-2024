@@ -34,7 +34,7 @@
                 android:background="#808080"
                 android:hint="　動物番号"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -44,9 +44,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="動物番号"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -57,7 +58,7 @@
                 android:background="#808080"
                 android:hint="　種類"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -67,9 +68,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="種類"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -80,7 +82,7 @@
                 android:background="#808080"
                 android:hint="　動物種"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -90,9 +92,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="動物種"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -103,7 +106,7 @@
                 android:background="#808080"
                 android:hint="　分類"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -113,9 +116,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="分類"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -126,7 +130,7 @@
                 android:background="#808080"
                 android:hint="　ニックネーム"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -136,9 +140,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="ニックネーム"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -149,7 +154,7 @@
                 android:background="#808080"
                 android:hint="　フリガナ"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -159,9 +164,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="フリガナ"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -172,7 +178,7 @@
                 android:background="#808080"
                 android:hint="　英"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -182,9 +188,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="英"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -195,7 +202,7 @@
                 android:background="#808080"
                 android:hint="　性別"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -205,9 +212,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="性別"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -218,7 +226,7 @@
                 android:background="#808080"
                 android:hint="　誕生日"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -228,9 +236,106 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="誕生日"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#808080"
+                android:hint="　年齢"
+                android:padding="8dp"
+                android:textColorHint="#e6e6e6"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/ageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#7AB0D1"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#808080"
+                android:hint="　水槽番号"
+                android:padding="8dp"
+                android:textColorHint="#e6e6e6"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/aquaNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#7AB0D1"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#808080"
+                android:hint="　体長"
+                android:padding="8dp"
+                android:textColorHint="#e6e6e6"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/spanEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#7AB0D1"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#808080"
+                android:hint="　体重"
+                android:padding="8dp"
+                android:textColorHint="#e6e6e6"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/bodyWeightEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#7AB0D1"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -241,7 +346,7 @@
                 android:background="#808080"
                 android:hint="　担当医"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -251,9 +356,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="担当医"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -264,7 +370,7 @@
                 android:background="#808080"
                 android:hint="　備考"
                 android:padding="8dp"
-                android:textColorHint="#ffffff"
+                android:textColorHint="#e6e6e6"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText,TextFields" />
 
@@ -274,9 +380,10 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#7AB0D1"
-                android:hint="備考"
+                android:hint="-"
                 android:padding="8dp"
                 android:textColorHint="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 

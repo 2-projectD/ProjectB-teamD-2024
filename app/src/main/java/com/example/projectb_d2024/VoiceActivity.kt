@@ -148,13 +148,13 @@ class VoiceActivity : AppCompatActivity() {
                 }
 
                 override fun onEndOfSpeech() {
-                    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-                    if (vibrator.hasVibrator()) {
-                        // バイブレーション効果の作成 (1000ms = 1秒)
-                        val vibrationEffect =
-                            VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE)
-                        vibrator.vibrate(vibrationEffect)
-                    }
+//                    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+//                    if (vibrator.hasVibrator()) {
+//                        // バイブレーション効果の作成 (1000ms = 1秒)
+//                        val vibrationEffect =
+//                            VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE)
+//                        vibrator.vibrate(vibrationEffect)
+//                    }
                 }
 
                 override fun onResults(results: Bundle?) {
@@ -256,3 +256,4 @@ class VoiceActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
     }
+}
