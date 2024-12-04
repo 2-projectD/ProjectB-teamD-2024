@@ -13,10 +13,10 @@
         android:layout_width="237dp"
         android:layout_height="162dp"
         android:background="#F8F7F5"
-        android:src="@drawable/icon_nippo"
+        android:src="@drawable/icon_nippo_soushin"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="376dp"
-        tools:layout_editor_absoluteY="108dp" />
+        tools:layout_editor_absoluteX="467dp"
+        tools:layout_editor_absoluteY="94dp" />
 
     <TextView
         android:layout_width="237dp"
@@ -37,10 +37,10 @@
         android:layout_width="228dp"
         android:layout_height="162dp"
         android:background="#00000000"
-        android:src="@drawable/menu_icon"
+        android:src="@drawable/icon_nippo"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="108dp" />
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="94dp" />
 
     <TextView
         android:layout_width="228dp"
@@ -80,7 +80,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="保存したメモ"
+        android:text="日報"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
