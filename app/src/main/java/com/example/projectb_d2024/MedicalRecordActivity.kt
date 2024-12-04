@@ -2,7 +2,6 @@ package com.example.projectb_d2024
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
@@ -27,12 +26,13 @@ class MedicalRecordActivity : AppCompatActivity() {
     private lateinit var doctorEditText: TextView
     private lateinit var noteEditText: TextView
 
-    private var currentAnimalNumber: Int = -1 // デフォルト値を設定
+    private var currentAnimalNumber: Int = -1 // デフォルト値
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medical_record)
+
 
         val back : ImageButton = findViewById(R.id.back)
         back.setOnClickListener {
@@ -67,6 +67,7 @@ class MedicalRecordActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         // View の初期化
         animalNumberTextView = findViewById(R.id.animalNumberTextView)
         typeEditText = findViewById(R.id.typeEditText)
@@ -91,7 +92,6 @@ class MedicalRecordActivity : AppCompatActivity() {
             finish()
             return
         }
-
         // データベースからデータを取得して表示
         loadAnimalData()
 
@@ -101,7 +101,6 @@ class MedicalRecordActivity : AppCompatActivity() {
     private fun loadAnimalData() {
         val dbHelper = AnimalDatabaseHelper(this)
         val animal = dbHelper.getAnimalByNumber(currentAnimalNumber)
-
 
         if (animal != null) {
             animalNumberTextView.text = animal.animalNumber.toString()
@@ -128,5 +127,7 @@ class MedicalRecordActivity : AppCompatActivity() {
             finish()
         }
     }
+
+
 
     }
