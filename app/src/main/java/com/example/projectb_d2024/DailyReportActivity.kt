@@ -416,32 +416,4 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         }
     }
 
-    data class Animal(
-        val animalNumber: String,
-        val name: String,
-        val nickname: String
-    )
-    class AnimalAdapterMap(private val context: Context, private val animals: List<Animal>) : BaseAdapter() {
-
-        override fun getCount(): Int = animals.size
-
-        override fun getItem(position: Int): Any = animals[position]
-
-        override fun getItemId(position: Int): Long = position.toLong()
-
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
-            val animal = getItem(position) as Animal
-
-            val animalNumberText = view.findViewById<TextView>(R.id.animalNumberText)
-            val animalNameText = view.findViewById<TextView>(R.id.animalNameText)
-            val nicknameText = view.findViewById<TextView>(R.id.nicknameText)
-
-            animalNumberText.text = "動物番号: ${animal.animalNumber}"
-            animalNameText.text = "動物種: ${animal.name}"
-            nicknameText.text = "名前: ${animal.nickname}"
-
-            return view
-        }
-    }
 }

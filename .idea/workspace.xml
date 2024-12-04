@@ -3,16 +3,16 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <device id="pixel_3a_xl" />
-        <device id="pixel_6_pro" />
-        <device id="pixel_4" />
-        <device id="pixel_3" />
         <device id="pixel" />
         <device id="pixel_7a" />
+        <device id="pixel_6_pro" />
         <device id="pixel_3_xl" />
         <device id="pixel_8" />
         <device id="pixel_xl" />
         <device id="pixel_6a" />
+        <device id="pixel_3a_xl" />
+        <device id="pixel_6" />
+        <device id="pixel_3a" />
       </config>
     </shared>
     <layouts>
@@ -184,10 +184,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="4Fマップ">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map5f.xml" afterDir="false" />
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="マップとかで機能追加と修正">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MapActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MapActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MedicalRecordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MedicalRecordActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +204,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\blueb\.android\avd\Pixel_Tablet_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=e4ee833)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -770,13 +777,13 @@
       <option name="project" value="LOCAL" />
       <updated>1733170208912</updated>
     </task>
-    <task id="LOCAL-00050" summary="4Fマップ">
+    <task id="LOCAL-00050" summary="マップとかで機能追加と修正">
       <option name="closed" value="true" />
-      <created>1733326828830</created>
+      <created>1733321697273</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1733326828830</updated>
+      <updated>1733321697273</updated>
     </task>
     <option name="localTasksCounter" value="51" />
     <servers />
@@ -805,6 +812,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="音声認識のプログラムの保存（間違いだらけ）" />
     <MESSAGE value="音声認識の直し中" />
     <MESSAGE value="・音声認識を２回目以降もテキストビューに入れられるようにした（上書きなし！）&#10;・CSVファイルの追加" />
     <MESSAGE value="csvの追加（新しいactivity追加した）" />
@@ -828,9 +836,8 @@
     <MESSAGE value="データベースいじり中！更新できるようになった！" />
     <MESSAGE value="マップとデータベースいろいろ" />
     <MESSAGE value="ちょい修正" />
-    <MESSAGE value="3Fマップ" />
-    <MESSAGE value="4Fマップ" />
-    <option name="LAST_COMMIT_MESSAGE" value="4Fマップ" />
+    <MESSAGE value="マップとかで機能追加と修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="マップとかで機能追加と修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

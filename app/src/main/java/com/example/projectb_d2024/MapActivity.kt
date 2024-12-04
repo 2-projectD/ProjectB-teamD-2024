@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.ScrollView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -60,41 +61,41 @@ class MapActivity : AppCompatActivity() {
 
 
         //1) Viewの取得(5Fボタン)
-        val imageButton8 : ImageButton = findViewById(R.id.imageButton8)
+        val imageButton8: ImageButton = findViewById(R.id.imageButton8)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        imageButton8.setOnClickListener{
+        imageButton8.setOnClickListener {
             val intent = Intent(this, Map_5f_Activity::class.java)
             startActivity(intent)
         }
 
         //1) Viewの取得(4Fボタン)
-        val imageButton6 : ImageButton = findViewById(R.id.imageButton6)
+        val imageButton6: ImageButton = findViewById(R.id.imageButton6)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        imageButton6.setOnClickListener{
+        imageButton6.setOnClickListener {
             val intent = Intent(this, Map_4f_Activity::class.java)
             startActivity(intent)
         }
 
         //1) Viewの取得(3Fボタン)
-        val imageButton5 : ImageButton = findViewById(R.id.imageButton5)
+        val imageButton5: ImageButton = findViewById(R.id.imageButton5)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        imageButton5.setOnClickListener{
+        imageButton5.setOnClickListener {
             val intent = Intent(this, Map_3f_Activity::class.java)
             startActivity(intent)
         }
 
         //1) Viewの取得(メイン画面へボタン)
-        val imageButton : ImageButton = findViewById(R.id.imageButton)
+        val imageButton: ImageButton = findViewById(R.id.imageButton)
 
         //2) ボタンを押したら次の画面へ
         //val intent = Intent(this,遷移先::class.java)
-        imageButton.setOnClickListener{
+        imageButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -144,6 +145,27 @@ class MapActivity : AppCompatActivity() {
             val aquaNumber = 5
             searchAndDisplayData(aquaNumber)
         }
+
+        // animalListView のクリックリスナーを設定
+        animalListView.setOnItemClickListener { _, _, position, _ ->
+            // animalListから選択されたアイテムを取得
+            val selectedAnimal = animalList[position]
+
+            // 動物番号を抽出 (想定: "動物番号: X" の形式)
+            val animalNumber = selectedAnimal.substringAfter("動物番号: ").substringBefore("\n").toIntOrNull()
+
+            if (animalNumber != null) {
+                // Intentを作成して次のActivityに遷移
+                val intent = Intent(this, MedicalRecordActivity::class.java)
+                intent.putExtra("animalNumber", animalNumber) // animalNumberを渡す
+                startActivity(intent)
+            } else {
+                // 動物番号が抽出できなかった場合のやつ
+                Toast.makeText(this, "動物番号の取得に失敗しました", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
     }
 
     private fun searchAndDisplayData(aquaNumber: Int) {
@@ -153,11 +175,7 @@ class MapActivity : AppCompatActivity() {
         if (animalDataList.isNotEmpty()) {
             animalList.clear()
             animalDataList.forEach { animal ->
-                animalList.add(
-                    "動物番号: ${animal.animalNumber}\n" +
-                            "動物種: ${animal.name}\n" +
-                            "名前: ${animal.nickname}"
-                )
+                animalList.add("動物番号: ${animal.animalNumber}\n動物種: ${animal.name}\n名前: ${animal.nickname}")
             }
         } else {
             animalList.clear()
@@ -167,6 +185,9 @@ class MapActivity : AppCompatActivity() {
         // アダプターを更新
         val animalListAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, animalList)
         animalListView.adapter = animalListAdapter
+
+
     }
+
 
 }
