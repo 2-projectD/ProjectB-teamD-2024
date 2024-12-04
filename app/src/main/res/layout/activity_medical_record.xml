@@ -49,6 +49,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -60,6 +61,7 @@
                 android:padding="8dp"
                 android:textColorHint="#FFFFFF"
                 android:textSize="25sp"
+                android:textStyle=""
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -73,6 +75,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -97,6 +100,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -121,6 +125,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -145,6 +150,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -169,6 +175,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -193,6 +200,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -217,6 +225,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -241,6 +250,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -265,6 +275,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -289,6 +300,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -313,6 +325,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -337,6 +350,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -361,6 +375,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
             <TextView
@@ -385,6 +400,7 @@
                 android:textColorHint="#505050"
                 android:textColor="#505050"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
         </LinearLayout>
