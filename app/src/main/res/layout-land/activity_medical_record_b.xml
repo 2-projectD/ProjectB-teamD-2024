@@ -27,7 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toButtomOf="@+id/imageButton2"
         tools:ignore="HardcodedText" />
 
     <ImageButton

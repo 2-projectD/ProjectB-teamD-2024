@@ -8,9 +8,6 @@
     android:background="#F8F7F5"
     tools:context=".ContactActivity">
 
-
-
-
     <ImageButton
         android:id="@+id/imageButton4"
         android:layout_width="wrap_content"
@@ -37,7 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.419"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toButtonOf="@+id/imageButton2"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -51,7 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toButtomOf="@+id/imageButton2"
         tools:ignore="HardcodedText" />
 
     <ImageButton
