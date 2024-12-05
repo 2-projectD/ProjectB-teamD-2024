@@ -143,14 +143,14 @@ class DataManager(private val context: Context) {
     }
 }
 
-// MainActivity
-class MainActivity : AppCompatActivity() {
+// UMainActivity
+class UMainActivity : AppCompatActivity() {
     private lateinit var userManager: UserManager
     private lateinit var dataManager: DataManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_user_setting)
 
         userManager = UserManager(this)
         dataManager = DataManager(this)
