@@ -118,11 +118,11 @@ class VoiceActivity : AppCompatActivity() {
             speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
             speechRecognizer?.setRecognitionListener(object : RecognitionListener {
                 override fun onReadyForSpeech(params: Bundle?) {
-                    Toast.makeText(this@VoiceActivity, "音声認識の準備完了", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@VoiceActivity, "音声認識を開始", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onBeginningOfSpeech() {
-                    Toast.makeText(this@VoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@VoiceActivity, "音声認識作動中", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onRmsChanged(rmsdB: Float) {}
@@ -147,15 +147,7 @@ class VoiceActivity : AppCompatActivity() {
                     initializeSpeechRecognizer() // エラー後に再初期化して再スタート準備
                 }
 
-                override fun onEndOfSpeech() {
-//                    val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-//                    if (vibrator.hasVibrator()) {
-//                        // バイブレーション効果の作成 (1000ms = 1秒)
-//                        val vibrationEffect =
-//                            VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE)
-//                        vibrator.vibrate(vibrationEffect)
-//                    }
-                }
+                override fun onEndOfSpeech() {}
 
                 override fun onResults(results: Bundle?) {
                     val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)

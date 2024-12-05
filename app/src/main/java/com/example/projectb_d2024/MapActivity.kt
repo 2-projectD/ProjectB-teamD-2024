@@ -146,16 +146,15 @@ class MapActivity : AppCompatActivity() {
             searchAndDisplayData(aquaNumber)
         }
 
-        // animalListView のクリックリスナーを設定
+        // animalListView のクリック設定
         animalListView.setOnItemClickListener { _, _, position, _ ->
             // animalListから選択されたアイテムを取得
             val selectedAnimal = animalList[position]
 
-            // 動物番号を抽出 (想定: "動物番号: X" の形式)
+            // 動物番号を抽出
             val animalNumber = selectedAnimal.substringAfter("動物番号: ").substringBefore("\n").toIntOrNull()
 
             if (animalNumber != null) {
-                // Intentを作成して次のActivityに遷移
                 val intent = Intent(this, MedicalRecordActivity::class.java)
                 intent.putExtra("animalNumber", animalNumber) // animalNumberを渡す
                 startActivity(intent)

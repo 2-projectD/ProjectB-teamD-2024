@@ -10,18 +10,19 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="342dp"
-        android:layout_height="554dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu"
+        app:layout_constraintEnd_toEndOf=" parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact">
 
         <LinearLayout
-            android:layout_width="329dp"
-            android:layout_height="559dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#F8F7F5"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,19 +31,45 @@
             app:layout_constraintTop_toBottomOf="@+id/contact"
             tools:ignore="RedundantNamespace">
 
-            <ImageButton
-                android:id="@+id/imageButton7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="4dp"
-                android:background="#00000000"
-                android:padding="0dp"
-                android:src="@drawable/middle_bg"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/contact"
-                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/middle_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contact"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/textMemo"
+                    android:layout_width="275dp"
+                    android:layout_height="340dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="start"
+                    android:longClickable="true"
+                    android:scrollbars="vertical"
+                    android:textColor="#000000"
+                    android:textIsSelectable="true"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contact"
+                    tools:ignore="TextViewEdits" />
+            </FrameLayout>
 
             <ImageButton
                 android:id="@+id/strVoice"
@@ -57,31 +84,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
-            <ImageButton
-                android:id="@+id/endVoice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="#00000000"
-                android:padding="20dp"
-                android:src="@drawable/memo_button2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-                tools:layout_editor_absoluteY="567dp" />
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/deleteButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:padding="0dp"
-                    android:paddingEnd="5dp"
                     android:src="@drawable/button_s1"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
@@ -92,51 +107,36 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:padding="0dp"
-                    android:paddingEnd="5dp"
+                    android:layout_marginStart="12dp"
                     android:src="@drawable/button_s2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/strVoice"
                     tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
-                <ImageButton
-                    android:id="@+id/nextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
-                    android:padding="0dp"
-                    android:src="@drawable/memo_button"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/memo_button"
-                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
-    <ImageButton
+
+    <TextView
         android:id="@+id/imageButton2"
-        android:layout_width="437dp"
-        android:layout_height="43dp"
-        android:padding="0dp"
-        android:src="@drawable/navi_top"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#4ea1d3"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <ImageButton
-        android:layout_width="438dp"
-        android:layout_height="32dp"
-        android:padding="0dp"
-        android:src="@drawable/navi_under"
+    <TextView
+        android:id="@+id/imageButton46"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#4ea1d3"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/back"
@@ -197,29 +197,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="268dp"
-        android:layout_height="361dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact"
-        tools:ignore="RedundantNamespace">
-
-        <TextView
-            android:id="@+id/textMemo"
-            android:layout_width="match_parent"
-            android:layout_height="340dp"
-            android:layout_marginTop="15dp"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

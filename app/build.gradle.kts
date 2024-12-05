@@ -56,6 +56,8 @@ chaquopy {
 
 dependencies {
 
+    implementation ("com.ibm.icu:icu4j:73.2")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

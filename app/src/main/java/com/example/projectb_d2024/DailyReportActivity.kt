@@ -19,6 +19,8 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.ibm.icu.text.Transliterator
+import java.text.Normalizer
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
@@ -247,6 +249,40 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         }
         return null
     }
+
+    fun convertToHiragana(input: String): String {
+        val transliterator = Transliterator.getInstance("Katakana-Hiragana") // カタカナをひらがなに変換
+        val normalized = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFKC) // 正規化
+        return transliterator.transliterate(normalized) // 変換結果を返す
+    }
+
+    fun getAnimalNumberByNickName(nickName: String): Int {
+        val db = readableDatabase
+
+        // 入力をひらがなに変換
+        val normalizedNickName = convertToHiragana(nickName)
+
+        val cursor = db.query(
+            TABLE_ANIMALS,
+            arrayOf(COLUMN_ANIMAL_NUMBER, COLUMN_NICKNAME),
+            "nickname = ?",
+            arrayOf(normalizedNickName), // 照合はひらがなに変換された文字列で行う
+            null, null, null
+        )
+
+        if (cursor.moveToFirst()) {
+            val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER))
+            cursor.close()
+            return animalNumber
+        } else {
+            cursor.close()
+            return -1 // 一致するデータがなかった場合
+        }
+    }
+
+
+
+
 
 
     fun getAllAnimals(): List<AnimalData> {

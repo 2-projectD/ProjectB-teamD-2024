@@ -1,63 +1,73 @@
 package com.example.projectb_d2024
 
-import android.os.Environment
-import java.io.File
-import java.io.FileWriter
-import java.io.IOException
-import android.annotation.SuppressLint
-import android.os.Bundle
-import android.widget.ImageButton
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import android.Manifest
-import android.widget.TextView
-import android.widget.Toast
-import android.speech.SpeechRecognizer
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.media.MediaRecorder
+import android.os.Bundle
+import com.ibm.icu.text.Transliterator
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
-import android.content.Intent
-import android.widget.Button
-import android.content.pm.PackageManager
+import android.speech.SpeechRecognizer
+import android.text.Editable
+import android.text.Selection
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import android.os.Handler
-import android.os.Looper
-//import com.chaquo.python.PyObject;
-//import com.chaquo.python.Python;
+
 
 class BreedingVoiceActivity : AppCompatActivity() {
+
+
+    private lateinit var breedingVoiceDatabase: BreedingVoiceDatabase
+    private lateinit var animalDatabaseHelper: AnimalDatabaseHelper
+
     private var speechRecognizer: SpeechRecognizer? = null
     private lateinit var textMemo: TextView
     private lateinit var strVoice: ImageButton
-    private lateinit var endVoice: ImageButton
-    private val handler = Handler(Looper.getMainLooper())
-    private lateinit var restartSpeechRecognitionRunnable: Runnable
     private var isListening = false
+    private lateinit var dbHelper: AnimalDatabaseHelper
+    private lateinit var voiceFilePath: String
+    private var animalNumber: Int = -1
+    private var string1: String = ""
+    private var string2: String = ""
+    private var int1: Int = 0
+    private val int2: Int = 0
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_breeding_voice)
+
+        // インスタンス初期化
+        breedingVoiceDatabase = BreedingVoiceDatabase(this)
+        animalDatabaseHelper = AnimalDatabaseHelper(this)
+
         //buttonの初期化
         textMemo = findViewById(R.id.textMemo)
         strVoice = findViewById(R.id.strVoice)
-        endVoice = findViewById(R.id.endVoice)
+        val deleteButton: ImageButton = findViewById(R.id.deleteButton)
         val saveButton: ImageButton = findViewById(R.id.saveButton)
 
         // ボタンのクリックリスナー設定
         strVoice.setOnClickListener { startSpeechRecognition() }
-        endVoice.setOnClickListener { stopSpeechRecognition() }
+        deleteButton.setOnClickListener { deleteSelectedText() }
+        saveButton.setOnClickListener { saveRecognizedTextToDatabase() }
 
+        // DailyReportActivityからanimalNumberを受け取る
+        animalNumber = intent.getIntExtra("animalNumber", -1)
 
-        // CSV保存ボタンのクリックリスナー
-        saveButton.setOnClickListener {
-            val textToSave = textMemo.text.toString()
-            if (textToSave.isNotEmpty()) {
-                saveToCSV(textToSave)
-            } else {
-                Toast.makeText(this, "保存するテキストがありません。", Toast.LENGTH_SHORT).show()
-            }
-        }
+        //データベース
+        dbHelper = AnimalDatabaseHelper(this)
+        voiceFilePath = "${filesDir.path}/voice_${animalNumber}.3gp" // 録音ファイルのパス
 
         val back : ImageButton = findViewById(R.id.back)
 
@@ -96,14 +106,6 @@ class BreedingVoiceActivity : AppCompatActivity() {
             finish()
         }
 
-        //csvの画面へ
-        val nextButton : Button = findViewById(R.id.nextButton)
-        //val intent = Intent(this,遷移先::class.java)
-        nextButton.setOnClickListener{
-            val intent = Intent(this, CsvActivity::class.java)
-            startActivity(intent)
-        }
-
         // 音声認識の初期化
         initializeSpeechRecognizer()
     }
@@ -113,11 +115,11 @@ class BreedingVoiceActivity : AppCompatActivity() {
             speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
             speechRecognizer?.setRecognitionListener(object : RecognitionListener {
                 override fun onReadyForSpeech(params: Bundle?) {
-                    Toast.makeText(this@BreedingVoiceActivity, "音声認識の準備完了", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BreedingVoiceActivity, "音声認識を開始", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onBeginningOfSpeech() {
-                    Toast.makeText(this@BreedingVoiceActivity, "話し始めてください", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BreedingVoiceActivity, "音声認識作動中", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onRmsChanged(rmsdB: Float) {}
@@ -142,20 +144,27 @@ class BreedingVoiceActivity : AppCompatActivity() {
                     initializeSpeechRecognizer() // エラー後に再初期化して再スタート準備
                 }
 
-                override fun onEndOfSpeech() { }
+                override fun onEndOfSpeech() {}
 
+                @SuppressLint("SetTextI18n")
                 override fun onResults(results: Bundle?) {
                     val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                     if (matches != null && matches.isNotEmpty()) {
+                        val recognizedText = matches[0]
+
+                        // 選択範囲の取得
+                        val start = textMemo.selectionStart
+                        val end = textMemo.selectionEnd
                         val existingText = textMemo.text.toString()
-                        val newText = if (existingText.isNotEmpty()) {
-                            "$existingText\n${matches[0]}"
+
+                        if (start >= 0 && end >= 0 && start != end) {
+                            val editableText = SpannableStringBuilder(existingText)
+                            editableText.replace(start, end, recognizedText)
+                            textMemo.text = editableText
                         } else {
-                            matches[0]
+                            // 選択範囲がない場合は最後に追加
+                            textMemo.text = existingText + "\n" + recognizedText
                         }
-                        textMemo.text = newText
-                    } else {
-                        Toast.makeText(this@BreedingVoiceActivity, "一致する結果がありません。もう一度話してください。", Toast.LENGTH_SHORT).show()
                     }
                     isListening = false
                 }
@@ -163,25 +172,35 @@ class BreedingVoiceActivity : AppCompatActivity() {
                 override fun onPartialResults(partialResults: Bundle?) {}
 
                 override fun onEvent(eventType: Int, params: Bundle?) {}
+
             })
         }
     }
 
     private fun startSpeechRecognition() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.RECORD_AUDIO
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 1)
             return
         }
 
         if (!isListening) {
-            initializeSpeechRecognizer() // 初期化
+            initializeSpeechRecognizer()
             val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-                putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                putExtra(
+                    RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                )
                 putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ja-JP")
                 putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
-                // 無音のタイムアウトを長く設定
-                putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 60000L) // 1分
-                putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, 60000L) // 1分
+                putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 60000L)
+                putExtra(
+                    RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS,
+                    60000L
+                )
             }
 
             isListening = true
@@ -189,84 +208,64 @@ class BreedingVoiceActivity : AppCompatActivity() {
         }
     }
 
-    private fun stopSpeechRecognition() {
-        if (isListening) {
-            try {
-                speechRecognizer?.stopListening()
-                // 結果を取得するためのフラグを設定
-                speechRecognizer?.setRecognitionListener(object : RecognitionListener {
-                    override fun onResults(results: Bundle?) {
-                        // 結果をテキストビューに追加
-                        val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                        if (matches != null && matches.isNotEmpty()) {
-                            val existingText = textMemo.text.toString()
-                            val newText = if (existingText.isNotEmpty()) {
-                                "$existingText\n${matches[0]}"
-                            } else {
-                                matches[0]
-                            }
-                            textMemo.text = newText
-                        }
-                    }
+    fun convertToHiragana(input: String): String {
+        val transliterator = Transliterator.getInstance("Katakana-Hiragana") // カタカナをひらがなに変換
+        val normalized = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFKC) // 正規化
+        return transliterator.transliterate(normalized) // 変換結果を返す
+    }
 
-                    override fun onError(error: Int) {
-                        // エラー処理はそのまま
-                    }
 
-                    override fun onEndOfSpeech() {
-                        // 音声が終わったときは何もしない
-                    }
+    private fun getSpeechText(): String {
+        return textMemo.text.toString()
+    }
 
-                    // その他のメソッドはそのまま
-                    override fun onReadyForSpeech(params: Bundle?) {}
-                    override fun onBeginningOfSpeech() {}
-                    override fun onRmsChanged(rmsdB: Float) {}
-                    override fun onBufferReceived(buffer: ByteArray?) {}
-                    override fun onPartialResults(partialResults: Bundle?) {}
-                    override fun onEvent(eventType: Int, params: Bundle?) {}
-                })
+    private fun saveRecognizedTextToDatabase() {
+        val speechText = getSpeechText()  // 音声認識結果を取得する方法（例：テキストフィールドから取得）
 
-                speechRecognizer?.cancel()
-                speechRecognizer?.destroy()
-                speechRecognizer = null
-                isListening = false
-                Toast.makeText(this, "音声認識を停止しました", Toast.LENGTH_SHORT).show()
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(this, "音声認識の停止に失敗しました", Toast.LENGTH_SHORT).show()
-            }
+        // speechTextを分割して必要な情報を抽出
+        val parts = speechText.split(" ")
+        if (parts.size < 3) return
+
+        val string1 = parts[0] // string(1) => nickName (例: "カメコ")
+        val string2 = parts[1] // string(2) => その他の文字列 (例: "アジ")
+        val int1 = parts[2].toIntOrNull() ?: 0 // int(1) => 数字 (例: 50)
+        val int2 = 0
+
+        // データベースから animalNumber を取得（ひらがなで照合）
+        val animalNumber = animalDatabaseHelper.getAnimalNumberByNickName(convertToHiragana(string1))
+
+        if (animalNumber != -1) {
+            // animalNumberが見つかった場合のみ保存処理を実行
+            breedingVoiceDatabase.insertRecord(animalNumber, string1, string2, int1, int2)
+        } else {
+            Toast.makeText(this, "一致する動物が見つかりませんでした", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun saveToCSV(data: String) {
-        val fileName = "speech_recognition_results.csv"
-        val file = File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), fileName)
-        try {
-            val maxLines = 10
-            val newContent = mutableListOf<String>()
-            if (file.exists()) {
-                file.forEachLine { line ->
-                    newContent.add(line)
-                }
-            }
-            newContent.add(data.replace("\n", ""))
-            while (newContent.size > maxLines) {
-                newContent.removeAt(0)
-            }
-            FileWriter(file).use { writer ->
-                newContent.forEach { line ->
-                    writer.append(line).append("\n")
-                }
-            }
-            Toast.makeText(this, "結果をCSVファイルに保存しました", Toast.LENGTH_SHORT).show()
-        } catch (e: IOException) {
-            e.printStackTrace()
-            Toast.makeText(this, "エラーが発生しました: ${e.message}", Toast.LENGTH_SHORT).show()
+
+
+
+    private fun deleteSelectedText() {
+        val spannableText = textMemo.text as? Spannable ?: return // Spannableにキャスト
+        val start = Selection.getSelectionStart(spannableText)
+        val end = Selection.getSelectionEnd(spannableText)
+
+        if (start != -1 && end != -1 && start != end) {
+            val editableText = spannableText.toString().toEditable() // SpannableをEditableに変換
+            editableText.delete(start, end)
+            textMemo.text = editableText // 更新後のテキストをセット
+            Toast.makeText(this, "選択したテキストを削除しました", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "削除する選択範囲がありません", Toast.LENGTH_SHORT).show()
         }
     }
+
+    // String拡張関数でEditableに変換
+    fun String.toEditable(): Editable = Editable.Factory.getInstance().newEditable(this)
 
     override fun onDestroy() {
         super.onDestroy()
-        stopSpeechRecognition()
     }
 }
+
+

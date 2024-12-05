@@ -3,16 +3,16 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="_device_class_phone" />
+        <device id="_device_class_tablet" />
+        <device id="_device_class_foldable" />
+        <device id="pixel_c" />
+        <device id="desktop_large" />
         <device id="pixel_3a_xl" />
         <device id="pixel_6_pro" />
         <device id="pixel_4" />
         <device id="pixel_3" />
         <device id="pixel" />
-        <device id="pixel_7a" />
-        <device id="pixel_3_xl" />
-        <device id="pixel_8" />
-        <device id="pixel_xl" />
-        <device id="pixel_6a" />
       </config>
     </shared>
     <layouts>
@@ -23,12 +23,6 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_daily_report_age.xml">
-        <config>
-          <state>Landscape</state>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_feeding_records_voice.xml">
         <config>
           <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -48,13 +42,12 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
         <config>
-          <state>Landscape</state>
+          <state>landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -147,11 +140,6 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_feeding_records_voice.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -164,6 +152,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
         <config>
+          <state>landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -238,7 +227,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="カルテ文字色変更" />
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="横画面など">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/IndividualManagementActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/IndividualManagementActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MapActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MapActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,7 +254,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\blueb\.android\avd\Pixel_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -436,6 +443,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
+    </task>
+    <task id="LOCAL-00003" summary="とりあえずの画面（移行可能）">
+      <option name="closed" value="true" />
+      <created>1725382527866</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725382527866</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ホーム画面の調整">
+      <option name="closed" value="true" />
+      <created>1725382686054</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725382686054</updated>
     </task>
     <task id="LOCAL-00005" summary="ホーム画面の調整">
       <option name="closed" value="true" />
@@ -813,23 +836,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733331465149</updated>
     </task>
-    <task id="LOCAL-00052" summary="横画面など">
-      <option name="closed" value="true" />
-      <created>1733334005742</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1733334005742</updated>
-    </task>
-    <task id="LOCAL-00053" summary="カルテ文字色変更">
-      <option name="closed" value="true" />
-      <created>1733335336737</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1733335336737</updated>
-    </task>
-    <option name="localTasksCounter" value="54" />
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -856,6 +863,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="・音声認識を２回目以降もテキストビューに入れられるようにした（上書きなし！）&#10;・CSVファイルの追加" />
     <MESSAGE value="csvの追加（新しいactivity追加した）" />
     <MESSAGE value="ちょっとだけレイアウト修正" />
     <MESSAGE value="エラー修正" />
@@ -880,8 +888,7 @@
     <MESSAGE value="3Fマップ" />
     <MESSAGE value="4Fマップ" />
     <MESSAGE value="横画面など" />
-    <MESSAGE value="カルテ文字色変更" />
-    <option name="LAST_COMMIT_MESSAGE" value="カルテ文字色変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="横画面など" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
