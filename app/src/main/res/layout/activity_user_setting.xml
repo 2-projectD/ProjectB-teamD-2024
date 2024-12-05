@@ -107,30 +107,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="Username"
-            android:inputType="textPersonName" />
+            android:hint="ユーザー名"
+            android:inputType="textPersonName"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:hint="パスワード"
+            android:inputType="textPassword"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/workInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:hint="「医者」or「管理者」or「飼育員」"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Register" />
+            android:backgroundTint="#4ea1d3"
+            android:clickable="true"
+            android:enabled="true"
+            android:text="登録"
+            android:textColorLink="#4ea1d3" />
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Login" />
+            android:backgroundTint="#4ea1d3"
+            android:text="ログイン"
+            android:textColorLink="#4ea1d3" />
 
 
     </LinearLayout>
