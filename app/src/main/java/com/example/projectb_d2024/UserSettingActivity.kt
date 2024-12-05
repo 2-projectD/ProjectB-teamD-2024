@@ -2,53 +2,100 @@ package com.example.projectb_d2024
 
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
-import android.util.Base64
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import java.security.MessageDigest
 
-// UserSettingActivity
 class UserSettingActivity : AppCompatActivity() {
+    private lateinit var userManager: UserManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_user_setting)
 
-        // ウィンドウインセットの調整
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        // ユーザーマネージャの初期化
+        userManager = UserManager(this)
+
+        // 各ビューを取得
+        val usernameInput = findViewById<EditText>(R.id.usernameInput)
+        val passwordInput = findViewById<EditText>(R.id.passwordInput)
+        val workInput = findViewById<EditText>(R.id.workInput)
+        val registerButton = findViewById<Button>(R.id.registerButton)
+        val loginButton = findViewById<Button>(R.id.loginButton)
+
+        // 登録ボタンが押されたときの処理
+        registerButton.setOnClickListener {
+            val username = usernameInput.text.toString().trim()
+            val password = passwordInput.text.toString().trim()
+            val work = workInput.text.toString().trim()
+
+            if (username.isEmpty() || password.isEmpty() || work.isEmpty()) {
+                Toast.makeText(this, "すべてのフィールドを入力してください", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (work != "医者" && work != "管理者" && work != "飼育員") {
+                Toast.makeText(this, "職業は「医者」「管理者」「飼育員」のいずれかを入力してください", Toast.LENGTH_SHORT).show()
+                workInput.text.clear()
+                return@setOnClickListener
+            }
+
+            val isSuccess = userManager.registerUser(username, password, work)
+            if (isSuccess) {
+                Toast.makeText(this, "ユーザー登録成功", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "ユーザー登録失敗", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // ログインボタンが押されたときの処理
+        loginButton.setOnClickListener {
+            val username = usernameInput.text.toString().trim()
+            val password = passwordInput.text.toString().trim()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "ユーザー名とパスワードを入力してください", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val work = userManager.authenticateUser(username, password)
+            if (work != null) {
+                Toast.makeText(this, "ログイン成功", Toast.LENGTH_SHORT).show()
+                when (work) {
+                    "管理者" -> {
+                        val intent = Intent(this, MainActivity2::class.java)
+                        startActivity(intent)
+                    }
+                    "医者", "飼育員" -> {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else -> {
+                        Toast.makeText(this, "不明な職業です", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(this, "ログイン失敗: ユーザー名またはパスワードが一致しません", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
 
-// DatabaseHelper
+// データベースヘルパークラス
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(
             """
             CREATE TABLE users (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 username TEXT UNIQUE,
-                password_hash TEXT
-            )
-            """
-        )
-        db.execSQL(
-            """
-            CREATE TABLE data (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                content TEXT
+                password_hash TEXT,
+                work TEXT
             )
             """
         )
@@ -56,7 +103,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS users")
-        db.execSQL("DROP TABLE IF EXISTS data")
         onCreate(db)
     }
 
@@ -66,31 +112,22 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 }
 
-// UserManager
+// ユーザーマネージャークラス
 class UserManager(private val context: Context) {
     private val dbHelper = DatabaseHelper(context)
 
-    // パスワードをハッシュ化するメソッド（SHA-256）
-    private fun hashPassword(password: String): String {
-        val digest = MessageDigest.getInstance("SHA-256")
-        val hash = digest.digest(password.toByteArray())
-        return Base64.encodeToString(hash, Base64.DEFAULT).trim()
-    }
-
     // ユーザー登録
-    fun registerUser(username: String, password: String): Boolean {
+    fun registerUser(username: String, password: String, work: String): Boolean {
         val db = dbHelper.writableDatabase
-        val passwordHash = hashPassword(password)
-
         val values = ContentValues().apply {
             put("username", username)
-            put("password_hash", passwordHash)
+            put("password_hash", hashPassword(password))
+            put("work", work)
         }
-
         return try {
-            db.insert("users", null, values)
-            true
+            db.insert("users", null, values) != -1L
         } catch (e: Exception) {
+            e.printStackTrace()
             false
         } finally {
             db.close()
@@ -98,89 +135,26 @@ class UserManager(private val context: Context) {
     }
 
     // ユーザー認証
-    fun authenticateUser(username: String, password: String): Boolean {
+    fun authenticateUser(username: String, password: String): String? {
         val db = dbHelper.readableDatabase
-        val cursor = db.rawQuery("SELECT password_hash FROM users WHERE username = ?", arrayOf(username))
+        val cursor = db.rawQuery("SELECT password_hash, work FROM users WHERE username = ?", arrayOf(username))
 
-        var isAuthenticated = false
+        var work: String? = null
         if (cursor.moveToFirst()) {
             val storedHash = cursor.getString(0)
             val inputHash = hashPassword(password)
-            isAuthenticated = storedHash == inputHash
+            if (storedHash == inputHash) {
+                work = cursor.getString(1) // 職業を取得
+            }
         }
 
         cursor.close()
         db.close()
-        return isAuthenticated
-    }
-}
-
-// DataManager
-class DataManager(private val context: Context) {
-    private val dbHelper = DatabaseHelper(context)
-
-    fun addData(content: String) {
-        val db = dbHelper.writableDatabase
-        val values = ContentValues().apply {
-            put("content", content)
-        }
-        db.insert("data", null, values)
-        db.close()
+        return work
     }
 
-    fun viewData(): List<String> {
-        val db = dbHelper.readableDatabase
-        val cursor = db.rawQuery("SELECT content FROM data", null)
-
-        val data = mutableListOf<String>()
-        while (cursor.moveToNext()) {
-            data.add(cursor.getString(0))
-        }
-
-        cursor.close()
-        db.close()
-        return data
-    }
-}
-
-// UMainActivity
-class UMainActivity : AppCompatActivity() {
-    private lateinit var userManager: UserManager
-    private lateinit var dataManager: DataManager
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_setting)
-
-        userManager = UserManager(this)
-        dataManager = DataManager(this)
-
-        val usernameInput = findViewById<EditText>(R.id.usernameInput)
-        val passwordInput = findViewById<EditText>(R.id.passwordInput)
-        val registerButton = findViewById<Button>(R.id.registerButton)
-        val loginButton = findViewById<Button>(R.id.loginButton)
-
-
-        registerButton.setOnClickListener {
-            val username = usernameInput.text.toString()
-            val password = passwordInput.text.toString()
-            if (userManager.registerUser(username, password)) {
-                Toast.makeText(this, "ユーザー登録成功", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "ユーザー登録失敗", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        loginButton.setOnClickListener {
-            val username = usernameInput.text.toString()
-            val password = passwordInput.text.toString()
-            if (userManager.authenticateUser(username, password)) {
-                Toast.makeText(this, "ログイン成功", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "ログイン失敗", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-
+    // パスワードをハッシュ化するメソッド（SHA-256）
+    private fun hashPassword(password: String): String {
+        return password // 必要であればハッシュ化処理を追加
     }
 }

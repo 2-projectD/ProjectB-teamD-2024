@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectB-D2024</string>
+    <string name="app_name">水族館記録業務アプリ</string>
     <string name="animal_number">Number</string>
     <string name="animal_breed">Breed</string>
     <string name="animal_nickname">Nickname</string>
