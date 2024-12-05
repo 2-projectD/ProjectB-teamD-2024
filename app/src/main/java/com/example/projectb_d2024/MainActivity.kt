@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //1) Viewの取得(連絡ボタン)
+        //1) Viewの取得(管理者ログインボタン)
         val kanrisya = findViewById<ImageButton>(R.id.kanrisya)
 
         //2) ボタンを押したら次の画面へ
