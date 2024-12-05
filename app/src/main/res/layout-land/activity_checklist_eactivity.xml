@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F7F5"
+    android:orientation="horizontal"
+    android:fitsSystemWindows="true"
+    tools:context=".ChecklistEActivity">
+
+    <ScrollView
+        android:layout_width="352dp"
+        android:layout_height="528dp"
+        android:id="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="352dp"
+            android:layout_height="528dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contact"
+            tools:ignore="RedundantNamespace">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button05"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button06"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button07"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button08"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button09"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button10"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button11"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button12"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button13"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button14"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="176dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button15"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:layout_width="180dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#00000000"
+                    android:padding="0dp"
+                    android:src="@drawable/button16"
+                    tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_marginTop="30dp"
+                android:background="#00000000"
+                android:src="@drawable/long_button"
+                tools:ignore="ContentDescription,MissingConstraints" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#4ea1d3"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!--    最後の行が上か下かのやつ    -->
+
+
+    <TextView
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#4ea1d3"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="検査結果の記録"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/tab_back"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <ImageButton
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnVoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/navi_button1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/navi_button2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

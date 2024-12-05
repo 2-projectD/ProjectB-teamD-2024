@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
     kotlin("kapt")
-//    id("com.chaquo.python")
+    id("com.chaquo.python")
 }
 
 android {
@@ -41,7 +41,22 @@ android {
     buildToolsVersion = "34.0.0"
 }
 
+chaquopy {
+    defaultConfig {
+        buildPython("C:\\Users\\kanpa\\AppData\\Local\\Programs\\Python\\Python311\\python.exe")
+        // ------ 以下の記述を追加 ------
+        pip {
+            install("numpy")
+            install("pandas")
+            install("cython")
+            //install("vosk")
+        }
+    }
+}
+
 dependencies {
+
+    implementation ("com.ibm.icu:icu4j:73.2")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

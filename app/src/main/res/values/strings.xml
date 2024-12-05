@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ProjectB-D2024</string>
-    <string name="animal_type">Type</string>
-    <string name="animal_name">Name</string>
-    <string name="animal_health_status">Health Status</string>
+    <string name="animal_number">Number</string>
+    <string name="animal_breed">Breed</string>
+    <string name="animal_nickname">Nickname</string>
+
 </resources>

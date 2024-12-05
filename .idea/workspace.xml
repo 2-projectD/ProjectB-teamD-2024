@@ -3,19 +3,113 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <device id="pixel" />
-        <device id="pixel_7a" />
-        <device id="pixel_6_pro" />
-        <device id="pixel_3_xl" />
-        <device id="pixel_8" />
-        <device id="pixel_xl" />
-        <device id="pixel_6a" />
+        <device id="_device_class_phone" />
+        <device id="_device_class_tablet" />
+        <device id="_device_class_foldable" />
+        <device id="pixel_c" />
+        <device id="desktop_large" />
         <device id="pixel_3a_xl" />
-        <device id="pixel_6" />
-        <device id="pixel_3a" />
+        <device id="pixel_6_pro" />
+        <device id="pixel_4" />
+        <device id="pixel_3" />
+        <device id="pixel" />
       </config>
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_daily_report.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_daily_report_age.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_health_checks.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_individual_management.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
+        <config>
+          <state>landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_measurement_result_records_voice.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_medical_record_b.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_user_setting.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_voice.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_word_registration_management.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/item_animal.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -51,11 +145,6 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_feeding_records_voice.xml">
-        <config>
-          <theme>@style/Theme.ProjectBD2024</theme>
-        </config>
-      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -68,6 +157,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
         <config>
+          <state>landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -92,6 +182,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
@@ -121,6 +216,11 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -132,58 +232,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="マップのずれ検証">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="音声認識！漢字なし！">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingListActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/vosk-model-small-ja-0.22/am/final.mdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/vosk-model-small-ja-0.22/conf/mfcc.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/vosk-model-small-ja-0.22/conf/model.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/vosk-model-small-ja-0.22/graph/disambig_tid.int" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/IndividualManagementActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/IndividualManagementActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/python/vosk_recognizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_s3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_s4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_karute.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_kotaikanri.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_kyuji.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_memo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_nippo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/icon_tango.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/memo_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/tab_var.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_voice.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_checklist_eactivity.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_contact.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_contact_voice.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_csv.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_daily_report.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_daily_report_age.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_feeding_records_voice.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_health_checks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_individual_management.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_measurement_result_records_voice.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_medical_record_b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_voice.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_word_registration_management.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/item_animal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/recycler_view_item.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +252,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\81906\.android\avd\Medium_Phone_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=e4ee833)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -204,6 +263,9 @@
       <list>
         <option value="Class" />
         <option value="Python Script" />
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -220,7 +282,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/2-projectD/ProjectB-teamD-2024&quot;,
-    &quot;accountId&quot;: &quot;6f65889c-5269-4bfc-843e-1dd1f39d6574&quot;
+    &quot;accountId&quot;: &quot;0912d4ec-c1fd-41c0-90ed-1adf2172027d&quot;
   }
 }</component>
   <component name="KotlinScriptingSettings">
@@ -229,7 +291,7 @@
     </scriptDefinition>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="_Designer_Tab" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -279,6 +341,12 @@
       <recent name="com.example.projectb_d2024" />
     </key>
     <key name="android.template.-956640693">
+      <recent name="com.example.projectb_d2024" />
+    </key>
+    <key name="android.template.1912927126">
+      <recent name="com.example.projectb_d2024" />
+    </key>
+    <key name="android.template.22194475">
       <recent name="com.example.projectb_d2024" />
     </key>
     <key name="android.template.-1145534137">
@@ -376,38 +444,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
-    </task>
-    <task id="LOCAL-00001" summary="一次保存&#10;画面を増やして色の調整">
-      <option name="closed" value="true" />
-      <created>1725378071951</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1725378071951</updated>
-    </task>
-    <task id="LOCAL-00002" summary="一次保存&#10;画面を増やして色の調整">
-      <option name="closed" value="true" />
-      <created>1725379077094</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1725379077094</updated>
-    </task>
-    <task id="LOCAL-00003" summary="とりあえずの画面（移行可能）">
-      <option name="closed" value="true" />
-      <created>1725382527866</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1725382527866</updated>
-    </task>
-    <task id="LOCAL-00004" summary="ホーム画面の調整">
-      <option name="closed" value="true" />
-      <created>1725382686054</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1725382686054</updated>
     </task>
     <task id="LOCAL-00005" summary="ホーム画面の調整">
       <option name="closed" value="true" />
@@ -737,7 +773,71 @@
       <option name="project" value="LOCAL" />
       <updated>1731940882703</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="メモ機能の性能向上！">
+      <option name="closed" value="true" />
+      <created>1732548109661</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1732548109661</updated>
+    </task>
+    <task id="LOCAL-00047" summary="データベースいじり中！">
+      <option name="closed" value="true" />
+      <created>1732822466734</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1732822466734</updated>
+    </task>
+    <task id="LOCAL-00048" summary="データベースいじり中！更新できるようになった！">
+      <option name="closed" value="true" />
+      <created>1732824886264</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1732824886264</updated>
+    </task>
+    <task id="LOCAL-00049" summary="ちょい修正">
+      <option name="closed" value="true" />
+      <created>1733170208833</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1733170208912</updated>
+    </task>
+    <task id="LOCAL-00050" summary="4Fマップ">
+      <option name="closed" value="true" />
+      <created>1733326828830</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1733326828830</updated>
+    </task>
+    <task id="LOCAL-00051" summary="横画面など">
+      <option name="closed" value="true" />
+      <created>1733331465149</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1733331465149</updated>
+    </task>
+    <task id="LOCAL-00052" summary="音声認識！まだ途中">
+      <option name="closed" value="true" />
+      <created>1733359873383</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1733359873383</updated>
+    </task>
+    <task id="LOCAL-00053" summary="音声認識！漢字なし！">
+      <option name="closed" value="true" />
+      <created>1733405851209</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1733405851211</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -764,16 +864,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="エラーの直し" />
-    <MESSAGE value="音声認識のバージョン変更" />
-    <MESSAGE value="エラー修正完了！&#10;メモのところのレイアウト変更中！代わりにやってくれると助かる。高さがあるのでスクロール式にしたい" />
-    <MESSAGE value="ちょっとレイアウト整えたのでチェックお願いします！直しもヨロ" />
-    <MESSAGE value="ちょっと修正（気にしなくて）" />
-    <MESSAGE value="スクロールレバーの追加" />
-    <MESSAGE value="音声認識のプログラムの保存（間違いだらけ）" />
-    <MESSAGE value="音声認識の直し中" />
-    <MESSAGE value="・音声認識を２回目以降もテキストビューに入れられるようにした（上書きなし！）&#10;・CSVファイルの追加" />
-    <MESSAGE value="csvの追加（新しいactivity追加した）" />
     <MESSAGE value="ちょっとだけレイアウト修正" />
     <MESSAGE value="エラー修正" />
     <MESSAGE value="色々修正！使い勝手まだ悪い" />
@@ -789,7 +879,17 @@
     <MESSAGE value="DailyReportActivityへ移動ボタン" />
     <MESSAGE value="細かい調整" />
     <MESSAGE value="マップのずれ検証" />
-    <option name="LAST_COMMIT_MESSAGE" value="マップのずれ検証" />
+    <MESSAGE value="メモ機能の性能向上！" />
+    <MESSAGE value="データベースいじり中！" />
+    <MESSAGE value="データベースいじり中！更新できるようになった！" />
+    <MESSAGE value="マップとデータベースいろいろ" />
+    <MESSAGE value="ちょい修正" />
+    <MESSAGE value="3Fマップ" />
+    <MESSAGE value="4Fマップ" />
+    <MESSAGE value="横画面など" />
+    <MESSAGE value="音声認識！まだ途中" />
+    <MESSAGE value="音声認識！漢字なし！" />
+    <option name="LAST_COMMIT_MESSAGE" value="音声認識！漢字なし！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
