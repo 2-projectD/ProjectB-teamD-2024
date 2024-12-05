@@ -236,14 +236,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="細かいレイアウト修正と給餌記録についての">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="データベースの内容の多少直し">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingListActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/GetDataActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportAgeActivity.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report_age.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,11 +270,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Python Script" />
         <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -445,6 +453,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
+    </task>
+    <task id="LOCAL-00006" summary="連絡の場所を作った">
+      <option name="closed" value="true" />
+      <created>1725385541674</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725385541674</updated>
     </task>
     <task id="LOCAL-00007" summary="連絡ボタンの更新">
       <option name="closed" value="true" />
@@ -830,15 +846,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733410413510</updated>
     </task>
-    <task id="LOCAL-00055" summary="細かいレイアウト修正と給餌記録についての">
-      <option name="closed" value="true" />
-      <created>1733413744193</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1733413744194</updated>
-    </task>
-    <option name="localTasksCounter" value="56" />
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -865,6 +873,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="エラー修正" />
+    <MESSAGE value="色々修正！使い勝手まだ悪い" />
     <MESSAGE value="Rename map_5f_all.png to map5f_all.png" />
     <MESSAGE value="色々！" />
     <MESSAGE value="ちょい修正！" />
@@ -887,10 +897,8 @@
     <MESSAGE value="横画面など" />
     <MESSAGE value="音声認識！まだ途中" />
     <MESSAGE value="音声認識！漢字なし！" />
-    <MESSAGE value="Add files via upload" />
     <MESSAGE value="データベースの内容の多少直し" />
-    <MESSAGE value="細かいレイアウト修正と給餌記録についての" />
-    <option name="LAST_COMMIT_MESSAGE" value="細かいレイアウト修正と給餌記録についての" />
+    <option name="LAST_COMMIT_MESSAGE" value="データベースの内容の多少直し" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -6,101 +6,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F7F5"
-    tools:context=".VoiceActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".BreedingVoiceActivity">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="担当医に報告する個体："
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="590dp"
+        android:layout_height="570dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/tab_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="567dp"
+        android:layout_height="567dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="2dp"
+        android:orientation="vertical"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintVertical_bias="0.445">
+
+
+        <TextView
+            android:id="@+id/textMemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingStart="10dp"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText" />
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="579dp"
+        android:layout_height="409dp"
+        android:layout_marginTop="56dp"
+        android:background="#F8F7F5"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        tools:ignore="RedundantNamespace">
+
+        <ImageButton
+            android:id="@+id/strVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="109dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:background="#00000000"
+            android:padding="0dp"
+            android:paddingBottom="100dp"
+            android:src="@drawable/tab_voice_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/endVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="181dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#00000000"
+            android:src="@drawable/tab_voice_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteY="567dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:paddingStart="106dp"
+                android:paddingEnd="15dp"
+                android:src="@drawable/tab_button_s1"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_width="278dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:paddingEnd="90dp"
+                android:src="@drawable/tab_button_s2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/strVoice"
+                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/contact"
+        android:layout_width="130dp"
+        android:layout_height="111dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/tab_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#4ea1d3"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="連絡内容を声に出してください"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="連絡"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:id="@+id/back"
+        android:layout_width="93dp"
+        android:layout_height="50dp"
         android:background="#00000000"
         android:padding="0dp"
-        android:src="@drawable/small_bg"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="147dp" />
-
-    <ImageButton
-        android:id="@+id/strVoice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/memo_button1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
+        android:src="@drawable/tab_back"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="114dp" />
-
-    <ImageButton
-        android:id="@+id/strVoice2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/memo_button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="181dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="528dp"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/button_s1"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="258dp" />
-
-    <ImageButton
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="28dp"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/button_s2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strVoice"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="match_parent"
@@ -110,53 +178,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <!--    最後の行が上か下かのやつ    -->
-
-
-    <TextView
-        android:id="@+id/imageButton2"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:background="#4ea1d3"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/tab_back"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="連絡"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/btnVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="222dp"
         android:background="#00000000"
+        android:elevation="3dp"
         android:padding="0dp"
-        android:src="@drawable/navi_button1"
+        android:src="@drawable/tab_navi_button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
@@ -165,10 +196,11 @@
         android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="222dp"
         android:background="#00000000"
+        android:elevation="3dp"
         android:padding="0dp"
-        android:src="@drawable/navi_button2"
+        android:src="@drawable/tab_navi_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />

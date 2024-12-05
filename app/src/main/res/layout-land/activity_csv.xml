@@ -10,8 +10,8 @@
 
     <ListView
         android:id="@+id/list"
-        android:layout_width="513dp"
-        android:layout_height="545dp"
+        android:layout_width="541dp"
+        android:layout_height="618dp"
         android:background="#7AB0D1"
         android:elevation="-2dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,20 +21,9 @@
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:background="#4ea1d3"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-    <!--    最後の行が上か下かのやつ    -->
-
-
-    <TextView
         android:id="@+id/imageButton2"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:layout_height="52dp"
         android:background="#4ea1d3"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,12 +31,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="保存したメモ"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,25 +45,35 @@
 
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="50dp"
         android:background="#00000000"
         android:padding="0dp"
         android:src="@drawable/tab_back"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#4ea1d3"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/btnVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="222dp"
         android:background="#00000000"
+        android:elevation="3dp"
         android:padding="0dp"
-        android:src="@drawable/navi_button1"
+        android:src="@drawable/tab_navi_button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
@@ -83,10 +82,11 @@
         android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="222dp"
         android:background="#00000000"
+        android:elevation="3dp"
         android:padding="0dp"
-        android:src="@drawable/navi_button2"
+        android:src="@drawable/tab_navi_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
