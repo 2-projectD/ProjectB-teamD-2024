@@ -132,18 +132,7 @@
             android:layout_marginBottom="16dp"
             android:text="Login" />
 
-        <Button
-            android:id="@+id/addDataButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Add Data" />
 
-        <Button
-            android:id="@+id/viewDataButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Data" />
     </LinearLayout>
 
 

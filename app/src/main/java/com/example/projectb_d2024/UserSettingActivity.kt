@@ -159,8 +159,7 @@ class UMainActivity : AppCompatActivity() {
         val passwordInput = findViewById<EditText>(R.id.passwordInput)
         val registerButton = findViewById<Button>(R.id.registerButton)
         val loginButton = findViewById<Button>(R.id.loginButton)
-        val addDataButton = findViewById<Button>(R.id.addDataButton)
-        val viewDataButton = findViewById<Button>(R.id.viewDataButton)
+
 
         registerButton.setOnClickListener {
             val username = usernameInput.text.toString()
@@ -182,15 +181,6 @@ class UMainActivity : AppCompatActivity() {
             }
         }
 
-        addDataButton.setOnClickListener {
-            val content = "保存するデータ"
-            dataManager.addData(content)
-            Toast.makeText(this, "データ保存成功", Toast.LENGTH_SHORT).show()
-        }
 
-        viewDataButton.setOnClickListener {
-            val data = dataManager.viewData()
-            Toast.makeText(this, "データ: ${data.joinToString(", ")}", Toast.LENGTH_LONG).show()
-        }
     }
 }
