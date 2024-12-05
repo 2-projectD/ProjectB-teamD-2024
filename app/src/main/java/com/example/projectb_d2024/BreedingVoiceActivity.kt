@@ -208,10 +208,17 @@ class BreedingVoiceActivity : AppCompatActivity() {
         }
     }
 
-    fun convertToHiragana(input: String): String {
-        val transliterator = Transliterator.getInstance("Katakana-Hiragana") // カタカナをひらがなに変換
-        val normalized = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFKC) // 正規化
-        return transliterator.transliterate(normalized) // 変換結果を返す
+    private fun convertToHiragana(input: String): String {
+        // 入力を正規化（全角・半角を統一）
+        val normalized = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFKC)
+
+        // カタカナをひらがなに変換
+        val katakanaToHiraganaTransliterator = Transliterator.getInstance("Katakana-Hiragana")
+        val kanaConverted = katakanaToHiraganaTransliterator.transliterate(normalized)
+
+        // 漢字を含む文字をひらがなに変換
+        val kanjiToHiraganaTransliterator = Transliterator.getInstance("Any-Hiragana")
+        return kanjiToHiraganaTransliterator.transliterate(kanaConverted)
     }
 
 
@@ -220,27 +227,42 @@ class BreedingVoiceActivity : AppCompatActivity() {
     }
 
     private fun saveRecognizedTextToDatabase() {
-        val speechText = getSpeechText()  // 音声認識結果を取得する方法（例：テキストフィールドから取得）
+        try {
+            val speechText = getSpeechText().trim() // 音声認識結果を取得
 
-        // speechTextを分割して必要な情報を抽出
-        val parts = speechText.split(" ")
-        if (parts.size < 3) return
+            // 入力の分割処理（空白で分割）
+            val parts = speechText.split("\\s+".toRegex())
+            if (parts.size < 3) {
+                Toast.makeText(this, "入力データが不完全です", Toast.LENGTH_SHORT).show()
+                return
+            }
 
-        val string1 = parts[0] // string(1) => nickName (例: "カメコ")
-        val string2 = parts[1] // string(2) => その他の文字列 (例: "アジ")
-        val int1 = parts[2].toIntOrNull() ?: 0 // int(1) => 数字 (例: 50)
-        val int2 = 0
+            val string1 = parts[0] // string(1) => nickName
+            val string2 = parts[1] // string(2) => その他の文字列
+            val int1 = parts[2].toIntOrNull() ?: 0 // int(1)
+            val int2 = 0
 
-        // データベースから animalNumber を取得（ひらがなで照合）
-        val animalNumber = animalDatabaseHelper.getAnimalNumberByNickName(convertToHiragana(string1))
+            // string1 をひらがなに変換してデータベースを照合
+            val animalNumber = animalDatabaseHelper.getAnimalNumberByNickName(convertToHiragana(string1))
 
-        if (animalNumber != -1) {
-            // animalNumberが見つかった場合のみ保存処理を実行
-            breedingVoiceDatabase.insertRecord(animalNumber, string1, string2, int1, int2)
-        } else {
-            Toast.makeText(this, "一致する動物が見つかりませんでした", Toast.LENGTH_SHORT).show()
+            if (animalNumber != -1) {
+                // 照合成功時にデータを保存
+                breedingVoiceDatabase.insertRecord(animalNumber, string1, string2, int1, int2)
+                Toast.makeText(this, "データを保存しました", Toast.LENGTH_SHORT).show()
+            } else {
+                // 照合失敗時の処理
+                Toast.makeText(this, "一致する動物が見つかりませんでした", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            // エラー処理
+            Toast.makeText(this, "エラーが発生しました: ${e.message}", Toast.LENGTH_LONG).show()
+            e.printStackTrace()
         }
     }
+
+
+
+
 
 
 

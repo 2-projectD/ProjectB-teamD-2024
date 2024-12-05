@@ -72,7 +72,7 @@ class DailyReportActivity : AppCompatActivity() {
 
         // 動物データをデータベースに挿入 (すでに挿入したデータがあればスキップ)
         val animalsData = listOf(
-            AnimalDatabaseHelper.AnimalData(112,"カメ", "アオウミガメ", "爬虫綱カメ目ウミガメ科アオウミガメ属", "亀子","kameko","Chelonia mydas",2,"2004/12/06","山田","","0", 1, "50", "150"),
+            AnimalDatabaseHelper.AnimalData(112,"カメ", "アオウミガメ", "爬虫綱カメ目ウミガメ科アオウミガメ属", "かめこ","kameko","Chelonia mydas",2,"2004/12/06","山田","","0", 1, "50", "150"),
             AnimalDatabaseHelper.AnimalData(203,"サメ","シロワニ", "シロワニ", "シャークマン","kameko","Chelonia mydas",1,"","長谷川","","0", 3, "70", "200"),
             AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "ケープペンギン", "ささみ","kameko","Chelonia mydas",2,"2015/01/19","長野","","0", 1, "", ""),
             AnimalDatabaseHelper.AnimalData(125,"ペンギン", "アデリーペンギン","アデリーペンギン", "カイト","kameko","Chelonia mydas",1,"2020/03/15","山田","","0", 1, "80", "120"),
@@ -250,40 +250,50 @@ class AnimalDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABAS
         return null
     }
 
-    fun convertToHiragana(input: String): String {
-        val transliterator = Transliterator.getInstance("Katakana-Hiragana") // カタカナをひらがなに変換
-        val normalized = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFKC) // 正規化
-        return transliterator.transliterate(normalized) // 変換結果を返す
+    private fun convertToHiragana(input: String): String {
+        // 入力を正規化（全角・半角を統一）
+        val normalized = java.text.Normalizer.normalize(input, java.text.Normalizer.Form.NFKC)
+
+        // カタカナをひらがなに変換
+        val katakanaToHiraganaTransliterator = Transliterator.getInstance("Katakana-Hiragana")
+        val kanaConverted = katakanaToHiraganaTransliterator.transliterate(normalized)
+
+        // 漢字をひらがなに変換
+        val kanjiToHiraganaTransliterator = Transliterator.getInstance("Any-Hiragana")
+        return kanjiToHiraganaTransliterator.transliterate(kanaConverted)
     }
 
     fun getAnimalNumberByNickName(nickName: String): Int {
         val db = readableDatabase
 
-        // 入力をひらがなに変換
+        // 入力された nickName をひらがなに変換
         val normalizedNickName = convertToHiragana(nickName)
 
+        // データベースクエリ（すべてのデータを取得して動的に照合）
         val cursor = db.query(
             TABLE_ANIMALS,
             arrayOf(COLUMN_ANIMAL_NUMBER, COLUMN_NICKNAME),
-            "nickname = ?",
-            arrayOf(normalizedNickName), // 照合はひらがなに変換された文字列で行う
-            null, null, null
+            null, // 全データ取得
+            null, null, null, null
         )
 
-        if (cursor.moveToFirst()) {
-            val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER))
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                // データベースから nickname を取得してひらがなに変換
+                val dbNickName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NICKNAME))
+                val normalizedDbNickName = convertToHiragana(dbNickName)
+
+                // 入力とデータベースの nickname を比較
+                if (normalizedNickName == normalizedDbNickName) {
+                    val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ANIMAL_NUMBER))
+                    cursor.close()
+                    return animalNumber
+                }
+            }
             cursor.close()
-            return animalNumber
-        } else {
-            cursor.close()
-            return -1 // 一致するデータがなかった場合
         }
+        return -1 // 一致するデータがない場合
     }
-
-
-
-
-
 
     fun getAllAnimals(): List<AnimalData> {
         val db = readableDatabase
