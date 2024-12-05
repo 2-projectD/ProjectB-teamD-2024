@@ -49,4 +49,37 @@ class BreedingVoiceDatabase(context: Context) : SQLiteOpenHelper(context, DATABA
         db.insert(TABLE_NAME, null, values)
         db.close()
     }
+
+    fun getAllRecords(): List<Record> {
+        val db = readableDatabase
+        val cursor = db.query(
+            "breeding_voice_table", // テーブル名
+            null, // 全列を取得
+            null, null, null, null, null
+        )
+
+        val records = mutableListOf<Record>()
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow("animalNumber"))
+                val string1 = cursor.getString(cursor.getColumnIndexOrThrow("string1"))
+                val string2 = cursor.getString(cursor.getColumnIndexOrThrow("string2"))
+                val int1 = cursor.getInt(cursor.getColumnIndexOrThrow("int1"))
+                val int2 = cursor.getInt(cursor.getColumnIndexOrThrow("int2"))
+
+                records.add(Record(animalNumber, string1, string2, int1, int2))
+            }
+            cursor.close()
+        }
+        return records
+    }
+
+    data class Record(
+        val animalNumber: Int,
+        val string1: String,
+        val string2: String,
+        val int1: Int,
+        val int2: Int
+    )
+
 }
