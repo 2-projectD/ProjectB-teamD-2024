@@ -21,6 +21,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //1) Viewの取得(連絡ボタン)
+        val kanrisya = findViewById<ImageButton>(R.id.kanrisya)
+
+        //2) ボタンを押したら次の画面へ
+        kanrisya.setOnClickListener{
+            val intent = Intent(this, UserSettingActivity::class.java)
+            startActivity(intent)
+        }
+
         //1) Viewの取得(メニュー画面へボタン)
         val btnMenu : ImageButton = findViewById(R.id.btnMenu)
 
@@ -54,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         //2) ボタンを押したら次の画面へ
         btn_nippo.setOnClickListener{
-            val intent = Intent(this, DailyReportAgeActivity::class.java)
+            val intent = Intent(this, DailyReportActivity::class.java)
             startActivity(intent)
         }
 
