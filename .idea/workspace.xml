@@ -105,6 +105,11 @@
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml">
+        <config>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml">
         <config>
           <theme>@style/Theme.ProjectBD2024</theme>
@@ -227,9 +232,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="音声認識！まだ途中">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="音声認識！漢字なし！">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingListActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
@@ -245,7 +252,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=e4ee833)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -337,6 +344,9 @@
       <recent name="com.example.projectb_d2024" />
     </key>
     <key name="android.template.1912927126">
+      <recent name="com.example.projectb_d2024" />
+    </key>
+    <key name="android.template.22194475">
       <recent name="com.example.projectb_d2024" />
     </key>
     <key name="android.template.-1145534137">
@@ -434,14 +444,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
-    </task>
-    <task id="LOCAL-00004" summary="ホーム画面の調整">
-      <option name="closed" value="true" />
-      <created>1725382686054</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1725382686054</updated>
     </task>
     <task id="LOCAL-00005" summary="ホーム画面の調整">
       <option name="closed" value="true" />
@@ -827,7 +829,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733359873383</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="音声認識！漢字なし！">
+      <option name="closed" value="true" />
+      <created>1733405851209</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1733405851211</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -854,7 +864,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="csvの追加（新しいactivity追加した）" />
     <MESSAGE value="ちょっとだけレイアウト修正" />
     <MESSAGE value="エラー修正" />
     <MESSAGE value="色々修正！使い勝手まだ悪い" />
@@ -879,7 +888,8 @@
     <MESSAGE value="4Fマップ" />
     <MESSAGE value="横画面など" />
     <MESSAGE value="音声認識！まだ途中" />
-    <option name="LAST_COMMIT_MESSAGE" value="音声認識！まだ途中" />
+    <MESSAGE value="音声認識！漢字なし！" />
+    <option name="LAST_COMMIT_MESSAGE" value="音声認識！漢字なし！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

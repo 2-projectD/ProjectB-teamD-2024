@@ -73,15 +73,15 @@ class DailyReportActivity : AppCompatActivity() {
         // 動物データをデータベースに挿入 (すでに挿入したデータがあればスキップ)
         val animalsData = listOf(
             AnimalDatabaseHelper.AnimalData(112,"カメ", "アオウミガメ", "爬虫綱カメ目ウミガメ科アオウミガメ属", "かめこ","kameko","Chelonia mydas",2,"2004/12/06","山田","","0", 1, "50", "150"),
-            AnimalDatabaseHelper.AnimalData(203,"サメ","シロワニ", "シロワニ", "シャークマン","kameko","Chelonia mydas",1,"","長谷川","","0", 3, "70", "200"),
-            AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "ケープペンギン", "ささみ","kameko","Chelonia mydas",2,"2015/01/19","長野","","0", 1, "", ""),
-            AnimalDatabaseHelper.AnimalData(125,"ペンギン", "アデリーペンギン","アデリーペンギン", "カイト","kameko","Chelonia mydas",1,"2020/03/15","山田","","0", 1, "80", "120"),
-            AnimalDatabaseHelper.AnimalData(501,"ペンギン","オウサマペンギン", "オウサマペンギン", "りりな","kameko","Chelonia mydas",2,"2000/06/18","長谷川","","0", 3, "50","95"),
-            AnimalDatabaseHelper.AnimalData(111,"ペンギン","ジェンツーペンギン", "ジェンツーペンギン", "こころ","kameko","Chelonia mydas",2,"2015/01/01","山田","","0", 2, "20", "30"),
-            AnimalDatabaseHelper.AnimalData(130,"ペンギン","ヒゲペンギン", "ヒゲペンギン", "イナゴ","kameko","Chelonia mydas",1,"2020/08/29","長野","","0", 5, "50", "120"),
-            AnimalDatabaseHelper.AnimalData(350,"ミミズク","アフリカンミミズク", "アフリカンミミズク", "ミミ","kameko","Chelonia mydas",2,"2024/01/09","山田","","0", 5, "120", "190"),
-            AnimalDatabaseHelper.AnimalData(566,"インコ","ルリコンゴインコ", "ルリコンゴインコ", "たま","kameko","Chelonia mydas",1,"2018/11/12","長野","","0", 2, "60", "130"),
-            AnimalDatabaseHelper.AnimalData(250,"タカ","モモアカノスリ", "モモアカノスリ", "タカコ","kameko","Chelonia mydas",2,"2021/07/11","長谷川","","0", 1, "100", "120")
+            AnimalDatabaseHelper.AnimalData(203,"サメ","シロワニ", "軟骨魚綱ネズミザメ目シロワニ科シロワニ属", "シャークマン","sya-kuman","Carcharias taurus",1,"","長谷川","","0", 3, "70", "200"),
+            AnimalDatabaseHelper.AnimalData(802,"ペンギン","ケープペンギン", "鳥綱ペンギン目ペンギン科", "ささみ","sasami","Spheniscus demersus",2,"2015/01/19","長野","","0", 1, "", ""),
+            AnimalDatabaseHelper.AnimalData(125,"ペンギン", "アデリーペンギン","鳥綱ペンギン目ペンギン科アデリーペンギン属", "カイト","kaito","Pygoscelis adeliae",1,"2020/03/15","山田","","0", 1, "80", "120"),
+            AnimalDatabaseHelper.AnimalData(501,"ペンギン","オウサマペンギン", "鳥綱ペンギン目ペンギン科オウサマペンギン属", "りりな","ririna","Aptenodytes patagonicus",2,"2000/06/18","長谷川","","0", 3, "50","95"),
+            AnimalDatabaseHelper.AnimalData(111,"ペンギン","ジェンツーペンギン", "鳥綱ペンギン目ペンギン科アデリーペンギン属", "こころ","kokoro","Chelonia mydas",2,"2015/01/01","山田","","0", 2, "20", "30"),
+            AnimalDatabaseHelper.AnimalData(130,"ペンギン","ヒゲペンギン", "鳥綱ペンギン科アデリーペンギン属", "イナゴ","inago","Pygoscelis antarctica",1,"2020/08/29","長野","","0", 5, "50", "120"),
+            AnimalDatabaseHelper.AnimalData(350,"ミミズク","アフリカワシミミズク", "鳥綱フクロウ目フクロウ科ワシミミズク属", "ミミ","mimi","Bubo africanus",2,"2024/01/09","山田","","0", 5, "120", "190"),
+            AnimalDatabaseHelper.AnimalData(566,"インコ","ルリコンゴインコ", "鳥綱オウム目インコ科コンゴウインコ属", "たま","tama","Ara ararauna",1,"2018/11/12","長野","","0", 2, "60", "130"),
+            AnimalDatabaseHelper.AnimalData(250,"タカ","モモアカノスリ", "鳥綱タカ目タカ科モモアカノスリ属", "タカコ","takako","Parabuteo unicinctus",2,"2021/07/11","長谷川","","0", 1, "100", "120")
 
         )
 
