@@ -11,12 +11,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="355dp"
-        android:layout_height="522dp"
+        android:layout_width="782dp"
+        android:layout_height="754dp"
+        android:layout_marginTop="8dp"
         android:background="#F8F7F5"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact"
         tools:ignore="RedundantNamespace">
@@ -28,20 +28,29 @@
 
             <ImageButton
                 android:id="@+id/btn_nippo"
-                android:layout_width="176dp"
-                android:layout_height="wrap_content"
+                android:layout_width="266dp"
+                android:layout_height="match_parent"
                 android:background="#F8F7F5"
                 android:padding="0dp"
-                android:src="@drawable/icon_nippo"
+                android:src="@drawable/tab_icon_nippo"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/check_it"
-                android:layout_width="180dp"
+                android:layout_width="266dp"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:padding="0dp"
-                android:src="@drawable/icon_kotaikanri"
+                android:src="@drawable/tab_icon_kotaikanri"
+                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/btnVoice1"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:src="@drawable/tab_icon_memo"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         </LinearLayout>
@@ -52,19 +61,27 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="177dp"
+                android:layout_width="266dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="日報記録"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:layout_width="181dp"
+                android:layout_width="266dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="個体管理"
-                android:textSize="18sp"
+                android:textSize="30sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="メモ帳"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>
@@ -76,21 +93,21 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnVoice1"
-                android:layout_width="176dp"
+                android:id="@+id/btnChek"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
-                android:padding="0dp"
-                android:src="@drawable/icon_memo"
+                android:paddingTop="20dp"
+                android:src="@drawable/tab_icon_tango"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/btnChek"
-                android:layout_width="180dp"
+                android:id="@+id/btnTenpure"
+                android:layout_width="390dp"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
-                android:padding="0dp"
-                android:src="@drawable/icon_tango"
+                android:paddingTop="20dp"
+                android:src="@drawable/tab_icon_map"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
         </LinearLayout>
@@ -102,49 +119,71 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="177dp"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="メモ帳"
-                android:textSize="18sp"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="181dp"
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="単語登録・管理"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/btnTenpure"
-            android:layout_width="match_parent"
-            android:layout_height="132dp"
-            android:layout_marginTop="15dp"
-            android:background="#00000000"
-            android:src="@drawable/icon_map"
-            tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="384dp"
+                android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:text="マップ"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 tools:ignore="HardcodedText" />
-
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/contact"
+        android:layout_width="130dp"
+        android:layout_height="111dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/tab_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#4ea1d3"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="メニュー"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="93dp"
+        android:layout_height="50dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/tab_back"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="match_parent"
@@ -154,51 +193,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <!--    最後の行が上か下かのやつ    -->
-
-
-    <TextView
-        android:id="@+id/imageButton2"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:background="#4ea1d3"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="メニュー"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/contact"
-        android:layout_width="wrap_content"
-        android:layout_height="65dp"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/btnVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="222dp"
         android:background="#00000000"
+        android:elevation="3dp"
         android:padding="0dp"
-        android:src="@drawable/navi_button1"
+        android:src="@drawable/tab_navi_button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
@@ -207,15 +211,13 @@
         android:id="@+id/btnMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="84dp"
+        android:layout_marginEnd="222dp"
         android:background="#00000000"
+        android:elevation="3dp"
         android:padding="0dp"
-        android:src="@drawable/navi_button2"
+        android:src="@drawable/tab_navi_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
