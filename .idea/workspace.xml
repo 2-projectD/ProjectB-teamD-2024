@@ -3,16 +3,16 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="pixel_3a" />
+        <device id="pixel_5" />
+        <device id="pixel_7a" />
+        <device id="pixel_fold" />
         <device id="pixel_2" />
         <device id="Nexus 6P" />
         <device id="pixel_6_pro" />
         <device id="pixel_2_xl" />
-        <device id="pixel_5" />
         <device id="pixel_4a" />
         <device id="pixel_4_xl" />
-        <device id="pixel_7_pro" />
-        <device id="pixel" />
-        <device id="pixel_6" />
       </config>
     </shared>
     <layouts>
@@ -90,21 +90,25 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -180,6 +184,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -191,11 +196,13 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_csv.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -207,11 +214,13 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_individual_management.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -232,6 +241,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -242,11 +252,13 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map5f.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -257,11 +269,13 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -273,21 +287,25 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_word_registration_management.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_animal.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml">
         <config>
+          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -298,12 +316,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="背景色統一">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -505,14 +518,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
-    </task>
-    <task id="LOCAL-00010" summary="更新">
-      <option name="closed" value="true" />
-      <created>1725387816747</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1725387816747</updated>
     </task>
     <task id="LOCAL-00011" summary="個体管理の画面追加と戻るボタンの修正、メニュー・メモボタンの追加">
       <option name="closed" value="true" />
@@ -898,7 +903,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733472365386</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="背景色統一">
+      <option name="closed" value="true" />
+      <created>1733492081091</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1733492081091</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

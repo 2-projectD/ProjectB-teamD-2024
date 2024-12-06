@@ -53,13 +53,13 @@
 
 
     <LinearLayout
-        android:layout_width="579dp"
-        android:layout_height="409dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="578dp"
+        android:layout_height="257dp"
+        android:layout_marginTop="124dp"
         android:background="#F8F7F5"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact"
         tools:ignore="RedundantNamespace">
@@ -72,36 +72,23 @@
             android:layout_marginTop="12dp"
             android:background="#00000000"
             android:padding="0dp"
-            android:paddingBottom="100dp"
             android:src="@drawable/tab_voice_start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/endVoice"
-            android:layout_width="wrap_content"
-            android:layout_height="181dp"
-            android:layout_gravity="center_horizontal"
-            android:background="#00000000"
-            android:src="@drawable/tab_voice_end"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
-            tools:layout_editor_absoluteY="567dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="133dp"
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="297dp"
+                android:layout_height="match_parent"
                 android:background="#00000000"
-                android:padding="0dp"
-                android:paddingStart="36dp"
+                android:paddingStart="106dp"
+                android:paddingTop="30dp"
                 android:paddingEnd="15dp"
                 android:src="@drawable/tab_button_s1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -109,23 +96,12 @@
 
             <ImageButton
                 android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="278dp"
+                android:layout_height="match_parent"
                 android:background="#00000000"
-                android:padding="0dp"
-                android:paddingEnd="15dp"
+                android:paddingTop="30dp"
+                android:paddingEnd="90dp"
                 android:src="@drawable/tab_button_s2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/strVoice"
-                tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
-
-            <ImageButton
-                android:id="@+id/nextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00000000"
-                android:padding="0dp"
-                android:src="@drawable/tab_button_s3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/strVoice"
                 tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
@@ -133,7 +109,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
     <ImageButton
         android:id="@+id/contact"
         android:layout_width="130dp"
