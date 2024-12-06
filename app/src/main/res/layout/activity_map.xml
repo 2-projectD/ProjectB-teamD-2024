@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#F8F7F5"
+    android:background="#00000000"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,17 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
         app:srcCompat="@drawable/maplist_bg1f"
-        android:layout_marginTop="20dp"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="291dp"
+        android:layout_marginTop="184dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintVertical_bias="0.619"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -36,26 +39,25 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-                <ListView
-                    android:id="@+id/animalListView"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintVertical_bias="0.586" />
+            <ListView
+                android:id="@+id/animalListView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.586" />
 
         </LinearLayout>
     </ScrollView>
-
 
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.558"
-        android:background="#00000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.295"
@@ -183,11 +185,11 @@
             android:id="@+id/imageButton14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map1f_all"
             android:layout_gravity="center"
+            android:background="#00000000"
             android:clickable="false"
             android:focusable="false"
+            app:srcCompat="@drawable/map1f_all"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </FrameLayout>
