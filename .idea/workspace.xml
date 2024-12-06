@@ -143,6 +143,7 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml">
         <config>
+          <state>portrait</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -275,8 +276,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="色々修正">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -478,14 +479,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
-    </task>
-    <task id="LOCAL-00008" summary="連絡ボタンの更新">
-      <option name="closed" value="true" />
-      <created>1725387223414</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1725387223414</updated>
     </task>
     <task id="LOCAL-00009" summary="連絡ボタンへの移動プログラム">
       <option name="closed" value="true" />
@@ -871,7 +864,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733468629464</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="色々修正">
+      <option name="closed" value="true" />
+      <created>1733470912240</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1733470912240</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
