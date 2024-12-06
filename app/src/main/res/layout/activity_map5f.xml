@@ -130,13 +130,13 @@
         tools:ignore="MissingConstraints">
 
 
-    <ImageButton
-        android:id="@+id/imageView7"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/map_bg"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <ImageButton
+            android:id="@+id/imageView7"
+            android:layout_width="330dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/map_bg"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/imageButton10"
