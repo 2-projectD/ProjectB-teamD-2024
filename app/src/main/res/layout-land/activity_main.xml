@@ -149,6 +149,22 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
 
+
+    <ImageButton
+        android:id="@+id/kanrisya"
+        android:layout_width="133dp"
+        android:layout_height="99dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/tab_kanrisya"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
         android:id="@+id/imageButton2"
         android:layout_width="match_parent"
@@ -171,19 +187,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText,MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/back"
-        android:layout_width="93dp"
-        android:layout_height="50dp"
-        android:background="#00000000"
-        android:padding="0dp"
-        android:src="@drawable/tab_back"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="match_parent"
@@ -219,5 +222,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
