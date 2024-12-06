@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F8F7F5"
+    tools:context=".MedicalRecordActivity">
+
+    <ScrollView
+        android:layout_width="377dp"
+        android:layout_height="529dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:ignore="RedundantNamespace,ScrollViewSize">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="動物番号"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/animalNumberTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="種類"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle=""
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/typeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="動物種"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="分類"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/breedEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="ニックネーム"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/nicknameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="フリガナ"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/furiganaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="英"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/romanizedNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="性別"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/genderTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="誕生日"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/birthDateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="年齢"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/ageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="水槽番号"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/aquaNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="体長"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/spanEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="体重"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/bodyWeightEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="担当医"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/doctorEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/bottom_border"
+                android:hint="備考"
+                android:padding="8dp"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                tools:ignore="HardcodedText,TextFields" />
+
+            <TextView
+                android:id="@+id/noteEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="#EFEEEB"
+                android:hint="-"
+                android:padding="8dp"
+                android:textColorHint="#505050"
+                android:textColor="#505050"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextFields" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="437dp"
+        android:layout_height="43dp"
+        android:padding="0dp"
+        android:src="@drawable/navi_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="カルテ"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/back"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton46"
+        android:layout_width="438dp"
+        android:layout_height="32dp"
+        android:padding="0dp"
+        android:src="@drawable/navi_under"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnVoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/navi_button1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription,MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:background="#00000000"
+        android:padding="0dp"
+        android:src="@drawable/navi_button2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
