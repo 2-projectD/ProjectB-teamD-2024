@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000"
+    android:fitsSystemWindows="true"
+    android:background="#F8F7F5"
     tools:context=".Map_5f_Activity">
 
     <ImageButton

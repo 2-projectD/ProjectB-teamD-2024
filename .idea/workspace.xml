@@ -3,166 +3,146 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
-        <device id="pixel_3a" />
-        <device id="pixel_5" />
-        <device id="pixel_7a" />
-        <device id="pixel_fold" />
+        <device id="_device_class_tablet" />
+        <device id="pixel_tablet" />
+        <device id="Nexus 9" />
         <device id="pixel_2" />
-        <device id="Nexus 6P" />
-        <device id="pixel_6_pro" />
-        <device id="pixel_2_xl" />
+        <device id="pixel_3" />
+        <device id="Nexus 10" />
+        <device id="pixel_5" />
+        <device id="pixel" />
         <device id="pixel_4a" />
-        <device id="pixel_4_xl" />
+        <device id="pixel_6" />
       </config>
     </shared>
     <layouts>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_list.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_breeding_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_checklist_eactivity.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_contact.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_contact_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_csv.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_daily_report.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_get_data.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_health_checks.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_individual_management.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main2.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_measurement_result_records_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_medical_record.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_medical_record_b.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_user_setting.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_word_registration_management.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/item_animal.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/list_item.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/recycler_view_item.xml">
         <config>
-          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_all_check.xml">
+        <config>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -173,54 +153,52 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml">
         <config>
+          <state>portrait</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml">
         <config>
-          <state>Landscape</state>
+          <theme>@style/Theme.ProjectBD2024</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chenge.xml">
+        <config>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_csv.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_get_data.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_individual_management.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -241,7 +219,6 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -252,13 +229,11 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_map5f.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -269,43 +244,36 @@
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_word_registration_management.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_animal.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml">
         <config>
-          <state>Landscape</state>
           <theme>@style/Theme.ProjectBD2024</theme>
         </config>
       </layout>
@@ -315,8 +283,51 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="背景色統一">
+    <list default="true" id="2a2298fc-9544-46ab-b7ac-8e566ab654ed" name="変更" comment="色々修正">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/AllCheckActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/ChengeActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_all_check.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chenge.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/BreedingVoiceDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/DailyReportActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/GetDataActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/GetDataActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/MainActivity2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/UserSettingActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projectb_d2024/VoiceActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map4f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_map5f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_medical_record_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_medical_record_b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_breeding_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_checklist_eactivity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_contact_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_csv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_csv.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_daily_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_get_data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_health_checks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_individual_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_individual_management.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map4f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_map5f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map5f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_measurement_result_records_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_medical_record_b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_voice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_word_registration_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_word_registration_management.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_animal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_animal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +337,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\blueb\.android\avd\Pixel_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=D:\android\Pixel_XL_API_34.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -379,31 +390,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/ProjectB-teamD-2024/app/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/android&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "ApkExportedModule": "ProjectB-D2024.app",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/ProjectB-teamD-2024/app/src/main/java",
+    "last_opened_file_path": "D:/android",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\kanpa\\.gradle&quot;
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\kanpa\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -441,6 +453,16 @@
     <key name="android.template.670916231">
       <recent name="com.example.projectb_d2024" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Gradle タスク" flag="true" />
+      <visibility group="Python ファイルの実行" flag="true" />
+      <visibility group="conda コマンドの実行" flag="true" />
+      <visibility group="pip コマンドを実行" flag="true" />
+      <visibility group="実行構成" flag="true" />
+      <visibility group="最近のプロジェクト" flag="true" />
+    </myKeys>
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -518,6 +540,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720207575831</updated>
+    </task>
+    <task id="LOCAL-00009" summary="連絡ボタンへの移動プログラム">
+      <option name="closed" value="true" />
+      <created>1725387749941</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1725387749941</updated>
+    </task>
+    <task id="LOCAL-00010" summary="更新">
+      <option name="closed" value="true" />
+      <created>1725387816747</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1725387816747</updated>
     </task>
     <task id="LOCAL-00011" summary="個体管理の画面追加と戻るボタンの修正、メニュー・メモボタンの追加">
       <option name="closed" value="true" />
@@ -895,23 +933,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733470912240</updated>
     </task>
-    <task id="LOCAL-00058" summary="背景色統一">
-      <option name="closed" value="true" />
-      <created>1733472365386</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1733472365386</updated>
-    </task>
-    <task id="LOCAL-00059" summary="背景色統一">
-      <option name="closed" value="true" />
-      <created>1733492081091</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1733492081091</updated>
-    </task>
-    <option name="localTasksCounter" value="60" />
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -938,6 +960,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rename map_5f_all.png to map5f_all.png" />
     <MESSAGE value="色々！" />
     <MESSAGE value="ちょい修正！" />
     <MESSAGE value="余計なボタンをけす" />
@@ -962,8 +985,7 @@
     <MESSAGE value="データベースの内容の多少直し" />
     <MESSAGE value="マップ横画面できた" />
     <MESSAGE value="色々修正" />
-    <MESSAGE value="背景色統一" />
-    <option name="LAST_COMMIT_MESSAGE" value="背景色統一" />
+    <option name="LAST_COMMIT_MESSAGE" value="色々修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -96,6 +96,7 @@ class VoiceActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         // 戻るボタン
         back.setOnClickListener {
             finish()

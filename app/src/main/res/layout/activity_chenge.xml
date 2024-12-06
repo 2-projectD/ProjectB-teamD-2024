@@ -5,16 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="#F8F7F5"
-    tools:context=".MedicalRecordActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".ChengeActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="377dp"
         android:layout_height="529dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact"
@@ -38,16 +39,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/animalNumberTextView"
+            <EditText
+                android:id="@+id/editNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -64,16 +65,16 @@
                 android:textStyle=""
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/typeEditText"
+            <EditText
+                android:id="@+id/editType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -89,16 +90,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/nameEditText"
+            <EditText
+                android:id="@+id/editName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -114,16 +115,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/breedEditText"
+            <EditText
+                android:id="@+id/editBreed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -139,16 +140,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/nicknameEditText"
+            <EditText
+                android:id="@+id/editNickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -164,16 +165,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/furiganaEditText"
+            <EditText
+                android:id="@+id/editFurigana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -189,16 +190,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/romanizedNameEditText"
+            <EditText
+                android:id="@+id/editRomanizedName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -214,16 +215,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/genderTextView"
+            <EditText
+                android:id="@+id/editGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -239,16 +240,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/birthDateEditText"
+            <EditText
+                android:id="@+id/editBirthDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -264,16 +265,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/ageEditText"
+            <EditText
+                android:id="@+id/editAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -289,16 +290,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/aquaNumberEditText"
+            <EditText
+                android:id="@+id/editAquaNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -314,16 +315,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/spanEditText"
+            <EditText
+                android:id="@+id/editSpan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -339,16 +340,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/bodyWeightEditText"
+            <EditText
+                android:id="@+id/editBodyWeight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -364,16 +365,16 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/doctorEditText"
+            <EditText
+                android:id="@+id/editDoctor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
@@ -389,22 +390,34 @@
                 android:textSize="25sp"
                 tools:ignore="HardcodedText,TextFields" />
 
-            <TextView
-                android:id="@+id/noteEditText"
+            <EditText
+                android:id="@+id/editNote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:background="#EFEEEB"
                 android:hint="-"
                 android:padding="8dp"
-                android:textColorHint="#505050"
                 android:textColor="#505050"
+                android:textColorHint="#505050"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TextFields" />
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#4ea1d3"
+        android:text="更新"
+        android:textColorLink="#4ea1d3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <TextView
         android:id="@+id/imageButton2"
@@ -421,7 +434,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="カルテ"
+        android:text="カルテ情報の変更"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
@@ -485,6 +498,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

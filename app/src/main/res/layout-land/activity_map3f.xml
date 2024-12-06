@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F7F5"
-    tools:context=".Map_5f_Activity">
+    tools:context=".Map_3f_Activity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -14,17 +13,20 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/map_back_tab"
+        app:srcCompat="@drawable/map_back"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
 
     <ImageButton
         android:id="@+id/imageButton47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,7 +40,7 @@
         android:id="@+id/imageButton50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,7 +54,7 @@
         android:id="@+id/imageButton49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -66,7 +68,7 @@
         android:id="@+id/imageButton48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,205 +78,249 @@
         app:srcCompat="@drawable/map_3fbuttonbig_tab"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout2"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView9"
-        app:layout_constraintHorizontal_bias="0.958"
-        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageButton"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492"
+        app:srcCompat="@drawable/map_bg" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/map3f_all" />
 
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="721dp"
-            android:layout_height="536dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.509"
-            app:srcCompat="@drawable/map_bg_middle_tab" />
+    <ImageButton
+        android:id="@+id/imageButton51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44"
+        app:srcCompat="@drawable/map3_1"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton73"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="29dp"
-            android:layout_marginTop="180dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad1"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton74"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="215dp"
-            android:layout_marginTop="123dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad2"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367"
+        app:srcCompat="@drawable/map3_2"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton75"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="340dp"
-            android:layout_marginTop="250dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad3"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton76"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="462dp"
-            android:layout_marginTop="340dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad4"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton54"
+        android:layout_width="64dp"
+        android:layout_height="54dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.515"
+        app:srcCompat="@drawable/map3_5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton77"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="496dp"
-            android:layout_marginTop="240dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad5"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton78"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="597dp"
-            android:layout_marginTop="205dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad6"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton55"
+        android:layout_width="20dp"
+        android:layout_height="13dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69"
+        app:srcCompat="@drawable/map3_6"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton79"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="612dp"
-            android:layout_marginTop="238dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad7"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton80"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="612dp"
-            android:layout_marginTop="278dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad8"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton56"
+        android:layout_width="46dp"
+        android:layout_height="43dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508"
+        app:srcCompat="@drawable/map3_7"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton81"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="278dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad9"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton82"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="313dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad10"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton57"
+        android:layout_width="21dp"
+        android:layout_height="31dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544"
+        app:srcCompat="@drawable/map3_8"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton83"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="357dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad11"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton58"
+        android:layout_width="19dp"
+        android:layout_height="15dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.484"
+        app:srcCompat="@drawable/map3_9"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton84"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="400dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad12"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton85"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="152dp"
-            android:layout_marginTop="426dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad13"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton59"
+        android:layout_width="16dp"
+        android:layout_height="17dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
+        app:srcCompat="@drawable/map3_10"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton86"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="190dp"
-            android:layout_marginTop="412dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad14"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton87"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="225dp"
-            android:layout_marginTop="385dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_3fpad15"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton60"
+        android:layout_width="17dp"
+        android:layout_height="19dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653"
+        app:srcCompat="@drawable/map3_11"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#00000000"
-            android:clickable="false"
-            android:focusable="false"
-            app:srcCompat="@drawable/map_3fpad"
-            tools:ignore="SpeakableTextPresentCheck" />
 
-    </FrameLayout>
+    <ImageButton
+        android:id="@+id/imageButton61"
+        android:layout_width="17dp"
+        android:layout_height="19dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/map3_12"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton62"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/map3_14"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton63"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62"
+        app:srcCompat="@drawable/map3_15"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton64"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575"
+        app:srcCompat="@drawable/map3_16"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton65"
+        android:layout_width="22dp"
+        android:layout_height="17dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528"
+        app:srcCompat="@drawable/map3_17"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="399dp"
-        android:layout_height="759dp"
+        android:layout_width="197dp"
+        android:layout_height="377dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512"
+        app:layout_constraintVertical_bias="0.735"
         app:srcCompat="@drawable/map_list_bg_3f" />
 
     <ScrollView

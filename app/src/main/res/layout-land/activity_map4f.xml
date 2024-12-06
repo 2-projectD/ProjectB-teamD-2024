@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00000000"
-    tools:context=".Map_5f_Activity">
+    tools:context=".Map_4f_Activity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -14,17 +14,19 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/map_back_tab"
+        app:srcCompat="@drawable/map_back"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,7 +40,7 @@
         android:id="@+id/imageButton50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,7 +54,7 @@
         android:id="@+id/imageButton49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -66,7 +68,7 @@
         android:id="@+id/imageButton48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="FFFFFF"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,115 +78,124 @@
         app:srcCompat="@drawable/map_3fbutton_tab"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout2"
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView9"
-        app:layout_constraintHorizontal_bias="0.958"
-        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageButton"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492"
+        app:srcCompat="@drawable/map_bg" />
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/map4f_all" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="721dp"
-            android:layout_height="536dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.509"
-            app:srcCompat="@drawable/map_bg_middle_tab" />
+    <ImageButton
+        android:id="@+id/imageButton67"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233"
+        app:srcCompat="@drawable/map4_1"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton73"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="174dp"
-            android:layout_marginTop="16dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_4fpad1"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton68"
+        android:layout_width="54dp"
+        android:layout_height="84dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538"
+        app:srcCompat="@drawable/map4_2"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton74"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="206dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_4fpad2"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton69"
+        android:layout_width="69dp"
+        android:layout_height="49dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.509"
+        app:srcCompat="@drawable/map4_3left"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton75"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="396dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_4fpad3"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton70"
+        android:layout_width="72dp"
+        android:layout_height="50dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.509"
+        app:srcCompat="@drawable/map4_3right"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton76"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="162dp"
-            android:layout_marginTop="328dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_4fpad4"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    <ImageButton
+        android:id="@+id/imageButton71"
+        android:layout_width="66dp"
+        android:layout_height="56dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.708"
+        app:srcCompat="@drawable/map4_4"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
-            android:id="@+id/imageButton77"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="392dp"
-            android:layout_marginTop="380dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_4fpad5"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageButton
-            android:id="@+id/imageButton78"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="210dp"
-            android:layout_marginTop="224dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/map_4fpad6"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="#00000000"
-            android:clickable="false"
-            android:focusable="false"
-            app:srcCompat="@drawable/map_4fpad"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </FrameLayout>
+    <ImageButton
+        android:id="@+id/imageButton72"
+        android:layout_width="154dp"
+        android:layout_height="64dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737"
+        app:srcCompat="@drawable/map4_5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="399dp"
-        android:layout_height="759dp"
+        android:layout_width="197dp"
+        android:layout_height="377dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512"
+        app:layout_constraintVertical_bias="0.735"
         app:srcCompat="@drawable/map_list_bg_4f" />
 
     <ScrollView

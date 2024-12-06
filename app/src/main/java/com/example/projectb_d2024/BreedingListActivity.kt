@@ -1,41 +1,57 @@
 package com.example.projectb_d2024
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-
 class BreedingListActivity : AppCompatActivity() {
+
     private lateinit var animalListView01: ListView
     private lateinit var breedingVoiceDatabase: BreedingVoiceDatabase
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_breeding_list)
 
+        //1) Viewの取得(連絡ボタン)
+        val contact : ImageButton = findViewById(R.id.contact)
+
+        //2) ボタンを押したら次の画面へ
+        //val intent = Intent(this,遷移先::class.java)
+        contact.setOnClickListener{
+            val intent = Intent(this, ContactActivity::class.java)
+            startActivity(intent)
+        }
+
         animalListView01 = findViewById(R.id.animalListView01)
         breedingVoiceDatabase = BreedingVoiceDatabase(this)
 
-        // データベースからデータを取得
-        val dataList = breedingVoiceDatabase.getAllRecords()
+        // データベースから全てのデータを取得
+        val breedingVoiceRecords = breedingVoiceDatabase.getAllRecords()
 
-        // リストの表示
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            dataList.map { it.string1 } // 表示したい項目（例：string1 を表示）
-        )
-        animalListView01.adapter = adapter
+        if (breedingVoiceRecords.isNotEmpty()) {
+            // リストの表示
+            val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_list_item_1,
+                breedingVoiceRecords.map { record ->
+                    "${record.string1}\n ${record.string2}\n ${record.int1}"
+                }
+            )
+            animalListView01.adapter = adapter
+        } else {
+            Toast.makeText(this@BreedingListActivity, "データがありません", Toast.LENGTH_SHORT).show()
+        }
 
         // リスト項目をタップした際の処理
         animalListView01.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            val selectedRecord = dataList[position]
-            val intent = Intent(this,  GetDataActivity::class.java)
+            val selectedRecord = breedingVoiceRecords[position]
+            val intent = Intent(this, GetDataActivity::class.java)
             intent.putExtra("animalNumber", selectedRecord.animalNumber)
             intent.putExtra("string1", selectedRecord.string1)
             intent.putExtra("string2", selectedRecord.string2)

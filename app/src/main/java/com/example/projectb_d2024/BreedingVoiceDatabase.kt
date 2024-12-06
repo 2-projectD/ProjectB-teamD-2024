@@ -9,77 +9,83 @@ class BreedingVoiceDatabase(context: Context) : SQLiteOpenHelper(context, DATABA
 
     companion object {
         private const val DATABASE_NAME = "breeding_voice.db"
-        private const val DATABASE_VERSION = 1
-        private const val TABLE_NAME = "voice_data"
-        private const val COLUMN_ANIMAL_NUMBER = "animalNumber"
-        private const val COLUMN_STRING1 = "string1"
-        private const val COLUMN_STRING2 = "string2"
-        private const val COLUMN_INT1 = "int1"
-        private const val COLUMN_INT2 = "int2"
+        private const val DATABASE_VERSION = 2
     }
 
     override fun onCreate(db: SQLiteDatabase) {
         val createTableQuery = """
-            CREATE TABLE $TABLE_NAME (
-                $COLUMN_ANIMAL_NUMBER INTEGER,
-                $COLUMN_STRING1 TEXT,
-                $COLUMN_STRING2 TEXT,
-                $COLUMN_INT1 INTEGER,
-                $COLUMN_INT2 INTEGER
-            )
-        """.trimIndent()
+        CREATE TABLE breeding_voice_table (
+            animalNumber INTEGER,
+            string1 TEXT,
+            string2 TEXT,
+            int1 INTEGER,
+            int2 INTEGER
+        )
+    """
         db.execSQL(createTableQuery)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
-        onCreate(db)
+        if (oldVersion < newVersion) {
+            db.execSQL("DROP TABLE IF EXISTS breeding_voice_table")
+            onCreate(db)
+        }
     }
 
-    fun insertRecord(animalNumber: Int, string1: String, string2: String, int1: Int, int2: Int) {
+    fun insertRecord(animalNumber: Int, string1: String, string2: String, int1: Int, int2: Int): Boolean {
         val db = writableDatabase
         val values = ContentValues().apply {
-            put(COLUMN_ANIMAL_NUMBER, animalNumber)
-            put(COLUMN_STRING1, string1)
-            put(COLUMN_STRING2, string2)
-            put(COLUMN_INT1, int1)
-            put(COLUMN_INT2, int2) // 初期値を0に設定(認証に使うから)
+            put("animalNumber", animalNumber)
+            put("string1", string1)
+            put("string2", string2)
+            put("int1", int1)
+            put("int2", int2)
         }
-
-        db.insert(TABLE_NAME, null, values)
-        db.close()
+        val result = db.insert("BreedingVoiceTable", null, values)
+        return result != -1L
     }
 
-    fun getAllRecords(): List<Record> {
+    fun getAllRecords(): List<BreedingVoiceRecord> {
+        val records = mutableListOf<BreedingVoiceRecord>()
         val db = readableDatabase
-        val cursor = db.query(
-            "breeding_voice_table", // テーブル名
-            null, // 全列を取得
-            null, null, null, null, null
-        )
 
-        val records = mutableListOf<Record>()
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
-                val animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow("animalNumber"))
-                val string1 = cursor.getString(cursor.getColumnIndexOrThrow("string1"))
-                val string2 = cursor.getString(cursor.getColumnIndexOrThrow("string2"))
-                val int1 = cursor.getInt(cursor.getColumnIndexOrThrow("int1"))
-                val int2 = cursor.getInt(cursor.getColumnIndexOrThrow("int2"))
-
-                records.add(Record(animalNumber, string1, string2, int1, int2))
+        try {
+            db.query(
+                "breeding_voice_table",
+                arrayOf("animalNumber", "string1", "string2", "int1", "int2"),
+                null, null, null, null, null
+            ).use { cursor ->
+                if (cursor != null && cursor.moveToFirst()) {
+                    do {
+                        val record = BreedingVoiceRecord(
+                            animalNumber = cursor.getInt(cursor.getColumnIndexOrThrow("animalNumber")),
+                            string1 = cursor.getString(cursor.getColumnIndexOrThrow("string1")),
+                            string2 = cursor.getString(cursor.getColumnIndexOrThrow("string2")),
+                            int1 = cursor.getInt(cursor.getColumnIndexOrThrow("int1")),
+                            int2 = cursor.getInt(cursor.getColumnIndexOrThrow("int2"))
+                        )
+                        records.add(record)
+                    } while (cursor.moveToNext())
+                } else {
+                    // データが空の場合のログ
+                    println("No records found in breeding_voice_table.")
+                }
             }
-            cursor.close()
+        } catch (e: Exception) {
+            // 例外が発生した場合のログ
+            e.printStackTrace()
         }
         return records
     }
 
-    data class Record(
+
+    data class BreedingVoiceRecord(
         val animalNumber: Int,
         val string1: String,
         val string2: String,
         val int1: Int,
         val int2: Int
     )
+
 
 }

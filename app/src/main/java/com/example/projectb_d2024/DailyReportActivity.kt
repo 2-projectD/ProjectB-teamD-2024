@@ -28,6 +28,10 @@ import java.time.temporal.ChronoUnit
 
 class DailyReportActivity : AppCompatActivity() {
 
+    private lateinit var animalDatabaseHelper: AnimalDatabaseHelper
+    private lateinit var listView: ListView
+    private lateinit var adapter: AnimalDatabaseHelper.AnimalAdapter
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +42,9 @@ class DailyReportActivity : AppCompatActivity() {
         back.setOnClickListener {
             finish()
         }
+
+        listView = findViewById(R.id.animalListView) // 他のアクティビティと ID を重複させない
+        animalDatabaseHelper = AnimalDatabaseHelper(this)
 
         //1) Viewの取得(連絡ボタン)
         val contact = findViewById<ImageButton>(R.id.contact)
@@ -104,17 +111,16 @@ class DailyReportActivity : AppCompatActivity() {
             Log.d("DatabaseCheck", "Animal: $animal")
         }
 
-        // ListView設定
-        val listView: ListView = findViewById(R.id.animalListView)
         val adapter = AnimalDatabaseHelper.AnimalAdapter(this, animals)
         listView.adapter = adapter
 
+        // リスト項目のクリックリスナー
         listView.setOnItemClickListener { _, _, position, _ ->
             val selectedAnimal = adapter.getItem(position)
             if (selectedAnimal != null) {
                 val intent = Intent(this, MedicalRecordActivity::class.java)
-                intent.putExtra("animalNumber", selectedAnimal.animalNumber) // データを渡す
-                startActivity(intent) // MedicalRecordActivity を起動
+                intent.putExtra("animalNumber", selectedAnimal.animalNumber)
+                startActivity(intent)
             } else {
                 Log.e("DailyReportActivity", "Selected animal is null!")
             }
