@@ -92,8 +92,8 @@ class ChengeActivity : AppCompatActivity() {
         editDoctor.setText(animalData.doctor)
         editNote.setText(animalData.note)
         editAquaNumber.setText(animalData.aquaNumber.toString())
-        editSpan.setText(animalData.span ?: "")
-        editBodyWeight.setText(animalData.bodyWeight ?: "")
+        editSpan.setText(animalData.span)
+        editBodyWeight.setText(animalData.bodyWeight)
     }
 
     private fun updateAnimalData() {

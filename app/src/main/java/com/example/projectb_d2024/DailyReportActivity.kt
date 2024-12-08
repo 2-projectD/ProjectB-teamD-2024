@@ -29,8 +29,6 @@ import java.time.temporal.ChronoUnit
 class DailyReportActivity : AppCompatActivity() {
 
     private lateinit var animalDatabaseHelper: AnimalDatabaseHelper
-    private lateinit var listView: ListView
-    private lateinit var adapter: AnimalDatabaseHelper.AnimalAdapter
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,8 +40,6 @@ class DailyReportActivity : AppCompatActivity() {
         back.setOnClickListener {
             finish()
         }
-
-        listView = findViewById(R.id.animalListView) // 他のアクティビティと ID を重複させない
         animalDatabaseHelper = AnimalDatabaseHelper(this)
 
         //1) Viewの取得(連絡ボタン)
@@ -111,6 +107,7 @@ class DailyReportActivity : AppCompatActivity() {
             Log.d("DatabaseCheck", "Animal: $animal")
         }
 
+        val listView: ListView = findViewById(R.id.animalListView)
         val adapter = AnimalDatabaseHelper.AnimalAdapter(this, animals)
         listView.adapter = adapter
 

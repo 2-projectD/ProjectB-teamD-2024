@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000"
-    android:orientation="horizontal"
+    android:background="#F8F7F5"
     android:fitsSystemWindows="true"
+    android:orientation="horizontal"
     tools:context=".ChecklistEActivity">
 
     <ScrollView
